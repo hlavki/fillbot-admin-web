@@ -1,0 +1,25 @@
+@use 'utils/variables';
+
+.mat-mdc-snack-bar-container {
+  width: 100vw !important;
+  margin: 0 !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  max-width: 100% !important;
+  width: 100%;
+  border-radius: 0 !important;
+  padding-right: 0 !important;
+}
+
+.mdc-snackbar__label {
+  text-align: center;
+}
+
+.app-snack-bar--success .mdc-snackbar__surface{
+  background-color: variables.$primary !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  color: variables.$black !important;
+}

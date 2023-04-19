@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+
+<mat-dialog-content>
+  <p *ngFor="let message of data.messages">
+    {{ message }}
+  </p>
+</mat-dialog-content>
+
+<mat-dialog-actions fxLayoutAlign="end center">
+  <button mat-flat-button [mat-dialog-close]="">
+    <span translate>secured.core.buttons.cancel</span>
+  </button>
+  <button *ngIf="!data.type" color="primary" mat-flat-button [mat-dialog-close]="{ success: true }">
+    <span translate>secured.core.buttons.confirm</span>
+  </button>
+  <button *ngIf="data.type === 'warn'" color="warn" mat-flat-button [mat-dialog-close]="{ success: true }">
+    <span translate>secured.core.buttons.delete</span>
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,18 @@
+@use 'utils/variables';
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 16px !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__title {
+  background-color: variables.$primary;
+  text-transform: uppercase;
+}
+
+.mdc-dialog__title+.mdc-dialog__content, .mdc-dialog__header+.mdc-dialog__content {
+  padding-top: 16px !important;
+}
+
+.mdc-dialog .mdc-dialog__content {
+  padding: 32px 24px 24px 24px !important;
+}

@@ -1,0 +1,45 @@
+<app-loading *ngIf="isLoading$ | async; else notLoading"></app-loading>
+
+<ng-template #notLoading>
+  <h2 mat-dialog-title translate>
+    secured.projects.dialogs.detail.title
+  </h2>
+
+  <mat-dialog-content>
+    <form [formGroup]="form" fxLayout="column" fxLayoutGap="32px">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label translate>secured.projects.fields.name.label</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+        <mat-label translate>secured.projects.fields.billing-profile.label</mat-label>
+        <mat-select formControlName="billingProfile">
+          <mat-option *ngFor="let billingProfile of billingProfiles" [value]="billingProfile">
+            <strong>{{ billingProfile.companyName || (billingProfile.firstName + ' ' + billingProfile.lastName) }}</strong>
+            <span>&nbsp;-&nbsp;{{ billingProfile.address | appFormatAddress }}&nbsp;-&nbsp;</span>
+            <span>{{ billingProfile.currency }}</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label translate>secured.projects.fields.daily-amount-limit.label</mat-label>
+        <input matInput type="number" min="0" step="1" formControlName="dailyAmountLimit">
+        <mat-hint translate>secured.projects.fields.daily-amount-limit.note</mat-hint>
+      </mat-form-field>
+
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">
+      <span translate>secured.core.buttons.cancel</span>
+    </button>
+    <button mat-button [disabled]="form.invalid" (click)="onSubmit(form.value)">
+      <span translate>secured.core.buttons.create</span>
+    </button>
+  </mat-dialog-actions>
+</ng-template>

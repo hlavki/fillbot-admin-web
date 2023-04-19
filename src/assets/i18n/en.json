@@ -1,0 +1,148 @@
+{
+  "secured": {
+    "enums": {
+      "billing-type": {
+        "PERSONAL": "Personal",
+        "COMPANY": "Company"
+      },
+      "country": {
+        "CZ": "CZ",
+        "SK": "SK"
+      },
+      "currency": {
+        "CZK": "CZK",
+        "EUR": "EUR"
+      }
+    },
+    "core": {
+      "confirmations": {
+        "title": "Confirmation",
+        "not-reversible": "This action is not reversible, do you really want to do it?"
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "save": "Save",
+        "create": "Create",
+        "add": "Add",
+        "logout": "Logout",
+        "submit": "Submit",
+        "delete": "Delete",
+        "confirm": "Confirm"
+      },
+      "menu": {
+        "dashboard": "Dashboard",
+        "projects": "Projects",
+        "web-pages": "Web pages",
+        "api-keys": "Api keys",
+        "statistics": "Statistics",
+        "settings": "Settings",
+        "personal": "Personal",
+        "billing-profiles": "Billing profiles",
+        "security": "Security"
+      },
+      "messages": {
+        "copied-to-clipboard": "Copied to clipboard"
+      },
+      "fields": {
+        "address": {
+          "street": "Street",
+          "register-number": "Register number",
+          "reference-number": "Reference number",
+          "zip-code": "Zip code",
+          "city": "City",
+          "country": "Country"
+        }
+      }
+    },
+    "projects": {
+      "fields": {
+        "daily-amount-limit": {
+          "label": "Daily amount limit",
+          "note": "Note: If you don't want to have any limit, let this field empty."
+        },
+        "name": {
+          "label": "Name"
+        },
+        "billing-profile": {
+          "label": "Billing profile"
+        }
+      },
+      "dialogs": {
+        "config": {
+          "title": "Api key configuration"
+        },
+        "detail": {
+          "title": "New Api key"
+        }
+      },
+      "pages": {
+        "api-keys": {
+          "title": "Api keys",
+          "new": "New api key"
+        },
+        "web-pages": {
+          "title": "Web pages"
+        }
+      },
+      "confirmations": {
+        "delete": "You are trying to delete api key."
+      },
+      "messages": {
+        "created": "Billing profile was successfully created",
+        "updated": "Billing profile was successfully updated",
+        "deleted": "Billing profile was successfully deleted"
+      }
+    },
+    "settings": {
+      "confirmations": {
+        "delete": "You are trying to delete billing profile."
+      },
+      "messages": {
+        "created": "Billing profile was successfully created",
+        "updated": "Billing profile was successfully updated",
+        "deleted": "Billing profile was successfully deleted"
+      },
+      "fields": {
+        "company-name": "Company name",
+        "cin": "CIN",
+        "vat": "VAT",
+        "first-name": "First name",
+        "last-name": "Last name"
+      },
+      "dialogs": {
+        "billing-detail": {
+          "new-billing-title": "New billing profile",
+          "edit-billing-title": "Edit billing profile"
+        }
+      },
+      "pages": {
+        "billing": {
+          "title": "Billing profiles",
+          "new": "New billing profile",
+          "cin": "CIN",
+          "vat": "VAT"
+        }
+      }
+    }
+  },
+  "system": {
+    "buttons": {
+      "home": "Go to home page",
+      "dashboard": "Go to dashboard page"
+    },
+    "pages": {
+      "error": {
+        "title": "Ooops!",
+        "sub-title": "Something went wrong on our side... We are sorry!"
+      },
+      "forbidden": {
+        "title": "403",
+        "sub-title": "You are trying to do actions against our rules!"
+      },
+      "not-found": {
+        "title": "Page not found",
+        "sub-title": "This is not the page you're looking for."
+      }
+    }
+  }
+}

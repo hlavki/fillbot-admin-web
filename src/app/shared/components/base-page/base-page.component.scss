@@ -1,0 +1,15 @@
+@use 'utils/variables';
+
+:host {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  padding: 0 0 16px 16px;
+}
+
+.base-page {
+  &__heading {
+    width: 100%;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="public">
+  <div class="public__header">
+    <div class="public__header__menu">
+      <img src="../../assets/svg/logo.svg" alt="Mores logo" width="172px">
+      <div style="display: flex; justify-content: center">
+        <button style="margin-right: 8px" pButton type="button" label="Buy" class="p-button-warning p-button-outlined"></button>
+        <button type="button" label="Login" class="p-button-warning p-button-outlined" (click)="onLogin()"></button>
+      </div>
+    </div>
+
+    <div class="public__header__heading">
+      <h1>Jenom validní adresy</h1>
+      <h2>API pro doplňování a validace adres</h2>
+    </div>
+
+    <div class="public__header__has-shape">
+      <svg width="100%" height="100%" viewBox="0 0 1920 236" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(0.000000, -970.000000)" fill="#454a5f">
+            <g transform="translate(-2.000000, 214.000000)">
+              <path d="M2,992 C324.951165,853.958547 641.951165,812.636301 953,868.033261 C1264.04884,923.430222 1587.04884,905.507676 1922,814.265623 L1925.27362,759.808598 L0.694852245,756.601701 L2,992 Z" id="Background"></path>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

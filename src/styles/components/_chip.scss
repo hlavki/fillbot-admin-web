@@ -1,0 +1,9 @@
+@use 'utils/variables';
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+  background-color: variables.$purple !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+  color: variables.$white !important;
+}

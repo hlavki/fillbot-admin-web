@@ -1,0 +1,75 @@
+@use 'utils/variables';
+
+.public {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: variables.$black;
+    margin-bottom: 200px;
+
+    &__menu {
+      width: 100%;
+      max-width: 1140px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    &__heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: variables.$white;
+
+      h1 {
+        font-size: 56px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+
+    &__has-shape {
+      position: absolute;
+      bottom: -200px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  ::ng-deep {
+    .p-menubar {
+      background: transparent;
+      border: none;
+    }
+
+    p-menubarsub {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+      color: variables.$white;
+    }
+
+    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+      background: transparent;
+    }
+
+    .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover .p-menuitem-text {
+      color: orange;
+    }
+  }
+}

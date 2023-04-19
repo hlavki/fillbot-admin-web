@@ -1,0 +1,17 @@
+@use 'utils/variables';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: variables.$primary;
+  border-bottom: variables.$area-border;
+  min-height: 70px;
+  width: 100%;
+}
+
+img {
+  margin-top: -20px;
+  margin-left: 6px;
+}

@@ -1,0 +1,44 @@
+@use 'utils/variables';
+
+.billing {
+  gap: 16px;
+
+  &__card {
+    &__content {
+      height: 100%;
+    }
+  }
+
+  &__new {
+    max-width: 400px;
+    min-width: 400px;
+    min-height: 200px;
+    background-color: variables.$white !important;
+    border: 1px dashed variables.$purple !important;
+    cursor: pointer;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      border: 1px dashed variables.$purple !important;
+
+      .billing__new__content {
+        color: variables.$purple !important;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

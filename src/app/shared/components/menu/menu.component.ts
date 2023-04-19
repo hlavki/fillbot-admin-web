@@ -1,0 +1,26 @@
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+
+@Component({
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class MenuComponent implements OnInit {
+  readonly expanded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  readonly expandedIndex$: BehaviorSubject<number> =  new BehaviorSubject<number>(0);
+
+  constructor(
+    private readonly router: Router,
+  ) {}
+
+  ngOnInit(): void {
+    if (this.router.url.includes('/secured/settings')) {
+      this.expandedIndex$.next(3);
+    } else if (this.router.url.includes('/secured/projects')) {
+      this.expandedIndex$.next(1);
+    }
+  }
+}

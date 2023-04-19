@@ -1,0 +1,145 @@
+<app-loading *ngIf="isLoading$ | async; else notLoading"></app-loading>
+
+<ng-template #notLoading>
+  <h2 mat-dialog-title>
+    <ng-container *ngIf="!!data; else newBillingProfileHeader">
+      <span translate>secured.settings.dialogs.billing-detail.edit-billing-title</span>
+    </ng-container>
+    <ng-template #newBillingProfileHeader>
+      <span translate>secured.settings.dialogs.billing-detail.new-billing-title</span>
+    </ng-template>
+  </h2>
+
+  <mat-dialog-content>
+    <form [formGroup]="form" fxLayout="column" fxLayoutGap="32px">
+      <div fxLayout="column" fxLayoutGap="16px">
+        <mat-radio-group fxLayoutGap="16px" formControlName="category">
+          <mat-radio-button [value]="eBillingType.PERSONAL" translate>
+            <span translate>secured.enums.billing-type.PERSONAL</span>
+          </mat-radio-button>
+          <mat-radio-button [value]="eBillingType.COMPANY">
+            <span translate>secured.enums.billing-type.COMPANY</span>
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <ng-container *ngIf="(category$ | async) === eBillingType.COMPANY; else personal">
+          <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label translate>secured.settings.fields.company-name</mat-label>
+            <input matInput type="text" formControlName="companyName">
+          </mat-form-field>
+
+          <div fxLayout="row" fxLayoutGap="16px">
+            <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+              <mat-label translate>secured.settings.fields.cin</mat-label>
+              <input matInput type="text" formControlName="cin">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+              <mat-label translate>secured.settings.fields.vat</mat-label>
+              <input matInput type="text" formControlName="vatId">
+            </mat-form-field>
+          </div>
+        </ng-container>
+
+        <ng-template #personal>
+          <div fxLayout="row" fxLayoutGap="16px">
+            <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+              <mat-label translate>secured.settings.fields.first-name</mat-label>
+              <input matInput type="text" formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+              <mat-label translate>secured.settings.fields.last-name</mat-label>
+              <input matInput type="text" formControlName="lastName">
+            </mat-form-field>
+          </div>
+        </ng-template>
+
+        <mat-divider></mat-divider>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="16px">
+        <div fxLayout="row" fxLayoutGap="16px">
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+            <mat-label translate>secured.core.fields.address.street</mat-label>
+            <input matInput type="text" formControlName="street">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+            <mat-label translate>secured.core.fields.address.register-number</mat-label>
+            <input matInput type="text" formControlName="registerNumber">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+            <mat-label translate>secured.core.fields.address.reference-number</mat-label>
+            <input matInput type="text" formControlName="referenceNumber">
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="16px">
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+            <mat-label translate>secured.core.fields.address.zip-code</mat-label>
+            <input matInput type="text" formControlName="zipCode">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+            <mat-label translate>secured.core.fields.address.city</mat-label>
+            <input matInput type="text" formControlName="city">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+            <mat-label>Country</mat-label>
+            <mat-select formControlName="country">
+              <mat-option [value]="eCountry.CZ" >
+                <span translate>secured.enums.country.CZ</span>
+              </mat-option>
+              <mat-option [value]="eCountry.SK">
+                <span translate>secured.enums.country.SK</span>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <mat-divider></mat-divider>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+          <mat-label>Currency</mat-label>
+          <mat-select formControlName="currency">
+            <mat-option [value]="eCurrency.CZK">
+              <span translate>secured.enums.currency.CZK</span>
+            </mat-option>
+            <mat-option [value]="eCurrency.EUR">
+              <span translate>secured.enums.currency.EUR</span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions *ngIf="dialogRef.disableClose" fxLayoutAlign="space-between center">
+    <button mat-button (click)="onCancel()">
+      <span translate>secured.core.buttons.logout</span>
+    </button>
+    <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="onSubmit(form.value)">
+      <span translate>secured.core.buttons.create</span>
+    </button>
+  </mat-dialog-actions>
+
+  <mat-dialog-actions *ngIf="!dialogRef.disableClose" fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">
+      <span translate>secured.core.buttons.cancel</span>
+    </button>
+    <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="onSubmit(form.value)">
+      <span *ngIf="!!data; else newSubmitAction" translate>
+        secured.core.buttons.submit
+      </span>
+      <ng-template #newSubmitAction>
+        <span translate>secured.core.buttons.create</span>
+      </ng-template>
+    </button>
+  </mat-dialog-actions>
+</ng-template>
+

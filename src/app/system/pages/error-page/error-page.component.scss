@@ -1,0 +1,16 @@
+@use 'utils/variables';
+
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$primary;
+}
+
+h1 {
+  font-size: 64px;
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,123 @@
+@use 'utils/variables';
+
+:host {
+  display: block;
+  background-color: variables.$yellow-pastel-light-2;
+  border-right: variables.$area-border;
+  height: 100%;
+}
+
+.menu {
+  height: 100%;
+  width: 280px;
+  -webkit-transition: width 0.2s ease-in-out;
+  -moz-transition: width 0.2s ease-in-out;
+  -o-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+
+  &--colapsed {
+    width: 70px;
+  }
+
+  &__footer {
+    font-size: 10px;
+  }
+
+  &__nav {
+    padding: 16px;
+
+    &__list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      &__item {
+        color: variables.$black;
+        padding: 8px 0;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          color: variables.$purple;
+          font-weight: bold;
+
+          & mat-icon {
+            animation: swing ease-in-out 0.5s 1 alternate;
+          }
+        }
+
+        & span {
+          padding: 8px 0;
+        }
+
+        &--active {
+          color: variables.$purple;
+          font-weight: bold;
+
+          & span {
+            color: variables.$purple;
+          }
+        }
+      }
+
+      &__expander {
+        -webkit-transition: transform 0.2s ease-in-out;
+        -moz-transition: transform 0.2s ease-in-out;
+        -o-transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
+
+        &--expanded {
+          transform: rotate(90deg);
+        }
+      }
+
+      &__expanded_area {
+        padding: 0 32px;
+        height: 0;
+        overflow: hidden;
+        -webkit-transition: height 0.2s ease-in-out;
+        -moz-transition: height 0.2s ease-in-out;
+        -o-transition: height 0.2s ease-in-out;
+        transition: height 0.2s ease-in-out;
+
+        &--expanded-2 {
+          height: 114px;
+        }
+
+        &--expanded-3 {
+          height: 171px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes swing {
+  0%,
+  30%,
+  50%,
+  70%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  80% {
+    transform: rotate(-5deg);
+  }
+}

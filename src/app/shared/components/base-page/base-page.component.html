@@ -1,0 +1,13 @@
+<ng-template #defaultLoading>
+  <app-loading [hasDelay]="true"></app-loading>
+</ng-template>
+
+<ng-container *ngIf="isLoading; else notLoading"
+              [ngTemplateOutlet]="defaultLoading">
+</ng-container>
+
+<ng-template #notLoading>
+  <h1 class="base-page__heading">{{ heading }}</h1>
+
+  <ng-container [ngTemplateOutlet]="contentRef"></ng-container>
+</ng-template>
