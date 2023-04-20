@@ -1,0 +1,30 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  tags:
+    - base
+  image: node
+  script:
+    - npm install
+    - npm run build:prod
+
+deploy:
+  stage: deploy
+  services:
+    - docker:dind
+  tags:
+    - base
+  image: docker
+  before_script:
+    - mkdir -p ~/.docker && echo $DOCKER_AUTH_CONFIG > ~/.docker/config.json
+  script:
+    - version=$(cat package.json | jq -r .version)
+    - docker build -t docker.mores.eu/fillbot/admin-web:$version .
+    - docker push docker.mores.eu/fillbot/admin-web:$version
