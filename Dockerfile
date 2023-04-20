@@ -1,4 +1,5 @@
 FROM node:alpine AS builder
+RUN apk add --no-cache jq
 WORKDIR /app
 COPY . /app/
 RUN npm install
