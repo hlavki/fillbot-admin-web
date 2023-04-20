@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'mores-web'`, () => {
+  it(`should have as title 'fillbot-web'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('mores-web');
+    expect(app.title).toEqual('fillbot-web');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('mores-web app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('fillbot-web app is running!');
   });
 });
