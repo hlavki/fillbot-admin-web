@@ -5,9 +5,7 @@ include:
 
 build:
   stage: build
-  tags:
-    - base
-  image: node
+  image: node:alpine
   script:
     - npm install
     - npm run build:prod
