@@ -6,4 +6,4 @@ RUN npm run build:prod
 
 FROM nginx:alpine
 COPY default.conf.template /etc/nginx/templates/
-COPY --from=builder /app/dist/fillbot-web /usr/share/nginx/html
+COPY --from=builder /app/dist/admin-web /usr/share/nginx/html
