@@ -1,3 +1,16 @@
+$grid-breakpoints: (
+  xs: 0,
+  lt-sm: 499px,
+  sm: 500px,
+  lt-md: 959px,
+  md: 960px,
+  gt-md: 961px,
+  lt-lg: 1279px,
+  lg: 1280px,
+  lt-xl: 1919px,
+  xl: 1920px,
+);
+
 $black: #000000;
 $gray: #7F7F7F;
 $gray-light: #CCCCCC;

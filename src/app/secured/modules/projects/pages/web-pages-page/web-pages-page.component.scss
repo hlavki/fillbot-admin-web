@@ -1,0 +1,60 @@
+@use 'utils/variables';
+
+.web-pages {
+  gap: 16px;
+
+  &__card {
+    max-width: 400px;
+    min-width: 400px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
+      min-width: 100%;
+    }
+
+    &__content {
+      height: 100%;
+    }
+  }
+
+  &__new {
+    max-width: 400px;
+    min-width: 400px;
+
+    @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
+      min-width: 100%;
+    }
+
+    min-height: 200px;
+    background-color: variables.$white !important;
+    border: 1px dashed variables.$purple !important;
+    cursor: pointer;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: variables.$blue-light-2 !important;
+
+      .billing__new__content {
+        color: variables.$purple !important;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

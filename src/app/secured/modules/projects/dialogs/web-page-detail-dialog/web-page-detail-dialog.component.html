@@ -2,7 +2,7 @@
 
 <ng-template #notLoading>
   <h2 mat-dialog-title translate>
-    secured.projects.dialogs.api-keys-detail.title
+    secured.projects.dialogs.web-pages-detail.title-new
   </h2>
 
   <mat-dialog-content>
@@ -10,6 +10,11 @@
       <mat-form-field appearance="outline" floatLabel="always">
         <mat-label translate>secured.projects.fields.name.label</mat-label>
         <input matInput type="text" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label translate>secured.projects.fields.url.label</mat-label>
+        <input matInput type="text" formControlName="originSite">
       </mat-form-field>
 
       <mat-form-field appearance="outline" floatLabel="always" fxFlex>
@@ -23,14 +28,17 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-divider></mat-divider>
-
-      <mat-form-field appearance="outline" floatLabel="always">
-        <mat-label translate>secured.projects.fields.daily-amount-limit.label</mat-label>
-        <input matInput type="number" min="0" step="1" formControlName="dailyAmountLimit">
-        <mat-hint translate>secured.projects.fields.daily-amount-limit.note</mat-hint>
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+        <mat-label translate>secured.projects.fields.pricing-tier.label</mat-label>
+        <mat-select formControlName="pricingTier">
+          <mat-option *ngFor="let pricingTier of pricingTiers" [value]="pricingTier">
+            <strong>{{ ('secured.enums.pricing-tier.' + pricingTier.code) | translate }}</strong>
+            <span>&nbsp;-&nbsp;{{ pricingTier.annualPrice }}&nbsp;€</span>
+            <span>&nbsp;/&nbsp;{{ pricingTier.monthlyPrice }}&nbsp;€</span>
+          </mat-option>
+        </mat-select>
+        <mat-hint translate>secured.projects.fields.pricing-tier.note</mat-hint>
       </mat-form-field>
-
     </form>
   </mat-dialog-content>
 
@@ -43,3 +51,5 @@
     </button>
   </mat-dialog-actions>
 </ng-template>
+
+

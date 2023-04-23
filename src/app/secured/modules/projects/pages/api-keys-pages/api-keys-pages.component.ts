@@ -1,17 +1,17 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, finalize, filter, switchMap } from 'rxjs';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject, finalize, filter, switchMap } from 'rxjs';
 
 import { IApiKeyDto } from '@core/api/interfaces/api-key-dto.interface';
 import { ApiKeysService } from '@core/api/services/api-keys/api-keys.service';
 import { IDialogClose } from '@core/interfaces/dialog-close.interface';
 import { NotificationService } from '@core/services/notification/notification.service';
+import { ConfirmationDialogComponent } from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
 
 import { ApiKeyDetailDialogComponent } from '../../dialogs/api-key-detail-dialog/api-key-detail-dialog.component';
-import { ConfirmationDialogComponent } from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { ApiKeyConfigDialogComponent } from '../../dialogs/api-key-config-dialog/api-key-config-dialog.component';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-api-keys-pages',
@@ -46,7 +46,7 @@ export class ApiKeysPagesComponent implements OnInit {
     this.dialog.open(ApiKeyDetailDialogComponent).afterClosed().pipe(
       filter((dialogClose: IDialogClose) => !!dialogClose?.success),
     ).subscribe(() => {
-      this.notificationService.success(this.translateService.instant('secured.projects.messages.created'));
+      this.notificationService.success(this.translateService.instant('secured.projects.messages.api-keys.created'));
       this.loadData();
     });
   }
@@ -55,7 +55,7 @@ export class ApiKeysPagesComponent implements OnInit {
     this.dialog.open(ApiKeyConfigDialogComponent, { data: configId }).afterClosed().pipe(
       filter((dialogClose: IDialogClose) => !!dialogClose?.success),
     ).subscribe(
-      () => this.notificationService.success(this.translateService.instant('secured.projects.messages.updated')),
+      () => this.notificationService.success(this.translateService.instant('secured.projects.messages.api-keys.updated')),
     );
   }
 
@@ -66,7 +66,7 @@ export class ApiKeysPagesComponent implements OnInit {
           type: 'warn',
           title: this.translateService.instant('secured.core.confirmations.title'),
           messages: [
-            this.translateService.instant('secured.projects.confirmations.delete'),
+            this.translateService.instant('secured.projects.confirmations.delete-api-key'),
             this.translateService.instant('secured.core.confirmations.not-reversible'),
           ],
         },
@@ -74,7 +74,7 @@ export class ApiKeysPagesComponent implements OnInit {
         filter((dialogClose: IDialogClose) => !!dialogClose?.success),
         switchMap(() => this.apiKeysService.deleteApiKey(id)),
       ).subscribe(() => {
-        this.notificationService.success(this.translateService.instant('secured.projects.messages.deleted'));
+        this.notificationService.success(this.translateService.instant('secured.projects.messages.api-keys.deleted'));
         this.loadData();
       });
     }

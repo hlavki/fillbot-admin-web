@@ -16,3 +16,9 @@
 .mdc-dialog .mdc-dialog__content {
   padding: 32px 24px 24px 24px !important;
 }
+
+.cdk-global-overlay-wrapper {
+  @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
+    padding: 0 16px;
+  }
+}

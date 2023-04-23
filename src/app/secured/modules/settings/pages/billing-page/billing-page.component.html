@@ -11,7 +11,7 @@
         </mat-card-content>
       </mat-card>
 
-      <mat-card *ngFor="let billingProfile of (data$ | async)" fxFlex="400px">
+      <mat-card class="billing__card" *ngFor="let billingProfile of (data$ | async)">
         <mat-card-header>
           <mat-card-title>
             <div fxFlex fxLayoutAlign="space-between" style="width: 100%">

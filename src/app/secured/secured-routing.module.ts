@@ -14,12 +14,12 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'dashboard',
+        redirectTo: 'projects',
       },
-      {
-        path: 'dashboard',
-        loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
-      },
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
+      // },
       {
         path: 'projects',
         loadChildren: () => import('./modules/projects/projects.module').then(m => m.ProjectsModule),

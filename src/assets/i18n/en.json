@@ -1,4 +1,10 @@
 {
+  "core": {
+    "pricing-tier": {
+      "annual": "Annual",
+      "monthly": "Monthly"
+    }
+  },
   "secured": {
     "enums": {
       "billing-type": {
@@ -12,6 +18,11 @@
       "currency": {
         "CZK": "CZK",
         "EUR": "EUR"
+      },
+      "pricing-tier": {
+        "BASIC": "Basic",
+        "STANDARD": "Standard",
+        "PRO": "Profesional"
       }
     },
     "core": {
@@ -36,7 +47,7 @@
         "api-keys": "Api keys",
         "statistics": "Statistics",
         "settings": "Settings",
-        "personal": "Personal",
+        "personal": "Preferencies",
         "billing-profiles": "Billing profiles",
         "security": "Security"
       },
@@ -65,14 +76,30 @@
         },
         "billing-profile": {
           "label": "Billing profile"
+        },
+        "pricing-tier": {
+          "label": "Pricing tier",
+          "note": "Note: Annual price / Monthly price"
+        },
+        "url": {
+          "label": "Web page origin url"
+        },
+        "enabled": {
+          "label": "Active"
         }
       },
       "dialogs": {
-        "config": {
+        "api-keys-config": {
           "title": "Api key configuration"
         },
-        "detail": {
+        "api-keys-detail": {
           "title": "New Api key"
+        },
+        "web-pages-config": {
+          "title": "Web page configuration"
+        },
+        "web-pages-detail": {
+          "title-new": "New Web page"
         }
       },
       "pages": {
@@ -81,16 +108,25 @@
           "new": "New api key"
         },
         "web-pages": {
-          "title": "Web pages"
+          "title": "Web pages",
+          "new": "New web page"
         }
       },
       "confirmations": {
-        "delete": "You are trying to delete api key."
+        "delete-api-key": "You are trying to delete api key.",
+        "delete-web-page": "You are trying to delete web page."
       },
       "messages": {
-        "created": "Billing profile was successfully created",
-        "updated": "Billing profile was successfully updated",
-        "deleted": "Billing profile was successfully deleted"
+        "api-keys": {
+          "created": "Api key was successfully created",
+          "updated": "Api key was successfully updated",
+          "deleted": "Api key was successfully deleted"
+        },
+        "web-pages": {
+          "created": "Web page was successfully created",
+          "updated": "Web page was successfully updated",
+          "deleted": "Web page was successfully deleted"
+        }
       }
     },
     "settings": {
@@ -128,7 +164,7 @@
   "system": {
     "buttons": {
       "home": "Go to home page",
-      "dashboard": "Go to dashboard page"
+      "admin": "Go to administration"
     },
     "pages": {
       "error": {

@@ -9,4 +9,11 @@
   <button mat-icon-button (click)="onLogout()">
     <mat-icon fontSet="material-icons-outlined">power_settings_new</mat-icon>
   </button>
+
+  <button mat-icon-button (click)="isMenuVisible$.value ? isMenuVisible$.next(false) : isMenuVisible$.next(true)" fxHide.gt-xs>
+    <mat-icon fontSet="material-icons-outlined" *ngIf="(isMenuVisible$ | async) === false">menu</mat-icon>
+    <mat-icon fontSet="material-icons-outlined" *ngIf="isMenuVisible$ | async">close</mat-icon>
+  </button>
 </div>
+
+<app-menu *ngIf="isMenuVisible$ | async" class="menu" (selected)="isMenuVisible$.next(false)"></app-menu>

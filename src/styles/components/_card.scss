@@ -14,3 +14,7 @@
   border: variables.$area-border !important;
   box-shadow: none !important;
 }
+
+.mat-mdc-card.inactive {
+  background-color: variables.$gray-light !important;
+}

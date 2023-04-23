@@ -5,12 +5,12 @@
   <div>
     <nav class="menu__nav">
       <ul class="menu__nav__list">
-        <li>
-          <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'dashboard']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+        <!-- <li>
+          <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'dashboard']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
             <mat-icon fontSet="material-icons-outlined">dashboard</mat-icon>
             <span translate>secured.core.menu.dashboard</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <span class="menu__nav__list__item" fxLayoutAlign="space-between center" (click)="expandedIndex$.next(expandedIndex$.value === 1 ? 0 : 1)">
             <div fxLayoutAlign="start center" fxLayoutGap="8px">
@@ -22,20 +22,20 @@
             </div>
           </span>
           <div class="menu__nav__list__expanded_area" fxLayout="column" [ngClass]="{ 'menu__nav__list__expanded_area--expanded-2': (expandedIndex$ | async) === 1 }">
-            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'projects', 'web-pages']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'projects', 'web-pages']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
               <span translate>secured.core.menu.web-pages</span>
             </a>
-            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'projects', 'api-keys']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'projects', 'api-keys']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
               <span translate>secured.core.menu.api-keys</span>
             </a>
           </div>
         </li>
-        <li>
-          <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'statistics']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+        <!-- <li>
+          <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'statistics']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
             <mat-icon fontSet="material-icons-outlined">analytics</mat-icon>
             <span translate>secured.core.menu.statistics</span>
           </a>
-        </li>
+        </li> -->
         <li>
           <span class="menu__nav__list__item" fxLayoutAlign="space-between center" (click)="expandedIndex$.next(expandedIndex$.value === 3 ? 0 : 3)">
             <div fxLayoutAlign="start center" fxLayoutGap="8px">
@@ -46,16 +46,16 @@
               <mat-icon>chevron_right</mat-icon>
             </div>
           </span>
-          <div class="menu__nav__list__expanded_area" fxLayout="column" [ngClass]="{ 'menu__nav__list__expanded_area--expanded-3': (expandedIndex$ | async) === 3 }">
-            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'settings', 'personal']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+          <div class="menu__nav__list__expanded_area" fxLayout="column" [ngClass]="{ 'menu__nav__list__expanded_area--expanded-2': (expandedIndex$ | async) === 3 }">
+            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'settings', 'personal']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
               <span translate>secured.core.menu.personal</span>
             </a>
-            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'settings', 'billing']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'settings', 'billing']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
               <span translate>secured.core.menu.billing-profiles</span>
             </a>
-            <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'settings', 'password']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px">
+            <!-- <a class="menu__nav__list__item" [routerLink]="['/', 'secured', 'settings', 'password']" routerLinkActive="menu__nav__list__item--active" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="selected.emit()">
               <span translate>secured.core.menu.security</span>
-            </a>
+            </a> -->
           </div>
         </li>
       </ul>
@@ -63,11 +63,11 @@
   </div>
 
   <div>
-    <div fxLayoutAlign="end">
+    <!-- <div fxLayoutAlign="end">
       <button mat-icon-button (click)="expanded$.next(!expanded$.value)">
         <mat-icon>{{ (expanded$ | async) ? 'chevron_left' : 'chevron_right' }}</mat-icon>
       </button>
-    </div>
+    </div> -->
     <div class="menu__footer">
       Version 0.0.1
     </div>

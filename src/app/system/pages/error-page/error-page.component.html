@@ -1,19 +1,23 @@
-<div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
-  <img src="../../../../assets/images/worried.png" width="150px">
-
-  <div fxLayout="column" fxLayoutGap="64px" fxLayoutAlign="start center">
+<app-base-page>
+  <ng-template #content>
     <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
-      <h1 translate>system.pages.error.title</h1>
-      <span translate>system.pages.error.sub-title</span>
-    </div>
+      <img src="../../../../assets/images/worried.png" width="150px">
 
-    <div fxLayoutAlign="center" fxLayoutGap="16px">
-      <button mat-raised-button color="primary" [routerLink]="['/', 'home']">
-        <span translate>system.buttons.home</span>
-      </button>
-      <button *ngIf="isLoggedIn$ | async" mat-raised-button color="primary" [routerLink]="['/', 'secured', 'dashboard']">
-        <span translate>system.buttons.dashboard</span>
-      </button>
+      <div fxLayout="column" fxLayoutGap="64px" fxLayoutAlign="start center">
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px" style="text-align: center">
+          <h1 translate>system.pages.error.title</h1>
+          <span translate>system.pages.error.sub-title</span>
+        </div>
+
+        <div fxLayoutAlign="center" fxLayoutGap="16px" fxLayout.lt-sm="column">
+          <button mat-raised-button color="primary" [routerLink]="['/', 'home']">
+            <span translate>system.buttons.home</span>
+          </button>
+          <button *ngIf="isLoggedIn$ | async" mat-raised-button color="primary" [routerLink]="['/', 'secured']">
+            <span translate>system.buttons.admin</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </ng-template>
+</app-base-page>

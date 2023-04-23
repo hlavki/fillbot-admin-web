@@ -11,20 +11,20 @@
         </mat-card-content>
       </mat-card>
 
-      <mat-card *ngFor="let apiKey of (data$ | async)" fxFlex="400px">
+      <mat-card class="api-keys__card" *ngFor="let apiKey of (data$ | async)">
         <mat-card-header>
           <mat-card-title>
             {{ apiKey.name }}
           </mat-card-title>
         </mat-card-header>
 
-        <mat-card-content class="billing__card__content" fxLayout="column" fxLayoutGap="16px">
+        <mat-card-content class="api-keys__card__content" fxLayout="column" fxLayoutGap="16px">
           <div fxLayoutAlign="start start" fxLayoutGap="8px">
             <mat-icon>payments</mat-icon>
             <div fxLayout="column">
               <span>{{ apiKey.billingProfile.companyName || (apiKey.billingProfile.firstName + ' ' + apiKey.billingProfile.lastName) }}</span>
               <span>{{ apiKey.billingProfile.address | appFormatAddress }}</span>
-              <span>{{ apiKey.billingProfile.currency }}</span>
+              <span>{{ apiKey.billingProfile.country }} ({{ apiKey.billingProfile.currency }})</span>
             </div>
           </div>
 

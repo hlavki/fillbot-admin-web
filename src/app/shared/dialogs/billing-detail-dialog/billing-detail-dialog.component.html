@@ -28,7 +28,7 @@
             <input matInput type="text" formControlName="companyName">
           </mat-form-field>
 
-          <div fxLayout="row" fxLayoutGap="16px">
+          <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
               <mat-label translate>secured.settings.fields.cin</mat-label>
               <input matInput type="text" formControlName="cin">
@@ -42,7 +42,7 @@
         </ng-container>
 
         <ng-template #personal>
-          <div fxLayout="row" fxLayoutGap="16px">
+          <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
               <mat-label translate>secured.settings.fields.first-name</mat-label>
               <input matInput type="text" formControlName="firstName">
@@ -58,26 +58,26 @@
         <mat-divider></mat-divider>
       </div>
 
-      <div fxLayout="column" fxLayoutGap="16px">
-        <div fxLayout="row" fxLayoutGap="16px">
+      <div fxLayout="column" fxLayoutGap="16px" fxLayout.lt-md="column">
+        <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
           <mat-form-field appearance="outline" floatLabel="always" fxFlex>
             <mat-label translate>secured.core.fields.address.street</mat-label>
             <input matInput type="text" formControlName="street">
           </mat-form-field>
 
-          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label translate>secured.core.fields.address.register-number</mat-label>
             <input matInput type="text" formControlName="registerNumber">
           </mat-form-field>
 
-          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label translate>secured.core.fields.address.reference-number</mat-label>
             <input matInput type="text" formControlName="referenceNumber">
           </mat-form-field>
         </div>
 
-        <div fxLayout="row" fxLayoutGap="16px">
-          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+        <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label translate>secured.core.fields.address.zip-code</mat-label>
             <input matInput type="text" formControlName="zipCode">
           </mat-form-field>
@@ -87,7 +87,7 @@
             <input matInput type="text" formControlName="city">
           </mat-form-field>
 
-          <mat-form-field appearance="outline" floatLabel="always" fxFlex="150px">
+          <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label>Country</mat-label>
             <mat-select formControlName="country">
               <mat-option [value]="eCountry.CZ" >

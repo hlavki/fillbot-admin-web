@@ -1,3 +1,31 @@
-<app-base-page heading="Personal info">
+<app-base-page heading="Preferencies">
+  <ng-template #content>
+    <h3>Language</h3>
 
+    <div class="personal__language" fxLayout="row" fxLayoutGap="16px">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="personal__language__flag personal__language__flag--usa" [ngClass]="{ 'personal__language__flag--selected': (language$ | async) === eLanguage.EN }" (click)="onSelected(eLanguage.EN)">
+        </div>
+        <div>
+          English
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="personal__language__flag personal__language__flag--czech" [ngClass]="{ 'personal__language__flag--selected': (language$ | async) === eLanguage.CS }" (click)="onSelected(eLanguage.CS)">
+        </div>
+        <div>
+          Czech
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="personal__language__flag personal__language__flag--slovak" [ngClass]="{ 'personal__language__flag--selected': (language$ | async) === eLanguage.SK }" (click)="onSelected(eLanguage.SK)">
+        </div>
+        <div>
+          Slovak
+        </div>
+      </div>
+    </div>
+  </ng-template>
 </app-base-page>
