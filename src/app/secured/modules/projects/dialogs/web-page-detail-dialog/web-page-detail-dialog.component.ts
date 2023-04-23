@@ -25,13 +25,7 @@ interface IApiKeyDetailForm {
 export class WebPageDetailDialogComponent implements OnInit {
   readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
-  readonly form: FormGroup = this.fb.group({
-    id: null,
-    name: [null, Validators.required],
-    originSite: [null, Validators.required],
-    billingProfile: [null, Validators.required],
-    pricingTier: [null, Validators.required],
-  });
+  form: FormGroup;
 
   billingProfiles: IBillingProfileDto[] = [];
   pricingTiers: IPricingTierDto[] = [];
@@ -52,6 +46,14 @@ export class WebPageDetailDialogComponent implements OnInit {
     ).subscribe(([billingProfiles, pricingTiers]: [IBillingProfileDto[], IPricingTierDto[]]) => {
       this.billingProfiles = billingProfiles;
       this.pricingTiers = pricingTiers;
+
+      this.form =  this.fb.group({
+        id: null,
+        name: [null, Validators.required],
+        originSite: [null, Validators.required],
+        billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
+        pricingTier: [null, Validators.required],
+      });
     });
   }
 

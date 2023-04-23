@@ -21,11 +21,7 @@ interface IApiKeyDetailForm {
 export class ApiKeyDetailDialogComponent implements OnInit {
   readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
-  readonly form: FormGroup = this.fb.group({
-    name: [null, Validators.required],
-    dailyAmountLimit: null,
-    billingProfile: [null, Validators.required],
-  });
+  form: FormGroup;
 
   billingProfiles: IBillingProfileDto[] = [];
 
@@ -41,6 +37,12 @@ export class ApiKeyDetailDialogComponent implements OnInit {
       finalize(() => this.isLoading$.next(false)),
     ).subscribe((billingProfiles: IBillingProfileDto[]) => {
       this.billingProfiles = billingProfiles;
+
+      this.form = this.fb.group({
+        name: [null, Validators.required],
+        dailyAmountLimit: null,
+        billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
+      });
     });
   }
 
