@@ -63,7 +63,7 @@ export class WebPagesPageComponent implements OnInit {
   }
 
   navigate(originSite: string): void {
-    window.open(`${originSite}?config=true`);
+    window.open(`${originSite.startsWith('http') ? originSite : `https://${originSite}`}?config=true`, '_blank');
   }
 
   private loadData(): void {

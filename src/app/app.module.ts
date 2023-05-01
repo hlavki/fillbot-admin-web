@@ -15,8 +15,6 @@ import { SharedModule } from '@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpErrorInterceptor } from './core/interceptors/error.interceptor';
-import { UserService } from './core/api/services/user/user.service';
-import { ELanguage } from './core/api/enums/language.enum';
 
 @NgModule({
   declarations: [
@@ -55,15 +53,7 @@ import { ELanguage } from './core/api/enums/language.enum';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(
-    private readonly translateService: TranslateService,
-    private readonly userService: UserService,
-  ) {
-    this.userService.getUserSettings().subscribe(
-      (language: ELanguage) => {
-        this.translateService.setDefaultLang('en');
-        this.translateService.use(language.toLowerCase());
-      }
-    );
+  constructor(private readonly translateService: TranslateService) {
+    this.translateService.setDefaultLang('en');
   }
 }

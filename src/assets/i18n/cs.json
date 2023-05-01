@@ -23,6 +23,12 @@
         "BASIC": "Základní",
         "STANDARD": "Štandard",
         "PRO": "Profesionál"
+      },
+      "servise-config": {
+        "ADDRESS": "Adresy",
+        "EMAIL": "E-maily",
+        "PHONE_NUMBER": "Telefónní čísla",
+        "COMPANY": "Firmy"
       }
     },
     "core": {
@@ -38,7 +44,8 @@
         "logout": "Odhlásit",
         "submit": "Potvrdit",
         "delete": "Zmazat",
-        "confirm": "Potvrdit"
+        "confirm": "Potvrdit",
+        "close": "Zatvorit"
       },
       "menu": {
         "dashboard": "Dashboard",
@@ -63,6 +70,17 @@
           "city": "Město",
           "country": "Země"
         }
+      },
+      "breadcrumbs": {
+        "projects": "Projekty",
+        "web-pages": "Webové stránky",
+        "web-page-detail": "Detail",
+        "api-keys": "Api klíče",
+        "settings": "Nastavení",
+        "preferencies": "Preference",
+        "billing-profiles": "Fakturační účty",
+        "web-page-config": "Služby",
+        "web-page-stats": "Statistiky"
       }
     },
     "projects": {
@@ -86,6 +104,12 @@
         },
         "enabled": {
           "label": "Aktívní"
+        },
+        "show-validation-state": {
+          "label": "Zobrazení validačního statusu"
+        },
+        "use-geolocation": {
+          "label": "Použít geolokaci"
         }
       },
       "dialogs": {
@@ -100,6 +124,11 @@
         },
         "web-pages-detail": {
           "title-new": "Nová webová stránka"
+        },
+        "web-page-validators": {
+          "title": "Nastavené validátory",
+          "element": "Element",
+          "mapped-as": "Namapované na"
         }
       },
       "pages": {
@@ -110,6 +139,26 @@
         "web-pages": {
           "title": "Webové stránky",
           "new": "Nová webová stránka"
+        },
+        "web-page-detail": {
+          "tabs": {
+            "services": "Služby",
+            "stats": "Statistiky"
+          },
+          "active-service": "Aktivní služby",
+          "available-service": "Dostupné šlužby",
+          "address": {
+            "desc": "Inteligentní našeptávač adres na základe geolokací."
+          },
+          "company": {
+            "desc": "Inteligentní našeptávač firem na základe IČO, DIČ, jménu a další."
+          },
+          "email": {
+            "desc": "Validace emailu v reálnim čase."
+          },
+          "phoneNumber": {
+            "desc": "Validace a dostupnost telefonního čísla v reálnim čase."
+          }
         }
       },
       "confirmations": {
@@ -126,6 +175,10 @@
           "created": "Webová stránka byla uspěšne vytvořen",
           "updated": "Webová stránka byla uspěšne aktualizován",
           "deleted": "Webová stránka byla uspěšne zmazán"
+        },
+        "web-page-detail": {
+          "no-data-active": "Nemáte zatím žádne aktivní služby.",
+          "no-data-available": "Máte všechny dostupné služby aktivní."
         }
       }
     },

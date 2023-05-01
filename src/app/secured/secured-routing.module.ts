@@ -22,10 +22,20 @@ const routes: Routes = [
       // },
       {
         path: 'projects',
+        data: {
+          breadcrumbs: {
+            label: 'secured.core.breadcrumbs.projects',
+          },
+        },
         loadChildren: () => import('./modules/projects/projects.module').then(m => m.ProjectsModule),
       },
       {
         path: 'settings',
+        data: {
+          breadcrumbs: {
+            label: 'secured.core.breadcrumbs.settings',
+          },
+        },
         loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule),
       },
       { path: '**', redirectTo: '/system/not-found' },

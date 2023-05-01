@@ -1,0 +1,76 @@
+<app-loading *ngIf="isLoading$ | async; else notLoading"></app-loading>
+
+<ng-template #notLoading>
+  <div fxLayout="column" fxLayoutGap="16px">
+    <div fxLayout="column">
+      <h2 translate>secured.projects.pages.web-page-detail.active-service</h2>
+
+      <div *ngIf="(activeServices$ | async).length; else noActiveServices" fxLayout="row wrap" class="fb-gap">
+        <app-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.ADDRESS)"
+                          [active]="true"
+                          [type]="eServiceConfigType.ADDRESS"
+                          [origin]="origin$ | async"
+                          [config]="dataWebPageConfig$ | async"
+                          (configChanged)="onConfigChanged($event)">
+        </app-service-card>
+        <app-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.EMAIL)"
+                          [active]="true"
+                          [type]="eServiceConfigType.EMAIL"
+                          [origin]="origin$ | async"
+                          [config]="dataWebPageConfig$ | async"
+                          (configChanged)="onConfigChanged($event)">
+        </app-service-card>
+        <app-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.COMPANY)"
+                          [active]="true"
+                          [type]="eServiceConfigType.COMPANY"
+                          [origin]="origin$ | async"
+                          [config]="dataWebPageConfig$ | async"
+                          (configChanged)="onConfigChanged($event)">
+        </app-service-card>
+        <app-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.PHONE_NUMBER)"
+                          [active]="true"
+                          [type]="eServiceConfigType.PHONE_NUMBER"
+                          [origin]="origin$ | async"
+                          [config]="dataWebPageConfig$ | async"
+                          (configChanged)="onConfigChanged($event)">
+        </app-service-card>
+      </div>
+
+      <ng-template #noActiveServices>
+        <span translate class="no-data">secured.projects.messages.web-page-detail.no-data-active</span>
+      </ng-template>
+    </div>
+
+    <div fxLayout="column">
+      <h2 translate>secured.projects.pages.web-page-detail.available-service</h2>
+
+      <div *ngIf="(possibleServices$ | async).length; else noAvailableServices" fxLayout="row wrap" class="fb-gap">
+        <app-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.ADDRESS)"
+                          [config]="$any({})"
+                          [origin]="origin$ | async"
+                          [type]="eServiceConfigType.ADDRESS">
+        </app-service-card>
+        <app-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.EMAIL)"
+                          [config]="$any({})"
+                          [origin]="origin$ | async"
+                          [type]="eServiceConfigType.EMAIL">
+        </app-service-card>
+        <app-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.COMPANY)"
+                          [config]="$any({})"
+                          [origin]="origin$ | async"
+                          [type]="eServiceConfigType.COMPANY">
+        </app-service-card>
+        <app-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.PHONE_NUMBER)"
+                          [config]="$any({})"
+                          [origin]="origin$ | async"
+                          [type]="eServiceConfigType.PHONE_NUMBER">
+        </app-service-card>
+      </div>
+
+      <ng-template #noAvailableServices>
+        <span translate class="no-data">secured.projects.messages.web-page-detail.no-data-available</span>
+      </ng-template>
+    </div>
+
+  </div>
+</ng-template>

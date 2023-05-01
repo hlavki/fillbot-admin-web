@@ -4,8 +4,8 @@
   gap: 16px;
 
   &__card {
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 380px;
+    min-width: 380px;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -21,8 +21,8 @@
   }
 
   &__new {
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 380px;
+    min-width: 380px;
 
     @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
       min-width: 100%;

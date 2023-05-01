@@ -1,0 +1,29 @@
+@use 'utils/variables';
+
+:host {
+  display: block;
+}
+
+.breadcrumbs {
+  padding: 0 0 0 16px;
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+  }
+
+  &__item-link {
+    color: variables.$gray;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color .2s ease-out;
+
+    &--disabled {
+      color: variables.$gray-light;
+    }
+  }
+}
