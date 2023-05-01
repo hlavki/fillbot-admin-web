@@ -54,6 +54,11 @@ import { HttpErrorInterceptor } from './core/interceptors/error.interceptor';
 })
 export class AppModule {
   constructor(private readonly translateService: TranslateService) {
-    this.translateService.setDefaultLang('en');
+    const allowedTranslations: string[] = ['cs', 'sk'];
+    if (allowedTranslations.includes(navigator.language.substring(0, 2))) {
+      this.translateService.setDefaultLang(navigator.language.substring(0, 2));
+    } else {
+      this.translateService.setDefaultLang('en');
+    }
   }
 }
