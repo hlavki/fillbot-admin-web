@@ -4,7 +4,8 @@
 
 <div class="secured__content">
   <app-menu fxHide.lt-sm></app-menu>
-  <div class="secured__content__content" fxFlex>
+  <div class="secured__content__content" fxLayout="column">
+    <app-breadcrumbs></app-breadcrumbs>
     <router-outlet></router-outlet>
   </div>
 </div>

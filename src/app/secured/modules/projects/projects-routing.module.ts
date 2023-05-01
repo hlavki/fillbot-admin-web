@@ -12,10 +12,41 @@ const routes: Routes = [
   },
   {
     path: 'web-pages',
+    pathMatch: 'full',
+    data: {
+      breadcrumbs: {
+        label: 'secured.core.breadcrumbs.web-pages',
+      },
+    },
     component: WebPagesPageComponent,
   },
   {
+    path: 'web-pages',
+    data: {
+      breadcrumbs: {
+        label: 'secured.core.breadcrumbs.web-pages',
+      },
+    },
+    children: [
+      {
+        path: ':id',
+        data: {
+          breadcrumbs: {
+            label: 'secured.core.breadcrumbs.web-page-detail',
+            disabled: true,
+          },
+        },
+        loadChildren: () => import('./pages/web-page-detail-page/web-page-detail-page.module').then(m => m.WebPageDetailPageModule),
+      },
+    ],
+  },
+  {
     path: 'api-keys',
+    data: {
+      breadcrumbs: {
+        label: 'secured.core.breadcrumbs.api-keys',
+      },
+    },
     component: ApiKeysPagesComponent,
   }
 ];

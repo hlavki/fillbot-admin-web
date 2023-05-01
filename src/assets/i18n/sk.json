@@ -23,6 +23,13 @@
         "BASIC": "Basic",
         "STANDARD": "Standard",
         "PRO": "Profesional"
+      },
+      "servise-config": {
+        "ADDRESS": "Adresy",
+        "EMAIL": "E-maily",
+        "PHONE_NUMBER": "Telefónne čísla",
+        "COMPANY": "Firmy",
+        "close": "Zatvoriť"
       }
     },
     "core": {
@@ -63,6 +70,17 @@
           "city": "City",
           "country": "Country"
         }
+      },
+      "breadcrumbs": {
+        "projects": "Projekty",
+        "web-pages": "Webové stránky",
+        "web-page-detail": "Detail",
+        "api-keys": "Api kľúče",
+        "settings": "Nastavenia",
+        "preferencies": "Preferencie",
+        "billing-profiles": "Fakturačné účty",
+        "web-page-config": "Služby",
+        "web-page-stats": "Štatistiky"
       }
     },
     "projects": {
@@ -86,6 +104,12 @@
         },
         "enabled": {
           "label": "Active"
+        },
+        "show-validation-state": {
+          "label": "Zobrazenie validačného statusu"
+        },
+        "use-geolocation": {
+          "label": "Použiť geolokaci"
         }
       },
       "dialogs": {
@@ -100,6 +124,11 @@
         },
         "web-pages-detail": {
           "title-new": "New Web page"
+        },
+        "web-page-validators": {
+          "title": "Nastavené validátory",
+          "element": "Element",
+          "mapped-as": "Namapované na"
         }
       },
       "pages": {
@@ -110,6 +139,26 @@
         "web-pages": {
           "title": "Web pages",
           "new": "New web page"
+        },
+        "web-page-detail": {
+          "tabs": {
+            "services": "Služby",
+            "stats": "Štatistiky"
+          },
+          "active-service": "Aktivné služby",
+          "available-service": "Dostupné šlužby",
+          "address": {
+            "desc": "Inteligentný našeptávač adres na základe geolokacií."
+          },
+          "company": {
+            "desc": "Inteligentný našeptávač firem na základe IČO, DIČ, názvu a pod."
+          },
+          "email": {
+            "desc": "Validácia emailu v reálnom čase."
+          },
+          "phoneNumber": {
+            "desc": "Validácia a dostupnosť telefonného čísla v reálnom čase."
+          }
         }
       },
       "confirmations": {
@@ -126,6 +175,10 @@
           "created": "Web page was successfully created",
           "updated": "Web page was successfully updated",
           "deleted": "Web page was successfully deleted"
+        },
+        "web-page-detail": {
+          "no-data-active": "Nemáte zatiaľ žiadne aktívne služby.",
+          "no-data-available": "Máte všetky dostupné služby aktívne."
         }
       }
     },

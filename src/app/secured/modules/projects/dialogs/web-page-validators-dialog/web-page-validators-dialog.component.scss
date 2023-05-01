@@ -1,0 +1,7 @@
+@use 'utils/variables';
+
+.web-page-validators {
+  &__content {
+    color: variables.$black;
+  }
+}

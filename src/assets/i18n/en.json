@@ -23,6 +23,12 @@
         "BASIC": "Basic",
         "STANDARD": "Standard",
         "PRO": "Profesional"
+      },
+      "servise-config": {
+        "ADDRESS": "Addresses",
+        "EMAIL": "E-mails",
+        "PHONE_NUMBER": "Phone numbers",
+        "COMPANY": "Companies"
       }
     },
     "core": {
@@ -38,7 +44,8 @@
         "logout": "Logout",
         "submit": "Submit",
         "delete": "Delete",
-        "confirm": "Confirm"
+        "confirm": "Confirm",
+        "close": "Close"
       },
       "menu": {
         "dashboard": "Dashboard",
@@ -63,6 +70,17 @@
           "city": "City",
           "country": "Country"
         }
+      },
+      "breadcrumbs": {
+        "projects": "Projects",
+        "web-pages": "Web pages",
+        "web-page-detail": "Detail",
+        "api-keys": "Api keys",
+        "settings": "Settings",
+        "preferencies": "Preferencies",
+        "billing-profiles": "Billing profiles",
+        "web-page-config": "Services",
+        "web-page-stats": "Statistics"
       }
     },
     "projects": {
@@ -86,6 +104,12 @@
         },
         "enabled": {
           "label": "Active"
+        },
+        "show-validation-state": {
+          "label": "Show validation state"
+        },
+        "use-geolocation": {
+          "label": "Use geolocation"
         }
       },
       "dialogs": {
@@ -100,6 +124,11 @@
         },
         "web-pages-detail": {
           "title-new": "New Web page"
+        },
+        "web-page-validators": {
+          "title": "Assigned validators",
+          "element": "Element",
+          "mapped-as": "Mapped as"
         }
       },
       "pages": {
@@ -110,6 +139,26 @@
         "web-pages": {
           "title": "Web pages",
           "new": "New web page"
+        },
+        "web-page-detail": {
+          "tabs": {
+            "services": "Services",
+            "stats": "Statistics"
+          },
+          "active-service": "Active services",
+          "available-service": "Available service",
+          "address": {
+            "desc": "Intelligent whisperer of addresses according to geolocation."
+          },
+          "company": {
+            "desc": "Intelligent whisperer of companies base on VAT ID, CIN, name etc."
+          },
+          "email": {
+            "desc": "Real time email validation."
+          },
+          "phoneNumber": {
+            "desc": "Real-time phone number validation and availability."
+          }
         }
       },
       "confirmations": {
@@ -126,6 +175,10 @@
           "created": "Web page was successfully created",
           "updated": "Web page was successfully updated",
           "deleted": "Web page was successfully deleted"
+        },
+        "web-page-detail": {
+          "no-data-active": "You don't have any active service.",
+          "no-data-available": "You have all available services active."
         }
       }
     },

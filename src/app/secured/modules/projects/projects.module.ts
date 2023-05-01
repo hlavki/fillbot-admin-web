@@ -9,7 +9,10 @@ import { ApiKeysPagesComponent } from './pages/api-keys-pages/api-keys-pages.com
 import { ApiKeyDetailDialogComponent } from './dialogs/api-key-detail-dialog/api-key-detail-dialog.component';
 import { ApiKeyConfigDialogComponent } from './dialogs/api-key-config-dialog/api-key-config-dialog.component';
 import { WebPageDetailDialogComponent } from './dialogs/web-page-detail-dialog/web-page-detail-dialog.component';
-import { WebPageConfigDialogComponent } from './dialogs/web-page-config-dialog/web-page-config-dialog.component';
+import { ServiceCardComponent } from './components/service-card/service-card.component';
+import { ConfigTabComponent } from './pages/web-page-detail-page/tabs/config-tab/config-tab.component';
+import { StaticsTabComponent } from './pages/web-page-detail-page/tabs/statics-tab/statics-tab.component';
+import { WebPageValidatorsDialogComponent } from './dialogs/web-page-validators-dialog/web-page-validators-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { WebPageConfigDialogComponent } from './dialogs/web-page-config-dialog/w
     ApiKeyDetailDialogComponent,
     ApiKeyConfigDialogComponent,
     WebPageDetailDialogComponent,
-    WebPageConfigDialogComponent,
+    ServiceCardComponent,
+    ConfigTabComponent,
+    StaticsTabComponent,
+    WebPageValidatorsDialogComponent,
   ],
   imports: [
     CommonModule,

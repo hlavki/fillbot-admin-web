@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ELanguage } from '@fb/core/api/enums/language.enum';
 import { UserService } from '@fb/core/api/services/user/user.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-personal-page',
@@ -12,16 +12,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class PersonalPageComponent {
   readonly eLanguage = ELanguage;
 
-  readonly language$: Observable<ELanguage> = this.userService.getUserSettings();
+  readonly language$: Observable<ELanguage> = this.userService.getLanguage();
 
   constructor(
     private readonly userService: UserService,
   ) {}
 
   onSelected(language: ELanguage): void {
-    this.userService.setUserSettings({ language: language });
-    // this.userService.updateUserSettings({
-    //   language,
-    // }).subscribe();
+    this.userService.updateUserSettings({ settings: { language } }).subscribe();
   }
 }

@@ -7,10 +7,12 @@ import { BillingService } from '@fb/core/api/services/billing/billing.service';
 import { IPricingTierDto } from '@fb/core/api/interfaces/pricing-tier-dto.interface';
 import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { EProtocolValue } from '@fb/core/enums/protocol.enum';
 
 interface IApiKeyDetailForm {
   id: string;
   enabled: boolean;
+  protocol: EProtocolValue,
   name: string;
   originSite: string;
   billingProfile: IBillingProfileDto;
@@ -23,6 +25,7 @@ interface IApiKeyDetailForm {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebPageDetailDialogComponent implements OnInit {
+  readonly eProtocolValue = EProtocolValue;
   readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   form: FormGroup;
@@ -50,6 +53,7 @@ export class WebPageDetailDialogComponent implements OnInit {
       this.form =  this.fb.group({
         id: null,
         name: [null, Validators.required],
+        protocol: [EProtocolValue.HTTPS],
         originSite: [null, Validators.required],
         billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
         pricingTier: [null, Validators.required],
@@ -58,12 +62,11 @@ export class WebPageDetailDialogComponent implements OnInit {
   }
 
   onSubmit(formValue: IApiKeyDetailForm): void {
-    console.log(formValue);
     this.isLoading$.next(true);
     this.webPagesService.createWebPage({
       id: undefined,
       name: formValue.name,
-      originSite: formValue.originSite,
+      originSite: `${formValue.protocol}${formValue.originSite}`,
       pricingTier: formValue.pricingTier,
       billingProfile: formValue.billingProfile,
       enabled: formValue.enabled,

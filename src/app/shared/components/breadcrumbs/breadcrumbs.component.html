@@ -1,0 +1,17 @@
+<ng-container *ngIf="breadcrumbsLinks$ | async as links">
+  <ul *ngIf="links.length >= minLinks" class="breadcrumbs">
+    <li *ngFor="let link of links; let last = last; let first = first"  class="breadcrumbs__item">
+      <a *ngIf="!last && !first && !link.disabled; else currentPage" [routerLink]="link.route" class="breadcrumbs__item-link">
+        {{ link.label | translate }}
+      </a>
+
+      <ng-template #currentPage>
+        <span class="breadcrumbs__item-link breadcrumbs__item-link--disabled">
+          {{ link.label | translate }}
+        </span>
+      </ng-template>
+
+      <mat-icon *ngIf="!last">navigate_next</mat-icon>
+    </li>
+  </ul>
+</ng-container>
