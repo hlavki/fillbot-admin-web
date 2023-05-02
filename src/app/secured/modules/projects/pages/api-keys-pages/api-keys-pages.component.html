@@ -30,14 +30,14 @@
 
           <div fxLayoutAlign="start center" fxLayoutGap="8px">
             <mat-icon>key</mat-icon>
-            <span>{{ apiKey.apiKey }}</span>
+            <span>{{ getApiKeySecured(apiKey.apiKey) }}</span>
+            <button mat-icon-button (click)="onCopyToClipboard(apiKey.apiKey)">
+              <mat-icon fontSet="material-icons-outlined">content_copy</mat-icon>
+            </button>
           </div>
         </mat-card-content>
 
         <mat-card-actions fxLayoutAlign="end end">
-          <button mat-icon-button (click)="onCopyToClipboard(apiKey.apiKey)">
-            <mat-icon fontSet="material-icons-outlined">content_copy</mat-icon>
-          </button>
           <button mat-icon-button disabled>
             <mat-icon fontSet="material-icons-outlined">analytics</mat-icon>
           </button>

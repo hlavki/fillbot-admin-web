@@ -34,7 +34,6 @@ export class ServiceCardComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.active) {
-      this.config
       this.form = this.createForm(this.type);
 
       this.form.get('enabled').valueChanges.pipe(

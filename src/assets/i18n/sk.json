@@ -233,5 +233,13 @@
         "sub-title": "This is not the page you're looking for."
       }
     }
+  },
+  "messages": {
+    "decimal": "Iba celé čísla",
+    "required": "Povinné",
+    "zipCode": "Nesprávny formát PSČ",
+    "maxLength": "Maximálne {value} znakov",
+    "minLength": "Minimálne {value} znakov",
+    "url": "Nesprávny formát URL"
   }
 }

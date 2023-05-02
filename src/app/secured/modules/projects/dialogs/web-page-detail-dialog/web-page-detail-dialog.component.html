@@ -10,6 +10,7 @@
       <mat-form-field appearance="outline" floatLabel="always">
         <mat-label translate>secured.projects.fields.name.label</mat-label>
         <input matInput type="text" formControlName="name">
+        <mat-error fb-form-message [control]="form.get('name')"></mat-error>
       </mat-form-field>
 
       <div fxLayout="row" fxLayoutGap="8px">
@@ -27,6 +28,7 @@
         <mat-form-field appearance="outline" floatLabel="always" fxFlex>
           <mat-label translate>secured.projects.fields.url.label</mat-label>
           <input matInput type="text" formControlName="originSite">
+          <mat-error fb-form-message [control]="form.get('originSite')"></mat-error>
         </mat-form-field>
       </div>
 
@@ -39,6 +41,7 @@
             <span>{{ billingProfile.currency }}</span>
           </mat-option>
         </mat-select>
+        <mat-error fb-form-message [control]="form.get('billingProfile')"></mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" floatLabel="always" fxFlex>
@@ -51,6 +54,7 @@
           </mat-option>
         </mat-select>
         <mat-hint translate>secured.projects.fields.pricing-tier.note</mat-hint>
+        <mat-error fb-form-message [control]="form.get('pricingTier')"></mat-error>
       </mat-form-field>
     </form>
   </mat-dialog-content>

@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog } from '@angular/material/dialog';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { of } from 'rxjs';
 
 import { ServiceCardComponent } from './service-card.component';
 
@@ -8,7 +12,22 @@ describe('ServiceCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ServiceCardComponent ]
+      declarations: [ServiceCardComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [ReactiveFormsModule],
+      providers: [
+        {
+          provide: FormBuilder,
+        },
+        {
+          provide: MatDialog,
+          useValue: {
+            open: {
+              afterClosed: () => of({ success: true }),
+            },
+          },
+        },
+      ],
     })
     .compileComponents();
 

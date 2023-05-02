@@ -11,6 +11,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MenuComponent } from './menu/menu.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { FormMessageComponent } from './form-message/form-message';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     ToolbarComponent,
     MenuComponent,
     BreadcrumbsComponent,
+    FormMessageComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     ToolbarComponent,
     MenuComponent,
     BreadcrumbsComponent,
+    FormMessageComponent,
   ],
 })
 export class ComponentsModule { }

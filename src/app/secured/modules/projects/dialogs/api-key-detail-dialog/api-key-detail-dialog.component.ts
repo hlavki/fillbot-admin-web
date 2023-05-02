@@ -6,6 +6,7 @@ import { BehaviorSubject, finalize } from 'rxjs';
 import { IBillingProfileDto } from '@core/api/interfaces/billing-profile-dto.interface';
 import { ApiKeysService } from '@core/api/services/api-keys/api-keys.service';
 import { BillingService } from '@core/api/services/billing/billing.service';
+import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 interface IApiKeyDetailForm {
   name: string;
@@ -39,8 +40,8 @@ export class ApiKeyDetailDialogComponent implements OnInit {
       this.billingProfiles = billingProfiles;
 
       this.form = this.fb.group({
-        name: [null, Validators.required],
-        dailyAmountLimit: null,
+        name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
+        dailyAmountLimit: [null, CustomValidators.decimal],
         billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
       });
     });

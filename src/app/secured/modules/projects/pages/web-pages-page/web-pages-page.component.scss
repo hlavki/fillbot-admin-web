@@ -18,6 +18,15 @@
     &__content {
       height: 100%;
     }
+
+    &:hover {
+      cursor: pointer;
+      background-color: variables.$blue-light-2 !important;
+
+      .billing__card__content {
+        color: variables.$purple !important;
+      }
+    }
   }
 
   &__new {

@@ -10,6 +10,7 @@
       <mat-form-field appearance="outline" floatLabel="always">
         <mat-label translate>secured.projects.fields.name.label</mat-label>
         <input matInput type="text" formControlName="name">
+        <mat-error fb-form-message [control]="form.get('name')"></mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" floatLabel="always" fxFlex>
@@ -29,6 +30,7 @@
         <mat-label translate>secured.projects.fields.daily-amount-limit.label</mat-label>
         <input matInput type="number" min="0" step="1" formControlName="dailyAmountLimit">
         <mat-hint translate>secured.projects.fields.daily-amount-limit.note</mat-hint>
+        <mat-error fb-form-message [control]="form.get('dailyAmountLimit')"></mat-error>
       </mat-form-field>
 
     </form>

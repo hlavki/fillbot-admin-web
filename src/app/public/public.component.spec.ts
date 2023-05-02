@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
 
 import { PublicComponent } from './public.component';
 
@@ -8,7 +10,16 @@ describe('PublicComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PublicComponent ]
+      declarations: [PublicComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        {
+          provide: KeycloakService,
+          useValue: {
+            login: () => void 0,
+          },
+        },
+      ],
     })
     .compileComponents();
 

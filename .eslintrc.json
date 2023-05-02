@@ -1,13 +1,12 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "plugins": ["unused-imports"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.eslint.json"]
+      },
       "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
@@ -19,7 +18,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "fb",
             "style": "camelCase"
           }
         ],
@@ -30,16 +29,35 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "quotes": ["error", "single"],
+        "comma-dangle": ["error", "always-multiline"],
+        "no-duplicate-imports": ["error", { "includeExports": true }],
+        "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }],
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "caughtErrorsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/ban-types": [
+          "error",
+          {
+            "extendDefaults": true,
+            "types": {
+              "{}": false
+            }
+          }
         ]
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
   ]

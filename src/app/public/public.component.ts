@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 
 import { environment } from '@env/environment';
@@ -6,7 +6,8 @@ import { environment } from '@env/environment';
 @Component({
   selector: 'app-public',
   templateUrl: './public.component.html',
-  styleUrls: ['./public.component.scss']
+  styleUrls: ['./public.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PublicComponent {
   constructor(private readonly keycloakService: KeycloakService) {}

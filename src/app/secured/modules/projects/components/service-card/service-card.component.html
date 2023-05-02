@@ -1,4 +1,4 @@
-  <mat-card *ngIf="(isLoading$ | async) === false" class="service__card" [ngClass]="{ 'service__card--inactive': !active }" [formGroup]="form">
+<mat-card *ngIf="(isLoading$ | async) === false" class="service__card" [ngClass]="{ 'service__card--inactive': !active }" [formGroup]="form">
 
   <ng-container [ngSwitch]="type">
 

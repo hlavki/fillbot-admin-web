@@ -5,6 +5,7 @@ import { BehaviorSubject, finalize } from 'rxjs';
 
 import { IApiKeyConfigDto } from '@core/api/interfaces/api-key-dto.interface';
 import { ApiKeysService } from '@core/api/services/api-keys/api-keys.service';
+import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 @Component({
   selector: 'app-api-key-config-dialog',
@@ -28,7 +29,7 @@ export class ApiKeyConfigDialogComponent implements OnInit {
       finalize(() => this.isLoading$.next(false)),
     ).subscribe((apiKeyConfig: IApiKeyConfigDto) => {
       this.form = this.fb.group({
-        dailyAmountLimit: [apiKeyConfig.dailyAmountLimit],
+        dailyAmountLimit: [apiKeyConfig.dailyAmountLimit, CustomValidators.decimal],
       });
     });
   }

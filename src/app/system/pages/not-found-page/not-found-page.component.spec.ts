@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { KeycloakService } from 'keycloak-angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { of } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { NotFoundPageComponent } from './not-found-page.component';
 
@@ -8,7 +12,17 @@ describe('NotFoundPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotFoundPageComponent ]
+      declarations: [NotFoundPageComponent],
+      imports: [RouterTestingModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        {
+          provide: KeycloakService,
+          useValue: {
+            isLoggedIn: () => of(false),
+          },
+        },
+      ],
     })
     .compileComponents();
 
