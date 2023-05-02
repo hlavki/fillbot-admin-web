@@ -10,6 +10,7 @@ import { WebPageDetailDialogComponent } from '../../dialogs/web-page-detail-dial
 import { NotificationService } from '@fb/core/services/notification/notification.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmationDialogComponent } from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-web-pages-page',
@@ -26,6 +27,7 @@ export class WebPagesPageComponent implements OnInit {
     private readonly dialog: MatDialog,
     private readonly notificationService: NotificationService,
     private readonly translateService: TranslateService,
+    private readonly router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -41,7 +43,13 @@ export class WebPagesPageComponent implements OnInit {
     });
   }
 
-  onDelete(id: string | undefined): void {
+  onDetail(event: Event, id: string): void {
+    event.stopPropagation();
+    this.router.navigate(['/', 'secured', 'projects', 'web-pages', id])
+  }
+
+  onDelete(event: Event, id: string | undefined): void {
+    event.stopPropagation();
     if (id) {
       this.dialog.open(ConfirmationDialogComponent, {
         data: {
@@ -62,7 +70,8 @@ export class WebPagesPageComponent implements OnInit {
     }
   }
 
-  navigate(originSite: string): void {
+  navigate(event: Event, originSite: string): void {
+    event.stopPropagation();
     window.open(`${originSite.startsWith('http') ? originSite : `https://${originSite}`}?config=true`, '_blank');
   }
 

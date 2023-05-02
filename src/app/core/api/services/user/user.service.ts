@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { KeycloakService } from 'keycloak-angular';
 import { Observable, BehaviorSubject, map, tap, of, filter, from, switchMap } from 'rxjs';
+
 import { ISettingDto } from '../../interfaces/setting-dto.interface';
 import { ELanguage } from '../../enums/language.enum';
-import { KeycloakService } from 'keycloak-angular';
-import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'

@@ -11,7 +11,10 @@
         </mat-card-content>
       </mat-card>
 
-      <mat-card *ngFor="let webPage of (data$ | async)" class="web-pages__card" [ngClass]="{ 'inactive': !webPage.enabled }">
+      <mat-card *ngFor="let webPage of (data$ | async)"
+                class="web-pages__card"
+                [ngClass]="{ 'inactive': !webPage.enabled }"
+                [routerLink]="['/', 'secured', 'projects', 'web-pages', webPage.id]">
         <mat-card-header>
           <mat-card-title>
             {{ webPage.name }}
@@ -43,13 +46,13 @@
           <button mat-icon-button disabled>
             <mat-icon fontSet="material-icons-outlined">analytics</mat-icon>
           </button>
-          <button mat-icon-button (click)="navigate(webPage.originSite)">
+          <button mat-icon-button (click)="navigate($event, webPage.originSite)">
             <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
           </button>
-          <button mat-icon-button [routerLink]="['/', 'secured', 'projects', 'web-pages', webPage.id]">
+          <button mat-icon-button (click)="onDetail($event, webPage.id)">
             <mat-icon fontSet="material-icons-outlined">visibility</mat-icon>
           </button>
-          <button color="warn" mat-icon-button (click)="onDelete(webPage.id)">
+          <button color="warn" mat-icon-button (click)="onDelete($event, webPage.id)">
             <mat-icon fontSet="material-icons-outlined" >delete</mat-icon>
           </button>
         </mat-card-actions>

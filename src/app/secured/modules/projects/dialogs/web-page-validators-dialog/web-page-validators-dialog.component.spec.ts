@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 import { WebPageValidatorsDialogComponent } from './web-page-validators-dialog.component';
 
@@ -8,7 +10,20 @@ describe('WebPageValidatorsDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WebPageValidatorsDialogComponent ]
+      declarations: [WebPageValidatorsDialogComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        {
+          provide: MatDialogRef,
+          useValue: {
+            close: () => void 0,
+          },
+        },
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: [],
+        },
+      ]
     })
     .compileComponents();
 

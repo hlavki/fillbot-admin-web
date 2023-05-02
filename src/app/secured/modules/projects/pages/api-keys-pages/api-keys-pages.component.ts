@@ -80,6 +80,10 @@ export class ApiKeysPagesComponent implements OnInit {
     }
   }
 
+  getApiKeySecured(apiKey: string): string {
+    return `${apiKey.substring(0, 3)}${Array(apiKey.length - 6).fill('*').join('')}${apiKey.substring(apiKey.length - 3)}`
+  }
+
   private loadData(): void {
     this.isLoading$.next(true);
     this.apiKeysService.getApiKeys().pipe(

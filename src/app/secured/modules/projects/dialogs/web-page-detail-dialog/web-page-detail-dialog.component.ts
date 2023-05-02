@@ -8,6 +8,7 @@ import { IPricingTierDto } from '@fb/core/api/interfaces/pricing-tier-dto.interf
 import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { EProtocolValue } from '@fb/core/enums/protocol.enum';
+import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 interface IApiKeyDetailForm {
   id: string;
@@ -52,9 +53,9 @@ export class WebPageDetailDialogComponent implements OnInit {
 
       this.form =  this.fb.group({
         id: null,
-        name: [null, Validators.required],
+        name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
         protocol: [EProtocolValue.HTTPS],
-        originSite: [null, Validators.required],
+        originSite: [null, [Validators.required, CustomValidators.url, Validators.maxLength(100)]],
         billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
         pricingTier: [null, Validators.required],
       });

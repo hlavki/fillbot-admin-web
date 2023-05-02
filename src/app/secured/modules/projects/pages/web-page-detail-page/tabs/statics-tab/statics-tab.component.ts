@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-statics-tab',
   templateUrl: './statics-tab.component.html',
-  styleUrls: ['./statics-tab.component.scss']
+  styleUrls: ['./statics-tab.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StaticsTabComponent {
-
-}
+export class StaticsTabComponent {}

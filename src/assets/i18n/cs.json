@@ -233,5 +233,13 @@
         "sub-title": "Toto není stránka, kterou hledáte."
       }
     }
+  },
+  "messages": {
+    "decimal": "Jenom celá čísla",
+    "required": "Povinné",
+    "zipCode": "Nesprávný formát PSČ",
+    "maxLength": "Maximálně {value} znaků",
+    "minLength": "Minimálně {value} znaků",
+    "url": "Nesprávný formát URL"
   }
 }

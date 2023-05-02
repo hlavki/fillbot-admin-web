@@ -8,7 +8,7 @@ describe('StaticsTabComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StaticsTabComponent ]
+      declarations: [StaticsTabComponent],
     })
     .compileComponents();
 

@@ -11,6 +11,7 @@ import { IBillingProfileDto, ICreateBillingProfileDto } from '@core/api/interfac
 import { BillingService } from '@core/api/services/billing/billing.service';
 import { EBillingType } from '@core/enums/billing-type.enum';
 import { IBillingDetailForm } from '@core/interfaces/billing-detail-form.interface';
+import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 @Component({
   selector: 'app-billing-detail-dialog',
@@ -27,16 +28,16 @@ export class BillingDetailDialogComponent implements OnInit {
 
   readonly form: FormGroup = this.fb.group({
     category: this.data?.companyName ? EBillingType.COMPANY : EBillingType.PERSONAL,
-    companyName: [this.data?.companyName || null, Validators.required],
-    firstName: [this.data?.firstName || null, Validators.required],
-    lastName: [this.data?.lastName || null, Validators.required],
+    companyName: [this.data?.companyName || null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+    firstName: [this.data?.firstName || null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+    lastName: [this.data?.lastName || null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
     cin: [this.data?.cin || null, Validators.required],
     vatId: [this.data?.vatId || null, Validators.required],
-    street: [this.data?.address.street || null, Validators.required],
+    street: [this.data?.address.street || null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
     referenceNumber: [this.data?.address.referenceNumber || null, Validators.required],
     registerNumber: [this.data?.address.registerNumber || null, Validators.required],
-    zipCode: [this.data?.address.zipCode || null, Validators.required],
-    city: [this.data?.address.city || null, Validators.required],
+    zipCode: [this.data?.address.zipCode || null, [Validators.required, CustomValidators.zipCode]],
+    city: [this.data?.address.city || null, [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
     country: [this.data?.country || null, Validators.required],
     currency: [this.data?.currency || null, Validators.required],
   });

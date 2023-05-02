@@ -26,17 +26,20 @@
           <mat-form-field appearance="outline" floatLabel="always">
             <mat-label translate>secured.settings.fields.company-name</mat-label>
             <input matInput type="text" formControlName="companyName">
+            <mat-error fb-form-message [control]="form.get('companyName')"></mat-error>
           </mat-form-field>
 
           <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
               <mat-label translate>secured.settings.fields.cin</mat-label>
               <input matInput type="text" formControlName="cin">
+              <mat-error fb-form-message [control]="form.get('cin')"></mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
               <mat-label translate>secured.settings.fields.vat</mat-label>
               <input matInput type="text" formControlName="vatId">
+              <mat-error fb-form-message [control]="form.get('vatId')"></mat-error>
             </mat-form-field>
           </div>
         </ng-container>
@@ -46,11 +49,13 @@
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
               <mat-label translate>secured.settings.fields.first-name</mat-label>
               <input matInput type="text" formControlName="firstName">
+              <mat-error fb-form-message [control]="form.get('firstName')"></mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
               <mat-label translate>secured.settings.fields.last-name</mat-label>
               <input matInput type="text" formControlName="lastName">
+              <mat-error fb-form-message [control]="form.get('lastName')"></mat-error>
             </mat-form-field>
           </div>
         </ng-template>
@@ -63,16 +68,19 @@
           <mat-form-field appearance="outline" floatLabel="always" fxFlex>
             <mat-label translate>secured.core.fields.address.street</mat-label>
             <input matInput type="text" formControlName="street">
+            <mat-error fb-form-message [control]="form.get('street')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label translate>secured.core.fields.address.register-number</mat-label>
             <input matInput type="text" formControlName="registerNumber">
+            <mat-error fb-form-message [control]="form.get('registerNumber')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label translate>secured.core.fields.address.reference-number</mat-label>
             <input matInput type="text" formControlName="referenceNumber">
+            <mat-error fb-form-message [control]="form.get('referenceNumber')"></mat-error>
           </mat-form-field>
         </div>
 
@@ -80,11 +88,13 @@
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
             <mat-label translate>secured.core.fields.address.zip-code</mat-label>
             <input matInput type="text" formControlName="zipCode">
+            <mat-error fb-form-message [control]="form.get('zipCode')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex>
             <mat-label translate>secured.core.fields.address.city</mat-label>
             <input matInput type="text" formControlName="city">
+            <mat-error fb-form-message [control]="form.get('city')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
@@ -97,6 +107,7 @@
                 <span translate>secured.enums.country.SK</span>
               </mat-option>
             </mat-select>
+            <mat-error fb-form-message [control]="form.get('country')"></mat-error>
           </mat-form-field>
         </div>
 
@@ -114,6 +125,7 @@
               <span translate>secured.enums.currency.EUR</span>
             </mat-option>
           </mat-select>
+          <mat-error fb-form-message [control]="form.get('currency')"></mat-error>
         </mat-form-field>
       </div>
     </form>

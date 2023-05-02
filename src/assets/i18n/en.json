@@ -233,5 +233,13 @@
         "sub-title": "This is not the page you're looking for."
       }
     }
+  },
+  "messages": {
+    "decimal": "Only decimal numbers",
+    "required": "Required",
+    "zipCode": "Invalid zip code",
+    "maxLength": "Max {value} chars",
+    "minLength": "Min {value} chars",
+    "url": "Invalid URL"
   }
 }
