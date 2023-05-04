@@ -29,7 +29,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
             this.router.navigate(['/', 'system', 'error'])
           }
           return throwError(errorResponse);
-        })
+        }),
       )
   }
 }

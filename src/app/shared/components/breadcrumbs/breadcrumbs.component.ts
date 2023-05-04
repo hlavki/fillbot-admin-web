@@ -6,7 +6,7 @@ import { IBreadcrumbLink } from '@fb/core/interfaces/breadcrumb.interface';
 import { uniqBy } from 'lodash-es';
 
 @Component({
-  selector: 'app-breadcrumbs',
+  selector: 'fb-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

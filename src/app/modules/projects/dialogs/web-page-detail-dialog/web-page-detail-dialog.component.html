@@ -1,0 +1,72 @@
+<fb-loading *ngIf="isLoading$ | async; else notLoading"></fb-loading>
+
+<ng-template #notLoading>
+  <h2 mat-dialog-title translate>
+    projects.dialogs.web-pages-detail.title-new
+  </h2>
+
+  <mat-dialog-content>
+    <form [formGroup]="form" fxLayout="column" fxLayoutGap="32px">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label translate>projects.fields.name.label</mat-label>
+        <input matInput type="text" formControlName="name">
+        <mat-error fb-form-message [control]="form.get('name')"></mat-error>
+      </mat-form-field>
+
+      <div fxLayout="row" fxLayoutGap="8px">
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex="130px">
+          <mat-select formControlName="protocol">
+            <mat-option [value]="eProtocolValue.HTTPS">
+              {{ eProtocolValue.HTTPS }}
+            </mat-option>
+            <mat-option [value]="eProtocolValue.HTTP">
+              {{ eProtocolValue.HTTP }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+          <mat-label translate>projects.fields.url.label</mat-label>
+          <input matInput type="text" formControlName="originSite">
+          <mat-error fb-form-message [control]="form.get('originSite')"></mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+        <mat-label translate>projects.fields.billing-profile.label</mat-label>
+        <mat-select formControlName="billingProfile">
+          <mat-option *ngFor="let billingProfile of billingProfiles" [value]="billingProfile">
+            <strong>{{ billingProfile.companyName || (billingProfile.firstName + ' ' + billingProfile.lastName) }}</strong>
+            <span>&nbsp;-&nbsp;{{ billingProfile.address | appFormatAddress }}&nbsp;-&nbsp;</span>
+            <span>{{ billingProfile.currency }}</span>
+          </mat-option>
+        </mat-select>
+        <mat-error fb-form-message [control]="form.get('billingProfile')"></mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+        <mat-label translate>projects.fields.pricing-tier.label</mat-label>
+        <mat-select formControlName="pricingTier">
+          <mat-option *ngFor="let pricingTier of pricingTiers" [value]="pricingTier">
+            <strong>{{ ('enums.pricing-tier.' + pricingTier.code) | translate }}</strong>
+            <span>&nbsp;-&nbsp;{{ pricingTier.annualPrice }}&nbsp;€</span>
+            <span>&nbsp;/&nbsp;{{ pricingTier.monthlyPrice }}&nbsp;€</span>
+          </mat-option>
+        </mat-select>
+        <mat-hint translate>projects.fields.pricing-tier.note</mat-hint>
+        <mat-error fb-form-message [control]="form.get('pricingTier')"></mat-error>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">
+      <span translate>core.buttons.cancel</span>
+    </button>
+    <button mat-flat-button [disabled]="form.invalid" color="primary" (click)="onSubmit(form.value)">
+      <span translate>core.buttons.create</span>
+    </button>
+  </mat-dialog-actions>
+</ng-template>
+
+

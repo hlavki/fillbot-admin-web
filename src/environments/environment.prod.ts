@@ -6,6 +6,6 @@ export const environment = {
       url: 'https://sso.fillbot.app',
       clientId: 'admin-web',
     },
-    redirectUri: `${window.location.origin}/secured`,
+    redirectUri: window.location.origin,
   },
 };

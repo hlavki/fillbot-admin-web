@@ -1,5 +1,6 @@
 {
   "root": true,
+  "ignorePatterns": ["projects/**/*"],
   "plugins": ["unused-imports"],
   "overrides": [
     {
@@ -14,20 +15,20 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "fb",
-            "style": "camelCase"
-          }
-        ],
         "@angular-eslint/component-selector": [
           "error",
           {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
+            "prefix": "fb",
+            "style": "kebab-case",
+            "type": "element"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "prefix": "fb",
+            "style": "camelCase",
+            "type": "attribute"
           }
         ],
         "quotes": ["error", "single"],

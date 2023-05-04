@@ -1,4 +1,4 @@
-<app-base-page>
+<fb-base-page>
   <ng-template #content>
     <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
       <img src="../../../../assets/images/worried.png" width="150px">
@@ -13,11 +13,11 @@
           <button mat-raised-button color="primary" [routerLink]="['/', 'home']">
             <span translate>system.buttons.home</span>
           </button>
-          <button *ngIf="isLoggedIn$ | async" mat-raised-button color="primary" [routerLink]="['/', 'secured']">
+          <button *ngIf="isLoggedIn$ | async" mat-raised-button color="primary" [routerLink]="['/']">
             <span translate>system.buttons.admin</span>
           </button>
         </div>
       </div>
     </div>
   </ng-template>
-</app-base-page>
+</fb-base-page>

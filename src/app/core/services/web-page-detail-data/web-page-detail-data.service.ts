@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WebPageDetailDataService {
   private readonly webPageOrigin$: BehaviorSubject<string> = new BehaviorSubject<string>(null);

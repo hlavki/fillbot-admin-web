@@ -1,12 +1,12 @@
-<app-loading *ngIf="isLoading$ | async; else notLoading"></app-loading>
+<fb-loading *ngIf="isLoading$ | async; else notLoading"></fb-loading>
 
 <ng-template #notLoading>
   <h2 mat-dialog-title>
     <ng-container *ngIf="!!data; else newBillingProfileHeader">
-      <span translate>secured.settings.dialogs.billing-detail.edit-billing-title</span>
+      <span translate>settings.dialogs.billing-detail.edit-billing-title</span>
     </ng-container>
     <ng-template #newBillingProfileHeader>
-      <span translate>secured.settings.dialogs.billing-detail.new-billing-title</span>
+      <span translate>settings.dialogs.billing-detail.new-billing-title</span>
     </ng-template>
   </h2>
 
@@ -15,29 +15,29 @@
       <div fxLayout="column" fxLayoutGap="16px">
         <mat-radio-group fxLayoutGap="16px" formControlName="category">
           <mat-radio-button [value]="eBillingType.PERSONAL" translate>
-            <span translate>secured.enums.billing-type.PERSONAL</span>
+            <span translate>enums.billing-type.PERSONAL</span>
           </mat-radio-button>
           <mat-radio-button [value]="eBillingType.COMPANY">
-            <span translate>secured.enums.billing-type.COMPANY</span>
+            <span translate>enums.billing-type.COMPANY</span>
           </mat-radio-button>
         </mat-radio-group>
 
         <ng-container *ngIf="(category$ | async) === eBillingType.COMPANY; else personal">
           <mat-form-field appearance="outline" floatLabel="always">
-            <mat-label translate>secured.settings.fields.company-name</mat-label>
+            <mat-label translate>settings.fields.company-name</mat-label>
             <input matInput type="text" formControlName="companyName">
             <mat-error fb-form-message [control]="form.get('companyName')"></mat-error>
           </mat-form-field>
 
           <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
-              <mat-label translate>secured.settings.fields.cin</mat-label>
+              <mat-label translate>settings.fields.cin</mat-label>
               <input matInput type="text" formControlName="cin">
               <mat-error fb-form-message [control]="form.get('cin')"></mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
-              <mat-label translate>secured.settings.fields.vat</mat-label>
+              <mat-label translate>settings.fields.vat</mat-label>
               <input matInput type="text" formControlName="vatId">
               <mat-error fb-form-message [control]="form.get('vatId')"></mat-error>
             </mat-form-field>
@@ -47,13 +47,13 @@
         <ng-template #personal>
           <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
-              <mat-label translate>secured.settings.fields.first-name</mat-label>
+              <mat-label translate>settings.fields.first-name</mat-label>
               <input matInput type="text" formControlName="firstName">
               <mat-error fb-form-message [control]="form.get('firstName')"></mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" floatLabel="always" fxFlex>
-              <mat-label translate>secured.settings.fields.last-name</mat-label>
+              <mat-label translate>settings.fields.last-name</mat-label>
               <input matInput type="text" formControlName="lastName">
               <mat-error fb-form-message [control]="form.get('lastName')"></mat-error>
             </mat-form-field>
@@ -66,19 +66,19 @@
       <div fxLayout="column" fxLayoutGap="16px" fxLayout.lt-md="column">
         <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
           <mat-form-field appearance="outline" floatLabel="always" fxFlex>
-            <mat-label translate>secured.core.fields.address.street</mat-label>
+            <mat-label translate>core.fields.address.street</mat-label>
             <input matInput type="text" formControlName="street">
             <mat-error fb-form-message [control]="form.get('street')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
-            <mat-label translate>secured.core.fields.address.register-number</mat-label>
+            <mat-label translate>core.fields.address.register-number</mat-label>
             <input matInput type="text" formControlName="registerNumber">
             <mat-error fb-form-message [control]="form.get('registerNumber')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
-            <mat-label translate>secured.core.fields.address.reference-number</mat-label>
+            <mat-label translate>core.fields.address.reference-number</mat-label>
             <input matInput type="text" formControlName="referenceNumber">
             <mat-error fb-form-message [control]="form.get('referenceNumber')"></mat-error>
           </mat-form-field>
@@ -86,13 +86,13 @@
 
         <div fxLayout="row" fxLayoutGap="16px" fxLayout.lt-md="column">
           <mat-form-field appearance="outline" floatLabel="always" fxFlex.gt-sm="150px">
-            <mat-label translate>secured.core.fields.address.zip-code</mat-label>
+            <mat-label translate>core.fields.address.zip-code</mat-label>
             <input matInput type="text" formControlName="zipCode">
             <mat-error fb-form-message [control]="form.get('zipCode')"></mat-error>
           </mat-form-field>
 
           <mat-form-field appearance="outline" floatLabel="always" fxFlex>
-            <mat-label translate>secured.core.fields.address.city</mat-label>
+            <mat-label translate>core.fields.address.city</mat-label>
             <input matInput type="text" formControlName="city">
             <mat-error fb-form-message [control]="form.get('city')"></mat-error>
           </mat-form-field>
@@ -101,10 +101,10 @@
             <mat-label>Country</mat-label>
             <mat-select formControlName="country">
               <mat-option [value]="eCountry.CZ" >
-                <span translate>secured.enums.country.CZ</span>
+                <span translate>enums.country.CZ</span>
               </mat-option>
               <mat-option [value]="eCountry.SK">
-                <span translate>secured.enums.country.SK</span>
+                <span translate>enums.country.SK</span>
               </mat-option>
             </mat-select>
             <mat-error fb-form-message [control]="form.get('country')"></mat-error>
@@ -119,10 +119,10 @@
           <mat-label>Currency</mat-label>
           <mat-select formControlName="currency">
             <mat-option [value]="eCurrency.CZK">
-              <span translate>secured.enums.currency.CZK</span>
+              <span translate>enums.currency.CZK</span>
             </mat-option>
             <mat-option [value]="eCurrency.EUR">
-              <span translate>secured.enums.currency.EUR</span>
+              <span translate>enums.currency.EUR</span>
             </mat-option>
           </mat-select>
           <mat-error fb-form-message [control]="form.get('currency')"></mat-error>
@@ -133,23 +133,23 @@
 
   <mat-dialog-actions *ngIf="dialogRef.disableClose" fxLayoutAlign="space-between center">
     <button mat-button (click)="onCancel()">
-      <span translate>secured.core.buttons.logout</span>
+      <span translate>core.buttons.logout</span>
     </button>
     <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="onSubmit(form.value)">
-      <span translate>secured.core.buttons.create</span>
+      <span translate>core.buttons.create</span>
     </button>
   </mat-dialog-actions>
 
   <mat-dialog-actions *ngIf="!dialogRef.disableClose" fxLayoutAlign="end center">
     <button mat-button [mat-dialog-close]="">
-      <span translate>secured.core.buttons.cancel</span>
+      <span translate>core.buttons.cancel</span>
     </button>
     <button mat-flat-button color="primary" [disabled]="form.invalid" (click)="onSubmit(form.value)">
       <span *ngIf="!!data; else newSubmitAction" translate>
-        secured.core.buttons.submit
+        core.buttons.submit
       </span>
       <ng-template #newSubmitAction>
-        <span translate>secured.core.buttons.create</span>
+        <span translate>core.buttons.create</span>
       </ng-template>
     </button>
   </mat-dialog-actions>

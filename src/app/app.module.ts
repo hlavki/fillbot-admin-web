@@ -1,9 +1,8 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { KeycloakService } from 'keycloak-angular';
-import { KeycloakAngularModule } from 'keycloak-angular';
+import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateCompiler, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MatDialogConfig, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
@@ -50,15 +49,6 @@ import { HttpErrorInterceptor } from './core/interceptors/error.interceptor';
     },
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { ...new MatDialogConfig(), width: '100%', maxWidth: '700px' } },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-  constructor(private readonly translateService: TranslateService) {
-    const allowedTranslations: string[] = ['cs', 'sk'];
-    if (allowedTranslations.includes(navigator.language.substring(0, 2))) {
-      this.translateService.setDefaultLang(navigator.language.substring(0, 2));
-    } else {
-      this.translateService.setDefaultLang('en');
-    }
-  }
-}
+export class AppModule {}

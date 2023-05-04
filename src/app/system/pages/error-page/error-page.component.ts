@@ -3,7 +3,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { Observable, from } from 'rxjs';
 
 @Component({
-  selector: 'app-error-page',
+  selector: 'fb-error-page',
   templateUrl: './error-page.component.html',
   styleUrls: ['./error-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

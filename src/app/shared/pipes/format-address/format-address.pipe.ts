@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { IAddressDto } from '@core/api/interfaces/address-dto.interface';
 
 @Pipe({
-  name: 'appFormatAddress'
+  name: 'appFormatAddress',
 })
 export class FormatAddressPipe implements PipeTransform {
 

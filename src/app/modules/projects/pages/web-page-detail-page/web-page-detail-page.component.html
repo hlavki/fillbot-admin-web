@@ -1,0 +1,57 @@
+<fb-base-page [heading]="(dataWebPage$ | async)?.name" [isLoading]="isLoading$ | async">
+
+  <ng-template #content>
+    <div fxLayout="column" fxLayoutGap="16px">
+      <div fxLayoutGap="32px" fxFlex fxLayout="row wrap" class="fb-gap">
+        <div fxLayout="column" fxLayoutGap="16px" fxFlex="380px">
+          <div fxLayoutAlign="start start" fxLayoutGap="8px">
+            <mat-icon>public</mat-icon>
+            <span>{{ (dataWebPage$ | async).originSite }}</span>
+          </div>
+
+          <div fxLayoutAlign="start start" fxLayoutGap="8px">
+            <mat-icon>payments</mat-icon>
+            <div fxLayout="column">
+              <span>{{ (dataWebPage$ | async).billingProfile.companyName || ((dataWebPage$ | async).billingProfile.firstName + ' ' + (dataWebPage$ | async).billingProfile.lastName) }}</span>
+              <span>{{ (dataWebPage$ | async).billingProfile.address | appFormatAddress }}</span>
+              <span>{{ (dataWebPage$ | async).billingProfile.country }} ({{ (dataWebPage$ | async).billingProfile.currency }})</span>
+            </div>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxLayoutGap="16px" fxFlex="380px">
+          <div fxLayoutAlign="start start" fxLayoutGap="8px">
+            <mat-icon>event</mat-icon>
+            <span>{{ (dataWebPage$ | async).createdAt | fbFormatDate }}</span>
+          </div>
+          <div fxLayoutAlign="start start" fxLayoutGap="8px">
+            <mat-icon>euro</mat-icon>
+            <div fxLayout="column">
+              <span>{{ 'enums.pricing-tier.' + (dataWebPage$ | async).pricingTier.code | translate }}</span>
+              <div>
+                <span>{{ 'core.pricing-tier.annual' | translate }}: {{ (dataWebPage$ | async).pricingTier.annualPrice }}€</span> | <span>{{ 'core.pricing-tier.monthly' | translate }}: {{ (dataWebPage$ | async).pricingTier.monthlyPrice }}€</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="16px">
+        <div fxLayout="column">
+          <mat-divider></mat-divider>
+
+          <div>
+            <mat-tab-group [selectedIndex]="selectedIndex$ | async" (selectedTabChange)="onSelectedTabChange($event)">
+              <mat-tab [label]="'projects.pages.web-page-detail.tabs.services' | translate"></mat-tab>
+              <mat-tab [label]="'projects.pages.web-page-detail.tabs.stats' | translate" disabled></mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </ng-template>
+
+</fb-base-page>

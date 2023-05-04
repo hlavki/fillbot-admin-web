@@ -12,7 +12,7 @@ import { ForbiddenPageComponent } from './pages/forbidden-page/forbidden-page.co
   declarations: [
     ErrorPageComponent,
     NotFoundPageComponent,
-    ForbiddenPageComponent
+    ForbiddenPageComponent,
   ],
   imports: [
     CommonModule,

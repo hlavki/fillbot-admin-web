@@ -3,214 +3,218 @@
     "pricing-tier": {
       "annual": "Annual",
       "monthly": "Monthly"
+    },
+    "confirmations": {
+      "title": "Confirmation",
+      "not-reversible": "This action is not reversible, do you really want to do it?"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "create": "Create",
+      "add": "Add",
+      "logout": "Logout",
+      "submit": "Submit",
+      "delete": "Delete",
+      "confirm": "Confirm",
+      "close": "Close"
+    },
+    "menu": {
+      "dashboard": "Dashboard",
+      "projects": "Projects",
+      "web-pages": "Web pages",
+      "api-keys": "Api keys",
+      "statistics": "Statistics",
+      "settings": "Settings",
+      "personal": "Preferencies",
+      "billing-profiles": "Billing profiles",
+      "security": "Security"
+    },
+    "messages": {
+      "copied-to-clipboard": "Copied to clipboard"
+    },
+    "fields": {
+      "address": {
+        "street": "Street",
+        "register-number": "Register number",
+        "reference-number": "Reference number",
+        "zip-code": "Zip code",
+        "city": "City",
+        "country": "Country"
+      }
+    },
+    "breadcrumbs": {
+      "projects": "Projects",
+      "web-pages": "Web pages",
+      "web-page-detail": "Detail",
+      "api-keys": "Api keys",
+      "settings": "Settings",
+      "preferencies": "Preferencies",
+      "billing-profiles": "Billing profiles",
+      "web-page-config": "Services",
+      "web-page-stats": "Statistics"
     }
   },
-  "secured": {
-    "enums": {
-      "billing-type": {
-        "PERSONAL": "Personal",
-        "COMPANY": "Company"
+  "enums": {
+    "billing-type": {
+      "PERSONAL": "Personal",
+      "COMPANY": "Company"
+    },
+    "country": {
+      "CZ": "CZ",
+      "SK": "SK"
+    },
+    "currency": {
+      "CZK": "CZK",
+      "EUR": "EUR"
+    },
+    "pricing-tier": {
+      "BASIC": "Basic",
+      "STANDARD": "Standard",
+      "PRO": "Profesional"
+    },
+    "servise-config": {
+      "ADDRESS": "Addresses",
+      "EMAIL": "E-mails",
+      "PHONE_NUMBER": "Phone numbers",
+      "COMPANY": "Companies"
+    }
+  },
+  "projects": {
+    "fields": {
+      "daily-amount-limit": {
+        "label": "Daily amount limit",
+        "note": "Note: If you don't want to have any limit, let this field empty."
       },
-      "country": {
-        "CZ": "CZ",
-        "SK": "SK"
+      "name": {
+        "label": "Name"
       },
-      "currency": {
-        "CZK": "CZK",
-        "EUR": "EUR"
+      "billing-profile": {
+        "label": "Billing profile"
       },
       "pricing-tier": {
-        "BASIC": "Basic",
-        "STANDARD": "Standard",
-        "PRO": "Profesional"
+        "label": "Pricing tier",
+        "note": "Note: Annual price / Monthly price"
       },
-      "servise-config": {
-        "ADDRESS": "Addresses",
-        "EMAIL": "E-mails",
-        "PHONE_NUMBER": "Phone numbers",
-        "COMPANY": "Companies"
+      "url": {
+        "label": "Web page origin url"
+      },
+      "enabled": {
+        "label": "Active"
+      },
+      "show-validation-state": {
+        "label": "Show validation state"
+      },
+      "use-geolocation": {
+        "label": "Use geolocation"
       }
     },
-    "core": {
-      "confirmations": {
-        "title": "Confirmation",
-        "not-reversible": "This action is not reversible, do you really want to do it?"
+    "dialogs": {
+      "api-keys-config": {
+        "title": "Api key configuration"
       },
-      "buttons": {
-        "cancel": "Cancel",
-        "save": "Save",
-        "create": "Create",
-        "add": "Add",
-        "logout": "Logout",
-        "submit": "Submit",
-        "delete": "Delete",
-        "confirm": "Confirm",
-        "close": "Close"
+      "api-keys-detail": {
+        "title": "New Api key"
       },
-      "menu": {
-        "dashboard": "Dashboard",
-        "projects": "Projects",
-        "web-pages": "Web pages",
-        "api-keys": "Api keys",
-        "statistics": "Statistics",
-        "settings": "Settings",
-        "personal": "Preferencies",
-        "billing-profiles": "Billing profiles",
-        "security": "Security"
+      "web-pages-config": {
+        "title": "Web page configuration"
       },
-      "messages": {
-        "copied-to-clipboard": "Copied to clipboard"
+      "web-pages-detail": {
+        "title-new": "New Web page"
       },
-      "fields": {
+      "web-page-validators": {
+        "title": "Assigned validators",
+        "element": "Element",
+        "mapped-as": "Mapped as"
+      }
+    },
+    "pages": {
+      "api-keys": {
+        "title": "Api keys",
+        "new": "New api key"
+      },
+      "web-pages": {
+        "title": "Web pages",
+        "new": "New web page"
+      },
+      "web-page-detail": {
+        "tabs": {
+          "services": "Services",
+          "stats": "Statistics"
+        },
+        "active-service": "Active services",
+        "available-service": "Available service",
         "address": {
-          "street": "Street",
-          "register-number": "Register number",
-          "reference-number": "Reference number",
-          "zip-code": "Zip code",
-          "city": "City",
-          "country": "Country"
-        }
-      },
-      "breadcrumbs": {
-        "projects": "Projects",
-        "web-pages": "Web pages",
-        "web-page-detail": "Detail",
-        "api-keys": "Api keys",
-        "settings": "Settings",
-        "preferencies": "Preferencies",
-        "billing-profiles": "Billing profiles",
-        "web-page-config": "Services",
-        "web-page-stats": "Statistics"
-      }
-    },
-    "projects": {
-      "fields": {
-        "daily-amount-limit": {
-          "label": "Daily amount limit",
-          "note": "Note: If you don't want to have any limit, let this field empty."
+          "desc": "Intelligent whisperer of addresses according to geolocation."
         },
-        "name": {
-          "label": "Name"
+        "company": {
+          "desc": "Intelligent whisperer of companies base on VAT ID, CIN, name etc."
         },
-        "billing-profile": {
-          "label": "Billing profile"
+        "email": {
+          "desc": "Real time email validation."
         },
-        "pricing-tier": {
-          "label": "Pricing tier",
-          "note": "Note: Annual price / Monthly price"
-        },
-        "url": {
-          "label": "Web page origin url"
-        },
-        "enabled": {
-          "label": "Active"
-        },
-        "show-validation-state": {
-          "label": "Show validation state"
-        },
-        "use-geolocation": {
-          "label": "Use geolocation"
-        }
-      },
-      "dialogs": {
-        "api-keys-config": {
-          "title": "Api key configuration"
-        },
-        "api-keys-detail": {
-          "title": "New Api key"
-        },
-        "web-pages-config": {
-          "title": "Web page configuration"
-        },
-        "web-pages-detail": {
-          "title-new": "New Web page"
-        },
-        "web-page-validators": {
-          "title": "Assigned validators",
-          "element": "Element",
-          "mapped-as": "Mapped as"
-        }
-      },
-      "pages": {
-        "api-keys": {
-          "title": "Api keys",
-          "new": "New api key"
-        },
-        "web-pages": {
-          "title": "Web pages",
-          "new": "New web page"
-        },
-        "web-page-detail": {
-          "tabs": {
-            "services": "Services",
-            "stats": "Statistics"
-          },
-          "active-service": "Active services",
-          "available-service": "Available service",
-          "address": {
-            "desc": "Intelligent whisperer of addresses according to geolocation."
-          },
-          "company": {
-            "desc": "Intelligent whisperer of companies base on VAT ID, CIN, name etc."
-          },
-          "email": {
-            "desc": "Real time email validation."
-          },
-          "phoneNumber": {
-            "desc": "Real-time phone number validation and availability."
-          }
-        }
-      },
-      "confirmations": {
-        "delete-api-key": "You are trying to delete api key.",
-        "delete-web-page": "You are trying to delete web page."
-      },
-      "messages": {
-        "api-keys": {
-          "created": "Api key was successfully created",
-          "updated": "Api key was successfully updated",
-          "deleted": "Api key was successfully deleted"
-        },
-        "web-pages": {
-          "created": "Web page was successfully created",
-          "updated": "Web page was successfully updated",
-          "deleted": "Web page was successfully deleted"
-        },
-        "web-page-detail": {
-          "no-data-active": "You don't have any active service.",
-          "no-data-available": "You have all available services active."
+        "phoneNumber": {
+          "desc": "Real-time phone number validation and availability."
         }
       }
     },
-    "settings": {
-      "confirmations": {
-        "delete": "You are trying to delete billing profile."
+    "confirmations": {
+      "delete-api-key": "You are trying to delete api key.",
+      "delete-web-page": "You are trying to delete web page."
+    },
+    "messages": {
+      "api-keys": {
+        "created": "Api key was successfully created",
+        "updated": "Api key was successfully updated",
+        "deleted": "Api key was successfully deleted"
       },
-      "messages": {
-        "created": "Billing profile was successfully created",
-        "updated": "Billing profile was successfully updated",
-        "deleted": "Billing profile was successfully deleted"
+      "web-pages": {
+        "created": "Web page was successfully created",
+        "updated": "Web page was successfully updated",
+        "deleted": "Web page was successfully deleted"
       },
-      "fields": {
-        "company-name": "Company name",
+      "web-page-detail": {
+        "no-data-active": "You don't have any active service.",
+        "no-data-available": "You have all available services active."
+      }
+    }
+  },
+  "settings": {
+    "confirmations": {
+      "delete": "You are trying to delete billing profile."
+    },
+    "messages": {
+      "created": "Billing profile was successfully created",
+      "updated": "Billing profile was successfully updated",
+      "deleted": "Billing profile was successfully deleted"
+    },
+    "fields": {
+      "company-name": "Company name",
+      "cin": "CIN",
+      "vat": "VAT",
+      "first-name": "First name",
+      "last-name": "Last name"
+    },
+    "dialogs": {
+      "billing-detail": {
+        "new-billing-title": "New billing profile",
+        "edit-billing-title": "Edit billing profile"
+      }
+    },
+    "pages": {
+      "billing": {
+        "title": "Billing profiles",
+        "new": "New billing profile",
         "cin": "CIN",
-        "vat": "VAT",
-        "first-name": "First name",
-        "last-name": "Last name"
+        "vat": "VAT"
       },
-      "dialogs": {
-        "billing-detail": {
-          "new-billing-title": "New billing profile",
-          "edit-billing-title": "Edit billing profile"
-        }
-      },
-      "pages": {
-        "billing": {
-          "title": "Billing profiles",
-          "new": "New billing profile",
-          "cin": "CIN",
-          "vat": "VAT"
-        }
+      "personal": {
+        "title": "Preferencies",
+        "language": "Language",
+        "language-not-set": "Language wasn't set yet. We are using browsers language.",
+        "en": "English",
+        "cz": "Česky",
+        "sk": "Slovensky"
       }
     }
   },
