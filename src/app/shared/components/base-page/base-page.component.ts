@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ContentChild, Input, TemplateRef } from '@angular/core';
 
 @Component({
-  selector: 'app-base-page',
+  selector: 'fb-base-page',
   templateUrl: './base-page.component.html',
   styleUrls: ['./base-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

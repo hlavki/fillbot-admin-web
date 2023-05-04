@@ -8,7 +8,7 @@ interface IDialogData {
 }
 
 @Component({
-  selector: 'app-confirmation-dialog',
+  selector: 'fb-confirmation-dialog',
   templateUrl: './confirmation-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -1,8 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { of } from 'rxjs';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BillingService } from '@fb/core/api/services/billing/billing.service';
 
@@ -17,6 +21,7 @@ describe('BillingDetailDialogComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [BillingDetailDialogComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [ReactiveFormsModule, MatRadioModule, MatSelectModule, MatInputModule, NoopAnimationsModule],
       providers: [
         {
           provide: MAT_DIALOG_DATA,
@@ -25,28 +30,11 @@ describe('BillingDetailDialogComponent', () => {
         {
           provide: MatDialogRef,
           useValue: {
-            close: () => void 0,
+            close: () => void 0 as unknown,
           },
         },
         {
           provide: FormBuilder,
-          useValue: {
-            group: () => new FormGroup({
-              category: null,
-              companyName: null,
-              firstName: null,
-              lastName: null,
-              cin: null,
-              vatId: null,
-              street: null,
-              referenceNumber: null,
-              registerNumber: null,
-              zipCode: null,
-              city: null,
-              country: null,
-              currency: null,
-            }),
-          },
         },
         {
           provide: BillingService,
@@ -57,7 +45,7 @@ describe('BillingDetailDialogComponent', () => {
         {
           provide: KeycloakService,
           useValue: {
-            logout: () => void 0,
+            logout: () => void 0 as unknown,
           },
         },
       ],

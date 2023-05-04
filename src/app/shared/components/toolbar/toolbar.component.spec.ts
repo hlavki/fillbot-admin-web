@@ -16,7 +16,7 @@ describe('ToolbarComponent', () => {
         {
           provide: KeycloakService,
           useValue: {
-            logout: () => void 0,
+            logout: () => void 0 as unknown,
           },
         },
       ],

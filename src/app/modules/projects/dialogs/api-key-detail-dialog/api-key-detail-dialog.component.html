@@ -1,0 +1,47 @@
+<fb-loading *ngIf="isLoading$ | async; else notLoading"></fb-loading>
+
+<ng-template #notLoading>
+  <h2 mat-dialog-title translate>
+    projects.dialogs.api-keys-detail.title
+  </h2>
+
+  <mat-dialog-content>
+    <form [formGroup]="form" fxLayout="column" fxLayoutGap="32px">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label translate>projects.fields.name.label</mat-label>
+        <input matInput type="text" formControlName="name">
+        <mat-error fb-form-message [control]="form.get('name')"></mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+        <mat-label translate>projects.fields.billing-profile.label</mat-label>
+        <mat-select formControlName="billingProfile">
+          <mat-option *ngFor="let billingProfile of billingProfiles" [value]="billingProfile">
+            <strong>{{ billingProfile.companyName || (billingProfile.firstName + ' ' + billingProfile.lastName) }}</strong>
+            <span>&nbsp;-&nbsp;{{ billingProfile.address | appFormatAddress }}&nbsp;-&nbsp;</span>
+            <span>{{ billingProfile.currency }}</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label translate>projects.fields.daily-amount-limit.label</mat-label>
+        <input matInput type="number" min="0" step="1" formControlName="dailyAmountLimit">
+        <mat-hint translate>projects.fields.daily-amount-limit.note</mat-hint>
+        <mat-error fb-form-message [control]="form.get('dailyAmountLimit')"></mat-error>
+      </mat-form-field>
+
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayoutAlign="end center">
+    <button mat-button [mat-dialog-close]="">
+      <span translate>core.buttons.cancel</span>
+    </button>
+    <button mat-flat-button [disabled]="form.invalid" color="primary" (click)="onSubmit(form.value)">
+      <span translate>core.buttons.create</span>
+    </button>
+  </mat-dialog-actions>
+</ng-template>

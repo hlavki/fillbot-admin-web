@@ -3,214 +3,218 @@
     "pricing-tier": {
       "annual": "Annual",
       "monthly": "Monthly"
+    },
+    "confirmations": {
+      "title": "Confirmation",
+      "not-reversible": "This action is not reversible, do you really want to do it?"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "create": "Create",
+      "add": "Add",
+      "logout": "Logout",
+      "submit": "Submit",
+      "delete": "Delete",
+      "confirm": "Confirm"
+    },
+    "menu": {
+      "dashboard": "Dashboard",
+      "projects": "Projects",
+      "web-pages": "Web pages",
+      "api-keys": "Api keys",
+      "statistics": "Statistics",
+      "settings": "Settings",
+      "personal": "Preferencie",
+      "billing-profiles": "Billing profiles",
+      "security": "Security"
+    },
+    "messages": {
+      "copied-to-clipboard": "Copied to clipboard"
+    },
+    "fields": {
+      "address": {
+        "street": "Street",
+        "register-number": "Register number",
+        "reference-number": "Reference number",
+        "zip-code": "Zip code",
+        "city": "City",
+        "country": "Country"
+      }
+    },
+    "breadcrumbs": {
+      "projects": "Projekty",
+      "web-pages": "Webové stránky",
+      "web-page-detail": "Detail",
+      "api-keys": "Api kľúče",
+      "settings": "Nastavenia",
+      "preferencies": "Preferencie",
+      "billing-profiles": "Fakturačné účty",
+      "web-page-config": "Služby",
+      "web-page-stats": "Štatistiky"
     }
   },
-  "secured": {
-    "enums": {
-      "billing-type": {
-        "PERSONAL": "Personal",
-        "COMPANY": "Company"
+  "enums": {
+    "billing-type": {
+      "PERSONAL": "Personal",
+      "COMPANY": "Company"
+    },
+    "country": {
+      "CZ": "CZ",
+      "SK": "SK"
+    },
+    "currency": {
+      "CZK": "CZK",
+      "EUR": "EUR"
+    },
+    "pricing-tier": {
+      "BASIC": "Basic",
+      "STANDARD": "Standard",
+      "PRO": "Profesional"
+    },
+    "servise-config": {
+      "ADDRESS": "Adresy",
+      "EMAIL": "E-maily",
+      "PHONE_NUMBER": "Telefónne čísla",
+      "COMPANY": "Firmy",
+      "close": "Zatvoriť"
+    }
+  },
+  "projects": {
+    "fields": {
+      "daily-amount-limit": {
+        "label": "Daily amount limit",
+        "note": "Note: If you don't want to have any limit, let this field empty."
       },
-      "country": {
-        "CZ": "CZ",
-        "SK": "SK"
+      "name": {
+        "label": "Názov"
       },
-      "currency": {
-        "CZK": "CZK",
-        "EUR": "EUR"
+      "billing-profile": {
+        "label": "Fakturačný účet"
       },
       "pricing-tier": {
-        "BASIC": "Basic",
-        "STANDARD": "Standard",
-        "PRO": "Profesional"
+        "label": "Tarif",
+        "note": "Note: Cena pre ročný tarif / Cena mesačne"
       },
-      "servise-config": {
-        "ADDRESS": "Adresy",
-        "EMAIL": "E-maily",
-        "PHONE_NUMBER": "Telefónne čísla",
-        "COMPANY": "Firmy",
-        "close": "Zatvoriť"
+      "url": {
+        "label": "Origin webovej stránky"
+      },
+      "enabled": {
+        "label": "Aktívny"
+      },
+      "show-validation-state": {
+        "label": "Zobrazenie validačného statusu"
+      },
+      "use-geolocation": {
+        "label": "Použiť geolokaci"
       }
     },
-    "core": {
-      "confirmations": {
-        "title": "Confirmation",
-        "not-reversible": "This action is not reversible, do you really want to do it?"
+    "dialogs": {
+      "api-keys-config": {
+        "title": "Api key configuration"
       },
-      "buttons": {
-        "cancel": "Cancel",
-        "save": "Save",
-        "create": "Create",
-        "add": "Add",
-        "logout": "Logout",
-        "submit": "Submit",
-        "delete": "Delete",
-        "confirm": "Confirm"
+      "api-keys-detail": {
+        "title": "New Api key"
       },
-      "menu": {
-        "dashboard": "Dashboard",
-        "projects": "Projects",
-        "web-pages": "Web pages",
-        "api-keys": "Api keys",
-        "statistics": "Statistics",
-        "settings": "Settings",
-        "personal": "Preferencie",
-        "billing-profiles": "Billing profiles",
-        "security": "Security"
+      "web-pages-config": {
+        "title": "Web page configuration"
       },
-      "messages": {
-        "copied-to-clipboard": "Copied to clipboard"
+      "web-pages-detail": {
+        "title-new": "New Web page"
       },
-      "fields": {
+      "web-page-validators": {
+        "title": "Nastavené validátory",
+        "element": "Element",
+        "mapped-as": "Namapované na"
+      }
+    },
+    "pages": {
+      "api-keys": {
+        "title": "Api keys",
+        "new": "New api key"
+      },
+      "web-pages": {
+        "title": "Web pages",
+        "new": "New web page"
+      },
+      "web-page-detail": {
+        "tabs": {
+          "services": "Služby",
+          "stats": "Štatistiky"
+        },
+        "active-service": "Aktivné služby",
+        "available-service": "Dostupné šlužby",
         "address": {
-          "street": "Street",
-          "register-number": "Register number",
-          "reference-number": "Reference number",
-          "zip-code": "Zip code",
-          "city": "City",
-          "country": "Country"
-        }
-      },
-      "breadcrumbs": {
-        "projects": "Projekty",
-        "web-pages": "Webové stránky",
-        "web-page-detail": "Detail",
-        "api-keys": "Api kľúče",
-        "settings": "Nastavenia",
-        "preferencies": "Preferencie",
-        "billing-profiles": "Fakturačné účty",
-        "web-page-config": "Služby",
-        "web-page-stats": "Štatistiky"
-      }
-    },
-    "projects": {
-      "fields": {
-        "daily-amount-limit": {
-          "label": "Daily amount limit",
-          "note": "Note: If you don't want to have any limit, let this field empty."
+          "desc": "Inteligentný našeptávač adres na základe geolokacií."
         },
-        "name": {
-          "label": "Name"
+        "company": {
+          "desc": "Inteligentný našeptávač firem na základe IČO, DIČ, názvu a pod."
         },
-        "billing-profile": {
-          "label": "Billing profile"
+        "email": {
+          "desc": "Validácia emailu v reálnom čase."
         },
-        "pricing-tier": {
-          "label": "Pricing tier",
-          "note": "Note: Annual price / Monthly price"
-        },
-        "url": {
-          "label": "Web page origin url"
-        },
-        "enabled": {
-          "label": "Active"
-        },
-        "show-validation-state": {
-          "label": "Zobrazenie validačného statusu"
-        },
-        "use-geolocation": {
-          "label": "Použiť geolokaci"
-        }
-      },
-      "dialogs": {
-        "api-keys-config": {
-          "title": "Api key configuration"
-        },
-        "api-keys-detail": {
-          "title": "New Api key"
-        },
-        "web-pages-config": {
-          "title": "Web page configuration"
-        },
-        "web-pages-detail": {
-          "title-new": "New Web page"
-        },
-        "web-page-validators": {
-          "title": "Nastavené validátory",
-          "element": "Element",
-          "mapped-as": "Namapované na"
-        }
-      },
-      "pages": {
-        "api-keys": {
-          "title": "Api keys",
-          "new": "New api key"
-        },
-        "web-pages": {
-          "title": "Web pages",
-          "new": "New web page"
-        },
-        "web-page-detail": {
-          "tabs": {
-            "services": "Služby",
-            "stats": "Štatistiky"
-          },
-          "active-service": "Aktivné služby",
-          "available-service": "Dostupné šlužby",
-          "address": {
-            "desc": "Inteligentný našeptávač adres na základe geolokacií."
-          },
-          "company": {
-            "desc": "Inteligentný našeptávač firem na základe IČO, DIČ, názvu a pod."
-          },
-          "email": {
-            "desc": "Validácia emailu v reálnom čase."
-          },
-          "phoneNumber": {
-            "desc": "Validácia a dostupnosť telefonného čísla v reálnom čase."
-          }
-        }
-      },
-      "confirmations": {
-        "delete-api-key": "You are trying to delete api key.",
-        "delete-web-page": "You are trying to delete web page."
-      },
-      "messages": {
-        "api-keys": {
-          "created": "Api key was successfully created",
-          "updated": "Api key was successfully updated",
-          "deleted": "Api key was successfully deleted"
-        },
-        "web-pages": {
-          "created": "Web page was successfully created",
-          "updated": "Web page was successfully updated",
-          "deleted": "Web page was successfully deleted"
-        },
-        "web-page-detail": {
-          "no-data-active": "Nemáte zatiaľ žiadne aktívne služby.",
-          "no-data-available": "Máte všetky dostupné služby aktívne."
+        "phoneNumber": {
+          "desc": "Validácia a dostupnosť telefonného čísla v reálnom čase."
         }
       }
     },
-    "settings": {
-      "confirmations": {
-        "delete": "You are trying to delete billing profile."
+    "confirmations": {
+      "delete-api-key": "You are trying to delete api key.",
+      "delete-web-page": "You are trying to delete web page."
+    },
+    "messages": {
+      "api-keys": {
+        "created": "Api key was successfully created",
+        "updated": "Api key was successfully updated",
+        "deleted": "Api key was successfully deleted"
       },
-      "messages": {
-        "created": "Billing profile was successfully created",
-        "updated": "Billing profile was successfully updated",
-        "deleted": "Billing profile was successfully deleted"
+      "web-pages": {
+        "created": "Web page was successfully created",
+        "updated": "Web page was successfully updated",
+        "deleted": "Web page was successfully deleted"
       },
-      "fields": {
-        "company-name": "Company name",
+      "web-page-detail": {
+        "no-data-active": "Nemáte zatiaľ žiadne aktívne služby.",
+        "no-data-available": "Máte všetky dostupné služby aktívne."
+      }
+    }
+  },
+  "settings": {
+    "confirmations": {
+      "delete": "You are trying to delete billing profile."
+    },
+    "messages": {
+      "created": "Billing profile was successfully created",
+      "updated": "Billing profile was successfully updated",
+      "deleted": "Billing profile was successfully deleted"
+    },
+    "fields": {
+      "company-name": "Company name",
+      "cin": "CIN",
+      "vat": "VAT",
+      "first-name": "First name",
+      "last-name": "Last name"
+    },
+    "dialogs": {
+      "billing-detail": {
+        "new-billing-title": "New billing profile",
+        "edit-billing-title": "Edit billing profile"
+      }
+    },
+    "pages": {
+      "billing": {
+        "title": "Billing profiles",
+        "new": "New billing profile",
         "cin": "CIN",
-        "vat": "VAT",
-        "first-name": "First name",
-        "last-name": "Last name"
+        "vat": "VAT"
       },
-      "dialogs": {
-        "billing-detail": {
-          "new-billing-title": "New billing profile",
-          "edit-billing-title": "Edit billing profile"
-        }
-      },
-      "pages": {
-        "billing": {
-          "title": "Billing profiles",
-          "new": "New billing profile",
-          "cin": "CIN",
-          "vat": "VAT"
-        }
+      "personal": {
+        "title": "Preferencie",
+        "language": "Jazyk",
+        "language-not-set": "Jazyk ešte nebol nastavený. Používame jazyk prehliadaču.",
+        "en": "English",
+        "cz": "Česky",
+        "sk": "Slovensky"
       }
     }
   },

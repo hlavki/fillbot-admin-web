@@ -1,0 +1,139 @@
+<mat-card *ngIf="(isLoading$ | async) === false" class="service__card" [ngClass]="{ 'service__card--inactive': !active }" [formGroup]="form">
+
+  <ng-container [ngSwitch]="type">
+
+    <ng-container *ngSwitchCase="eServiceConfigType.ADDRESS">
+      <mat-card-header>
+        <mat-card-title class="center-text">
+          <span translate>enums.servise-config.ADDRESS</span>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="service__card__content" fxLayout="column" fxLayoutGap="16px" [fxLayoutAlign]="active ? 'start' : 'center'">
+        <div *ngIf="active; else notActive" fxLayoutAlign="start start" fxLayoutGap="8px" fxLayout="column">
+          <mat-slide-toggle color="primary" formControlName="enabled">
+            <span translate>projects.fields.enabled.label</span>
+          </mat-slide-toggle>
+          <mat-slide-toggle color="primary" formControlName="showValidationState">
+            <span translate>projects.fields.show-validation-state.label</span>
+          </mat-slide-toggle>
+          <mat-slide-toggle color="primary" formControlName="useGeolocation">
+            <span translate>projects.fields.use-geolocation.label</span>
+          </mat-slide-toggle>
+        </div>
+
+        <ng-template #notActive>
+          <span class="caption center-text" translate>projects.pages.web-page-detail.address.desc</span>
+        </ng-template>
+      </mat-card-content>
+
+      <mat-card-actions fxLayoutAlign="end end">
+        <button mat-icon-button *ngIf="active" (click)="onSwowValidators(config.address.validators)">
+          <mat-icon fontSet="material-icons-outlined">checklist</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="!origin" (click)="navigate(origin)">
+          <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
+        </button>
+      </mat-card-actions>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="eServiceConfigType.COMPANY">
+      <mat-card-header>
+        <mat-card-title class="center-text">
+          <span translate>enums.servise-config.COMPANY</span>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="service__card__content" fxLayout="column" fxLayoutGap="16px" [fxLayoutAlign]="active ? 'start' : 'center'">
+        <div *ngIf="active; else notActive" fxLayoutAlign="start start" fxLayoutGap="8px" fxLayout="column">
+          <mat-slide-toggle color="primary" formControlName="enabled">
+            <span translate>projects.fields.enabled.label</span>
+          </mat-slide-toggle>
+          <mat-slide-toggle color="primary" formControlName="showValidationState">
+            <span translate>projects.fields.show-validation-state.label</span>
+          </mat-slide-toggle>
+        </div>
+
+        <ng-template #notActive>
+          <span class="caption center-text" translate>projects.pages.web-page-detail.company.desc</span>
+        </ng-template>
+      </mat-card-content>
+
+      <mat-card-actions fxLayoutAlign="end end">
+        <button mat-icon-button *ngIf="active" (click)="onSwowValidators(config.company.validators)">
+          <mat-icon fontSet="material-icons-outlined">checklist</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="!origin" (click)="navigate(origin)">
+          <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
+        </button>
+      </mat-card-actions>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="eServiceConfigType.EMAIL">
+      <mat-card-header>
+        <mat-card-title class="center-text">
+          <span translate>enums.servise-config.EMAIL</span>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="service__card__content" fxLayout="column" fxLayoutGap="16px" [fxLayoutAlign]="active ? 'start' : 'center'">
+        <div *ngIf="active; else notActive" fxLayoutAlign="start start" fxLayoutGap="8px" fxLayout="column">
+          <mat-slide-toggle color="primary" formControlName="enabled">
+            <span translate>projects.fields.enabled.label</span>
+          </mat-slide-toggle>
+          <mat-slide-toggle color="primary" formControlName="showValidationState">
+            <span translate>projects.fields.show-validation-state.label</span>
+          </mat-slide-toggle>
+        </div>
+
+        <ng-template #notActive>
+          <span class="caption center-text" translate>projects.pages.web-page-detail.email.desc</span>
+        </ng-template>
+      </mat-card-content>
+
+      <mat-card-actions fxLayoutAlign="end end">
+        <button mat-icon-button *ngIf="active" (click)="onSwowValidators(config.email.validators)">
+          <mat-icon fontSet="material-icons-outlined">checklist</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="!origin" (click)="navigate(origin)">
+          <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
+        </button>
+      </mat-card-actions>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="eServiceConfigType.PHONE_NUMBER">
+      <mat-card-header>
+        <mat-card-title class="center-text">
+          <span translate>enums.servise-config.PHONE_NUMBER</span>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="service__card__content" fxLayout="column" fxLayoutGap="16px" [fxLayoutAlign]="active ? 'start' : 'center'">
+        <div *ngIf="active; else notActive" fxLayoutAlign="start start" fxLayoutGap="8px" fxLayout="column">
+          <mat-slide-toggle color="primary" formControlName="enabled">
+            <span translate>projects.fields.enabled.label</span>
+          </mat-slide-toggle>
+          <mat-slide-toggle color="primary" formControlName="showValidationState">
+            <span translate>projects.fields.show-validation-state.label</span>
+          </mat-slide-toggle>
+        </div>
+
+        <ng-template #notActive>
+          <span class="caption center-text" translate>projects.pages.web-page-detail.phoneNumber.desc</span>
+        </ng-template>
+      </mat-card-content>
+
+      <mat-card-actions fxLayoutAlign="end end">
+        <button mat-icon-button *ngIf="active" (click)="onSwowValidators(config.phoneNumber.validators)">
+          <mat-icon fontSet="material-icons-outlined">checklist</mat-icon>
+        </button>
+        <button mat-icon-button [disabled]="!origin" (click)="navigate(origin)">
+          <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
+        </button>
+      </mat-card-actions>
+    </ng-container>
+
+  </ng-container>
+
+</mat-card>
+

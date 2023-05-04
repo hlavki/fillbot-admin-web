@@ -3,214 +3,218 @@
     "pricing-tier": {
       "annual": "Počáteční",
       "monthly": "Měsíční"
+    },
+    "confirmations": {
+      "title": "Potvrzení",
+      "not-reversible": "Táto akce se nedá vrátit zpět. Určite chcete pokračovat?"
+    },
+    "buttons": {
+      "cancel": "Zrušit",
+      "save": "Uložit",
+      "create": "Vytvořit",
+      "add": "Přidat",
+      "logout": "Odhlásit",
+      "submit": "Potvrdit",
+      "delete": "Zmazat",
+      "confirm": "Potvrdit",
+      "close": "Zatvorit"
+    },
+    "menu": {
+      "dashboard": "Dashboard",
+      "projects": "Projekty",
+      "web-pages": "Webové stránky",
+      "api-keys": "Api klíče",
+      "statistics": "Statistiky",
+      "settings": "Nastavení",
+      "personal": "Preference",
+      "billing-profiles": "Fakturační účty",
+      "security": "Bezpečnosti"
+    },
+    "messages": {
+      "copied-to-clipboard": "Skopirováno do schránky"
+    },
+    "fields": {
+      "address": {
+        "street": "Ulice",
+        "register-number": "Registrační číslo",
+        "reference-number": "Popisní číslo",
+        "zip-code": "Smerovací číslo",
+        "city": "Město",
+        "country": "Země"
+      }
+    },
+    "breadcrumbs": {
+      "projects": "Projekty",
+      "web-pages": "Webové stránky",
+      "web-page-detail": "Detail",
+      "api-keys": "Api klíče",
+      "settings": "Nastavení",
+      "preferencies": "Preference",
+      "billing-profiles": "Fakturační účty",
+      "web-page-config": "Služby",
+      "web-page-stats": "Statistiky"
     }
   },
-  "secured": {
-    "enums": {
-      "billing-type": {
-        "PERSONAL": "Fyzická osoba",
-        "COMPANY": "Společnost"
+  "enums": {
+    "billing-type": {
+      "PERSONAL": "Fyzická osoba",
+      "COMPANY": "Společnost"
+    },
+    "country": {
+      "CZ": "Česká republika",
+      "SK": "Slovenská republika"
+    },
+    "currency": {
+      "CZK": "CZK",
+      "EUR": "EUR"
+    },
+    "pricing-tier": {
+      "BASIC": "Základní",
+      "STANDARD": "Štandard",
+      "PRO": "Profesionál"
+    },
+    "servise-config": {
+      "ADDRESS": "Adresy",
+      "EMAIL": "E-maily",
+      "PHONE_NUMBER": "Telefónní čísla",
+      "COMPANY": "Firmy"
+    }
+  },
+  "projects": {
+    "fields": {
+      "daily-amount-limit": {
+        "label": "Denní limit requestů",
+        "note": "Poznámka: Ak nechcete nastavit denní limit requestů, nechte toto pole prázdne."
       },
-      "country": {
-        "CZ": "Česká republika",
-        "SK": "Slovenská republika"
+      "name": {
+        "label": "Jméno"
       },
-      "currency": {
-        "CZK": "CZK",
-        "EUR": "EUR"
+      "billing-profile": {
+        "label": "Fakturační profil"
       },
       "pricing-tier": {
-        "BASIC": "Základní",
-        "STANDARD": "Štandard",
-        "PRO": "Profesionál"
+        "label": "Tarif",
+        "note": "Cena pro roční tarif / Cena měsíčně"
       },
-      "servise-config": {
-        "ADDRESS": "Adresy",
-        "EMAIL": "E-maily",
-        "PHONE_NUMBER": "Telefónní čísla",
-        "COMPANY": "Firmy"
+      "url": {
+        "label": "Origin webové stránky"
+      },
+      "enabled": {
+        "label": "Aktívní"
+      },
+      "show-validation-state": {
+        "label": "Zobrazení validačního statusu"
+      },
+      "use-geolocation": {
+        "label": "Použít geolokaci"
       }
     },
-    "core": {
-      "confirmations": {
-        "title": "Potvrzení",
-        "not-reversible": "Táto akce se nedá vrátit zpět. Určite chcete pokračovat?"
+    "dialogs": {
+      "api-keys-config": {
+        "title": "Konfigurace Api klíče"
       },
-      "buttons": {
-        "cancel": "Zrušit",
-        "save": "Uložit",
-        "create": "Vytvořit",
-        "add": "Přidat",
-        "logout": "Odhlásit",
-        "submit": "Potvrdit",
-        "delete": "Zmazat",
-        "confirm": "Potvrdit",
-        "close": "Zatvorit"
+      "api-keys-detail": {
+        "title": "Vytvoření nového Api Api klíče"
       },
-      "menu": {
-        "dashboard": "Dashboard",
-        "projects": "Projekty",
-        "web-pages": "Webové stránky",
-        "api-keys": "Api klíče",
-        "statistics": "Statistiky",
-        "settings": "Nastavení",
-        "personal": "Preference",
-        "billing-profiles": "Fakturační účty",
-        "security": "Bezpečnosti"
+      "web-pages-config": {
+        "title": "Konfigurace webové stránky"
       },
-      "messages": {
-        "copied-to-clipboard": "Skopirováno do schránky"
+      "web-pages-detail": {
+        "title-new": "Nová webová stránka"
       },
-      "fields": {
+      "web-page-validators": {
+        "title": "Nastavené validátory",
+        "element": "Element",
+        "mapped-as": "Namapované na"
+      }
+    },
+    "pages": {
+      "api-keys": {
+        "title": "Api klíče",
+        "new": "Nový api klíč"
+      },
+      "web-pages": {
+        "title": "Webové stránky",
+        "new": "Nová webová stránka"
+      },
+      "web-page-detail": {
+        "tabs": {
+          "services": "Služby",
+          "stats": "Statistiky"
+        },
+        "active-service": "Aktivní služby",
+        "available-service": "Dostupné šlužby",
         "address": {
-          "street": "Ulice",
-          "register-number": "Registrační číslo",
-          "reference-number": "Popisní číslo",
-          "zip-code": "Smerovací číslo",
-          "city": "Město",
-          "country": "Země"
-        }
-      },
-      "breadcrumbs": {
-        "projects": "Projekty",
-        "web-pages": "Webové stránky",
-        "web-page-detail": "Detail",
-        "api-keys": "Api klíče",
-        "settings": "Nastavení",
-        "preferencies": "Preference",
-        "billing-profiles": "Fakturační účty",
-        "web-page-config": "Služby",
-        "web-page-stats": "Statistiky"
-      }
-    },
-    "projects": {
-      "fields": {
-        "daily-amount-limit": {
-          "label": "Denní limit requestů",
-          "note": "Poznámka: Ak nechcete nastavit denní limit requestů, nechte toto pole prázdne."
+          "desc": "Inteligentní našeptávač adres na základe geolokací."
         },
-        "name": {
-          "label": "Jméno"
+        "company": {
+          "desc": "Inteligentní našeptávač firem na základe IČO, DIČ, jménu a další."
         },
-        "billing-profile": {
-          "label": "Fakturační profil"
+        "email": {
+          "desc": "Validace emailu v reálnim čase."
         },
-        "pricing-tier": {
-          "label": "Cenový profil",
-          "note": "Poznámka: Počáteční cena / Měsíční cena"
-        },
-        "url": {
-          "label": "Origin webové stránky"
-        },
-        "enabled": {
-          "label": "Aktívní"
-        },
-        "show-validation-state": {
-          "label": "Zobrazení validačního statusu"
-        },
-        "use-geolocation": {
-          "label": "Použít geolokaci"
-        }
-      },
-      "dialogs": {
-        "api-keys-config": {
-          "title": "Konfigurace Api klíče"
-        },
-        "api-keys-detail": {
-          "title": "Vytvoření nového Api Api klíče"
-        },
-        "web-pages-config": {
-          "title": "Konfigurace webové stránky"
-        },
-        "web-pages-detail": {
-          "title-new": "Nová webová stránka"
-        },
-        "web-page-validators": {
-          "title": "Nastavené validátory",
-          "element": "Element",
-          "mapped-as": "Namapované na"
-        }
-      },
-      "pages": {
-        "api-keys": {
-          "title": "Api klíče",
-          "new": "Nový api klíč"
-        },
-        "web-pages": {
-          "title": "Webové stránky",
-          "new": "Nová webová stránka"
-        },
-        "web-page-detail": {
-          "tabs": {
-            "services": "Služby",
-            "stats": "Statistiky"
-          },
-          "active-service": "Aktivní služby",
-          "available-service": "Dostupné šlužby",
-          "address": {
-            "desc": "Inteligentní našeptávač adres na základe geolokací."
-          },
-          "company": {
-            "desc": "Inteligentní našeptávač firem na základe IČO, DIČ, jménu a další."
-          },
-          "email": {
-            "desc": "Validace emailu v reálnim čase."
-          },
-          "phoneNumber": {
-            "desc": "Validace a dostupnost telefonního čísla v reálnim čase."
-          }
-        }
-      },
-      "confirmations": {
-        "delete-api-key": "Snažíte se zmazat api klíč.",
-        "delete-web-page": "Snažíte se zmazat webovou stránku"
-      },
-      "messages": {
-        "api-keys": {
-          "created": "Api klíč byl uspěšne vytvořen",
-          "updated": "Api klíč byl uspěšne aktualizován",
-          "deleted": "Api klíč byl uspěšne zmazán"
-        },
-        "web-pages": {
-          "created": "Webová stránka byla uspěšne vytvořen",
-          "updated": "Webová stránka byla uspěšne aktualizován",
-          "deleted": "Webová stránka byla uspěšne zmazán"
-        },
-        "web-page-detail": {
-          "no-data-active": "Nemáte zatím žádne aktivní služby.",
-          "no-data-available": "Máte všechny dostupné služby aktivní."
+        "phoneNumber": {
+          "desc": "Validace a dostupnost telefonního čísla v reálnim čase."
         }
       }
     },
-    "settings": {
-      "confirmations": {
-        "delete": "Snažíte se zmazat fakturační účet."
+    "confirmations": {
+      "delete-api-key": "Snažíte se zmazat api klíč.",
+      "delete-web-page": "Snažíte se zmazat webovou stránku"
+    },
+    "messages": {
+      "api-keys": {
+        "created": "Api klíč byl uspěšne vytvořen",
+        "updated": "Api klíč byl uspěšne aktualizován",
+        "deleted": "Api klíč byl uspěšne zmazán"
       },
-      "messages": {
-        "created": "Fakturační účet byl uspěšne vytvořen",
-        "updated": "Fakturační účet byl uspěšne aktualizován",
-        "deleted": "Fakturační účet byl uspěšne zmazán"
+      "web-pages": {
+        "created": "Webová stránka byla uspěšne vytvořen",
+        "updated": "Webová stránka byla uspěšne aktualizován",
+        "deleted": "Webová stránka byla uspěšne zmazán"
       },
-      "fields": {
-        "company-name": "Název splečnosti",
+      "web-page-detail": {
+        "no-data-active": "Nemáte zatím žádne aktivní služby.",
+        "no-data-available": "Máte všechny dostupné služby aktivní."
+      }
+    }
+  },
+  "settings": {
+    "confirmations": {
+      "delete": "Snažíte se zmazat fakturační účet."
+    },
+    "messages": {
+      "created": "Fakturační účet byl uspěšne vytvořen",
+      "updated": "Fakturační účet byl uspěšne aktualizován",
+      "deleted": "Fakturační účet byl uspěšne zmazán"
+    },
+    "fields": {
+      "company-name": "Název splečnosti",
+      "cin": "IČO",
+      "vat": "DIČ",
+      "first-name": "Křestní jméno",
+      "last-name": "Přijmení"
+    },
+    "dialogs": {
+      "billing-detail": {
+        "new-billing-title": "Nový fakturační účet",
+        "edit-billing-title": "Editace fakturačního účtu"
+      }
+    },
+    "pages": {
+      "billing": {
+        "title": "Fakturační účty",
+        "new": "Nový fakturační účet",
         "cin": "IČO",
-        "vat": "DIČ",
-        "first-name": "Křestní jméno",
-        "last-name": "Přijmení"
+        "vat": "DIČ"
       },
-      "dialogs": {
-        "billing-detail": {
-          "new-billing-title": "Nový fakturační účet",
-          "edit-billing-title": "Editace fakturačního účtu"
-        }
-      },
-      "pages": {
-        "billing": {
-          "title": "Fakturační účty",
-          "new": "Nový fakturační účet",
-          "cin": "IČO",
-          "vat": "DIČ"
-        }
+      "personal": {
+        "title": "Preference",
+        "language": "Jazyk",
+        "language-not-set": "Jazyk aplikace nebyl nastaven. Používame jazyk prohlížeče.",
+        "en": "English",
+        "cz": "Česky",
+        "sk": "Slovensky"
       }
     }
   },

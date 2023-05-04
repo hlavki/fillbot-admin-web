@@ -3,7 +3,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { Observable, from } from 'rxjs';
 
 @Component({
-  selector: 'app-forbidden-page',
+  selector: 'fb-forbidden-page',
   templateUrl: './forbidden-page.component.html',
   styleUrls: ['./forbidden-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

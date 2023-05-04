@@ -16,4 +16,4 @@
   </button>
 </div>
 
-<app-menu *ngIf="isMenuVisible$ | async" class="menu" (selected)="isMenuVisible$.next(false)"></app-menu>
+<fb-menu *ngIf="isMenuVisible$ | async" class="menu" (selected)="isMenuVisible$.next(false)"></fb-menu>

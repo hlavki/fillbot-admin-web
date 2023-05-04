@@ -3,6 +3,7 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[fb-form-message]',
   template: '<span>{{ errorMessage() | translate }}</span>',
 })
@@ -16,6 +17,7 @@ export class FormMessageComponent {
 
   errorMessage(): string {
     for (const propertyName in this.control.errors) {
+      // eslint-disable-next-line no-prototype-builtins
       if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
         return this.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
       }
@@ -25,7 +27,7 @@ export class FormMessageComponent {
   }
 
   private getValidatorErrorMessage(validatorName: string, validatorValue?: ValidationErrors): string {
-    const validatorMessages = {
+    const validatorMessages: Record<string, string> = {
       required: this.translateService.instant('messages.required'),
       decimal: this.translateService.instant('messages.decimal'),
       zipCode: this.translateService.instant('messages.zipCode'),

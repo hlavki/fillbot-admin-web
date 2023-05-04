@@ -3,7 +3,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { Observable, from } from 'rxjs';
 
 @Component({
-  selector: 'app-not-found-page',
+  selector: 'fb-not-found-page',
   templateUrl: './not-found-page.component.html',
   styleUrls: ['./not-found-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

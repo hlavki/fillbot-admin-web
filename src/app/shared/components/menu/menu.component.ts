@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'app-menu',
+  selector: 'fb-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,9 +19,9 @@ export class MenuComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.router.url.includes('/secured/settings')) {
+    if (this.router.url.includes('/settings')) {
       this.expandedIndex$.next(3);
-    } else if (this.router.url.includes('/secured/projects')) {
+    } else if (this.router.url.includes('/projects')) {
       this.expandedIndex$.next(1);
     }
   }

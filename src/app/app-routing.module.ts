@@ -1,24 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { BillingGuard } from '@core/guards/billing/billing.guard';
+import { AuthGuard } from '@core/guards/auth/auth.quard';
+import { SettingsGuard } from '@core/guards/settings/settings.quard';
+
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./public/public.module').then(m => m.PublicModule),
+    canActivate: [AuthGuard, SettingsGuard, BillingGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule),
+      },
+      {
+        path: 'system',
+        loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
+      },
+      { path: '**', redirectTo: '/system/not-found' },
+    ],
   },
-  {
-    path: 'secured',
-    loadChildren: () => import('./secured/secured.module').then(m => m.SecuredModule),
-  },
-  {
-    path: 'system',
-    loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
-  },
-  { path: '**', redirectTo: '/system/not-found' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

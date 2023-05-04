@@ -8,12 +8,12 @@
 
 <mat-dialog-actions fxLayoutAlign="end center">
   <button mat-flat-button [mat-dialog-close]="">
-    <span translate>secured.core.buttons.cancel</span>
+    <span translate>core.buttons.cancel</span>
   </button>
   <button *ngIf="!data.type" color="primary" mat-flat-button [mat-dialog-close]="{ success: true }">
-    <span translate>secured.core.buttons.confirm</span>
+    <span translate>core.buttons.confirm</span>
   </button>
   <button *ngIf="data.type === 'warn'" color="warn" mat-flat-button [mat-dialog-close]="{ success: true }">
-    <span translate>secured.core.buttons.delete</span>
+    <span translate>core.buttons.delete</span>
   </button>
 </mat-dialog-actions>

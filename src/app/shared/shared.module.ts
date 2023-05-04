@@ -15,7 +15,7 @@ import { ConfirmationDialogComponent } from './dialogs/confirmation-dialog/confi
 @NgModule({
   declarations: [
     BillingDetailDialogComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
   ],
   imports: [
     CommonModule,
