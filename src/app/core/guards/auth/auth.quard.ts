@@ -22,6 +22,7 @@ export class AuthGuard extends KeycloakAuthGuard {
       options.redirectUri = window.location.href;
 
       await this.keycloakService.login(options);
+      return false;
     }
     return true;
   }
