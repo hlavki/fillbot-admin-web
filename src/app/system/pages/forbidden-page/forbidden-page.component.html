@@ -10,9 +10,6 @@
         </div>
 
         <div fxLayoutAlign="center" fxLayoutGap="16px" fxLayout.lt-sm="column">
-          <button mat-raised-button color="primary" [routerLink]="['/', 'home']">
-            <span translate>system.buttons.home</span>
-          </button>
           <button *ngIf="isLoggedIn$ | async" mat-raised-button color="primary" [routerLink]="['/']">
             <span translate>system.buttons.admin</span>
           </button>

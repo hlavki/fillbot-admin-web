@@ -220,7 +220,6 @@
   },
   "system": {
     "buttons": {
-      "home": "Přejít na domovní stránku",
       "admin": "Přejít na administraci"
     },
     "pages": {

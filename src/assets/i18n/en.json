@@ -220,7 +220,6 @@
   },
   "system": {
     "buttons": {
-      "home": "Go to home page",
       "admin": "Go to administration"
     },
     "pages": {
