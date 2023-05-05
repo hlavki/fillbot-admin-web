@@ -95,6 +95,6 @@ export class BillingDetailDialogComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.keycloakService.logout(`${window.location.origin}/home`);
+    this.keycloakService.logout(window.location.origin);
   }
 }

@@ -17,6 +17,6 @@ export class ToolbarComponent {
   ) {}
 
   onLogout(): void {
-    this.keycloakService.logout(`${window.location.origin}/home`);
+    this.keycloakService.logout(window.location.origin);
   }
 }

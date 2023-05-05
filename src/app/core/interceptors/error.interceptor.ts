@@ -20,7 +20,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
       .pipe(
         catchError((errorResponse: HttpErrorResponse) => {
           if (errorResponse.status === 401) {
-            this.keycloakService.logout(`${window.location.origin}/home`);
+            this.keycloakService.logout(window.location.origin);
           } else if (errorResponse.status === 403) {
             this.dialog.closeAll();
             this.router.navigate(['/', 'system', 'forbidden']);

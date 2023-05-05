@@ -22,7 +22,7 @@ export class BillingGuard implements CanActivate {
           closeOnNavigation: false,
           disableClose: true,
         }).afterClosed().pipe(
-          map((result: boolean) => result || this.router.parseUrl('/home')),
+          map((result: boolean) => result || this.router.parseUrl('/')),
         ) : of(true)),
     );
   }
