@@ -8,17 +8,23 @@ import { SettingsGuard } from '@core/guards/settings/settings.quard';
 const routes: Routes = [
   {
     path: '',
-    canActivate: [AuthGuard, SettingsGuard, BillingGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
-        loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule),
+        canActivate: [SettingsGuard, BillingGuard],
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule),
+          },
+          {
+            path: 'system',
+            loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
+          },
+          { path: '**', redirectTo: '/system/not-found' },
+        ],
       },
-      {
-        path: 'system',
-        loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
-      },
-      { path: '**', redirectTo: '/system/not-found' },
     ],
   },
 ];
