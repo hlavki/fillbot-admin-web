@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   keycloak: {
     params: {
-      realm: 'api-platform',
+      realm: 'fillbot',
       url: 'https://sso.dev.fillbot.app',
       clientId: 'admin-web',
     },
