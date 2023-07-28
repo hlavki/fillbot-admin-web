@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "https://dev.fillbot.app",
+    "target": "https://admin.dev.fillbot.app",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"

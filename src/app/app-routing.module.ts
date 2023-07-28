@@ -11,16 +11,16 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
+        path: 'system',
+        loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
+      },
+      {
         path: '',
         canActivate: [SettingsGuard, BillingGuard],
         children: [
           {
             path: '',
             loadChildren: () => import('./modules/modules.module').then(m => m.ModulesModule),
-          },
-          {
-            path: 'system',
-            loadChildren: () => import('./system/system.module').then(m => m.SystemModule),
           },
           { path: '**', redirectTo: '/system/not-found' },
         ],
