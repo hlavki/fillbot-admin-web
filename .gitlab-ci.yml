@@ -13,3 +13,5 @@ deploy:
   extends: .deploy-to-dev-tpl
   variables:
     ENV: dev
+  only:
+    - main
