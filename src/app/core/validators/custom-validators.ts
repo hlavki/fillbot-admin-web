@@ -16,7 +16,7 @@ export class CustomValidators {
   }
 
   static url(control: AbstractControl): ValidationErrors | null {
-    if (control.value && !(new RegExp('([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')).test(control.value)) {
+    if (control.value && !(new RegExp('([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?|localhost')).test(control.value)) {
       return { url : control.value };
     }
     return null;
