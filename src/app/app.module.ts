@@ -2,7 +2,7 @@ import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateCompiler, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatDialogConfig, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
@@ -51,4 +51,16 @@ import { HttpErrorInterceptor } from './core/interceptors/error.interceptor';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  private readonly ALLOWED_TRANSLATIONS: string[] = ['cs', 'sk'];
+  
+  constructor(
+    private readonly translateService: TranslateService,
+  ) {
+    if (this.ALLOWED_TRANSLATIONS.includes(navigator.language.substring(0, 2))) {
+      this.translateService.setDefaultLang(navigator.language.substring(0, 2));
+    } else {
+      this.translateService.setDefaultLang('en');
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, UrlTree } from '@angular/router';
-import { map, Observable, of, switchMap } from 'rxjs';
+import { catchError, map, Observable, of, switchMap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
 import { BillingDetailDialogComponent } from '@shared/dialogs/billing-detail-dialog/billing-detail-dialog.component';
@@ -17,6 +17,10 @@ export class BillingGuard implements CanActivate {
 
   canActivate(): Observable<boolean | UrlTree> {
     return this.billingService.checkBillingProfile().pipe(
+      catchError(() => {
+        this.router.navigate(['/', 'system', 'error']);
+        return of(false);
+      }),
       switchMap((hasBillingProfile: boolean) => !hasBillingProfile ?
         this.dialog.open(BillingDetailDialogComponent, {
           closeOnNavigation: false,
