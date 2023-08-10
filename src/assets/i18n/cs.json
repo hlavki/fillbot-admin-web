@@ -73,7 +73,7 @@
       "STANDARD": "Štandard",
       "PRO": "Profesionál"
     },
-    "servise-config": {
+    "service-config": {
       "ADDRESS": "Adresy",
       "EMAIL": "E-maily",
       "PHONE_NUMBER": "Telefónní čísla",
@@ -97,7 +97,7 @@
         "note": "Cena pro roční tarif / Cena měsíčně"
       },
       "url": {
-        "label": "Origin webové stránky"
+        "label": "Adresa webu"
       },
       "enabled": {
         "label": "Aktívní"
@@ -138,6 +138,7 @@
         "new": "Nová webová stránka"
       },
       "web-page-detail": {
+        "configure-button": "Spusti konfiguraci",
         "tabs": {
           "services": "Služby",
           "stats": "Statistiky"

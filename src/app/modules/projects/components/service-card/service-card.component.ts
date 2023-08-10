@@ -6,6 +6,7 @@ import { IWebConfigValidatorDto, IWebPageConfigDto } from '@fb/core/api/interfac
 import { EServiceConfigType } from '@fb/core/enums/service-config-type.enum';
 import { MatDialog } from '@angular/material/dialog';
 import { WebPageValidatorsDialogComponent } from '../../dialogs/web-page-validators-dialog/web-page-validators-dialog.component';
+import {getConfiguratorUrl} from '@core/utils/webPageUtil';
 
 @Component({
   selector: 'fb-service-card',
@@ -56,7 +57,7 @@ export class ServiceCardComponent implements OnInit {
   }
 
   navigate(originSite: string): void {
-    window.open(`${originSite.startsWith('http') ? originSite : `https://${originSite}`}?config=true`, '_blank');
+    window.open(getConfiguratorUrl(originSite), '_blank');
   }
 
   onSwowValidators(validators: IWebConfigValidatorDto[]): void {

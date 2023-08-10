@@ -13,6 +13,7 @@ import { ServiceCardComponent } from './components/service-card/service-card.com
 import { ConfigTabComponent } from './pages/web-page-detail-page/tabs/config-tab/config-tab.component';
 import { StaticsTabComponent } from './pages/web-page-detail-page/tabs/statics-tab/statics-tab.component';
 import { WebPageValidatorsDialogComponent } from './dialogs/web-page-validators-dialog/web-page-validators-dialog.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { WebPageValidatorsDialogComponent } from './dialogs/web-page-validators-
     CommonModule,
     ProjectsRoutingModule,
     SharedModule,
+    MatButtonToggleModule,
   ],
 })
 export class ProjectsModule { }

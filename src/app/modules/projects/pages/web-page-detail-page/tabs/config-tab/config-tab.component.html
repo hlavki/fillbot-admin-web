@@ -3,36 +3,44 @@
 <ng-template #notLoading>
   <div fxLayout="column" fxLayoutGap="16px">
     <div fxLayout="column">
+      <button mat-flat-button color="primary" style="width:50%" (click)="navigate()">
+        <span translate>projects.pages.web-page-detail.configure-button</span>
+      </button>
+<!--      <mat-button-toggle style="width:50%" [disabled]="form.invalid || !form.dirty" (click)="onSubmit(form.value)">-->
+<!--        <span translate>projects.pages.web-page-detail.configure-button</span>-->
+<!--      </mat-button-toggle>-->
+    </div>
+    <div fxLayout="column">
       <h2 translate>projects.pages.web-page-detail.active-service</h2>
 
       <div *ngIf="(activeServices$ | async).length; else noActiveServices" fxLayout="row wrap" class="fb-gap">
         <fb-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.ADDRESS)"
-                          [active]="true"
-                          [type]="eServiceConfigType.ADDRESS"
-                          [origin]="origin$ | async"
-                          [config]="dataWebPageConfig$ | async"
-                          (configChanged)="onConfigChanged($event)">
+                         [active]="true"
+                         [type]="eServiceConfigType.ADDRESS"
+                         [origin]="origin$ | async"
+                         [config]="dataWebPageConfig$ | async"
+                         (configChanged)="onConfigChanged($event)">
         </fb-service-card>
         <fb-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.EMAIL)"
-                          [active]="true"
-                          [type]="eServiceConfigType.EMAIL"
-                          [origin]="origin$ | async"
-                          [config]="dataWebPageConfig$ | async"
-                          (configChanged)="onConfigChanged($event)">
+                         [active]="true"
+                         [type]="eServiceConfigType.EMAIL"
+                         [origin]="origin$ | async"
+                         [config]="dataWebPageConfig$ | async"
+                         (configChanged)="onConfigChanged($event)">
         </fb-service-card>
         <fb-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.COMPANY)"
-                          [active]="true"
-                          [type]="eServiceConfigType.COMPANY"
-                          [origin]="origin$ | async"
-                          [config]="dataWebPageConfig$ | async"
-                          (configChanged)="onConfigChanged($event)">
+                         [active]="true"
+                         [type]="eServiceConfigType.COMPANY"
+                         [origin]="origin$ | async"
+                         [config]="dataWebPageConfig$ | async"
+                         (configChanged)="onConfigChanged($event)">
         </fb-service-card>
         <fb-service-card *ngIf="(activeServices$ | async).includes(eServiceConfigType.PHONE_NUMBER)"
-                          [active]="true"
-                          [type]="eServiceConfigType.PHONE_NUMBER"
-                          [origin]="origin$ | async"
-                          [config]="dataWebPageConfig$ | async"
-                          (configChanged)="onConfigChanged($event)">
+                         [active]="true"
+                         [type]="eServiceConfigType.PHONE_NUMBER"
+                         [origin]="origin$ | async"
+                         [config]="dataWebPageConfig$ | async"
+                         (configChanged)="onConfigChanged($event)">
         </fb-service-card>
       </div>
 
@@ -46,24 +54,24 @@
 
       <div *ngIf="(possibleServices$ | async).length; else noAvailableServices" fxLayout="row wrap" class="fb-gap">
         <fb-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.ADDRESS)"
-                          [config]="$any({})"
-                          [origin]="origin$ | async"
-                          [type]="eServiceConfigType.ADDRESS">
+                         [config]="$any({})"
+                         [origin]="origin$ | async"
+                         [type]="eServiceConfigType.ADDRESS">
         </fb-service-card>
         <fb-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.EMAIL)"
-                          [config]="$any({})"
-                          [origin]="origin$ | async"
-                          [type]="eServiceConfigType.EMAIL">
+                         [config]="$any({})"
+                         [origin]="origin$ | async"
+                         [type]="eServiceConfigType.EMAIL">
         </fb-service-card>
         <fb-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.COMPANY)"
-                          [config]="$any({})"
-                          [origin]="origin$ | async"
-                          [type]="eServiceConfigType.COMPANY">
+                         [config]="$any({})"
+                         [origin]="origin$ | async"
+                         [type]="eServiceConfigType.COMPANY">
         </fb-service-card>
         <fb-service-card *ngIf="(possibleServices$ | async).includes(eServiceConfigType.PHONE_NUMBER)"
-                          [config]="$any({})"
-                          [origin]="origin$ | async"
-                          [type]="eServiceConfigType.PHONE_NUMBER">
+                         [config]="$any({})"
+                         [origin]="origin$ | async"
+                         [type]="eServiceConfigType.PHONE_NUMBER">
         </fb-service-card>
       </div>
 

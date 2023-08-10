@@ -1,16 +1,17 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, finalize, filter, switchMap } from 'rxjs';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {BehaviorSubject, filter, finalize, switchMap} from 'rxjs';
 
-import { IWebPageDto } from '@fb/core/api/interfaces/web-page-dto.interface';
-import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
-import { IDialogClose } from '@fb/core/interfaces/dialog-close.interface';
+import {IWebPageDto} from '@fb/core/api/interfaces/web-page-dto.interface';
+import {WebPagesService} from '@fb/core/api/services/web-pages/web-pages.service';
+import {IDialogClose} from '@fb/core/interfaces/dialog-close.interface';
 
-import { WebPageDetailDialogComponent } from '../../dialogs/web-page-detail-dialog/web-page-detail-dialog.component';
-import { NotificationService } from '@fb/core/services/notification/notification.service';
-import { TranslateService } from '@ngx-translate/core';
-import { ConfirmationDialogComponent } from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
-import { Router } from '@angular/router';
+import {WebPageDetailDialogComponent} from '../../dialogs/web-page-detail-dialog/web-page-detail-dialog.component';
+import {NotificationService} from '@fb/core/services/notification/notification.service';
+import {TranslateService} from '@ngx-translate/core';
+import {ConfirmationDialogComponent} from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
+import {Router} from '@angular/router';
+import {getConfiguratorUrl} from '@core/utils/webPageUtil';
 
 @Component({
   selector: 'fb-web-pages-page',
@@ -28,7 +29,8 @@ export class WebPagesPageComponent implements OnInit {
     private readonly notificationService: NotificationService,
     private readonly translateService: TranslateService,
     private readonly router: Router,
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.loadData();
@@ -72,7 +74,7 @@ export class WebPagesPageComponent implements OnInit {
 
   navigate(event: Event, originSite: string): void {
     event.stopPropagation();
-    window.open(`${originSite.startsWith('http') ? originSite : `https://${originSite}`}?config=true`, '_blank');
+    window.open(getConfiguratorUrl(originSite), '_blank');
   }
 
   private loadData(): void {

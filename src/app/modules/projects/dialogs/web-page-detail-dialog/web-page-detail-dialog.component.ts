@@ -7,13 +7,11 @@ import { IBillingProfileDto } from '@fb/core/api/interfaces/billing-profile-dto.
 import { BillingService } from '@fb/core/api/services/billing/billing.service';
 import { IPricingTierDto } from '@fb/core/api/interfaces/pricing-tier-dto.interface';
 import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
-import { EProtocolValue } from '@fb/core/enums/protocol.enum';
 import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 interface IApiKeyDetailForm {
   id: string;
   enabled: boolean;
-  protocol: EProtocolValue,
   name: string;
   originSite: string;
   billingProfile: IBillingProfileDto;
@@ -26,7 +24,6 @@ interface IApiKeyDetailForm {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WebPageDetailDialogComponent implements OnInit {
-  readonly eProtocolValue = EProtocolValue;
   readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
 
   form: FormGroup;
@@ -54,7 +51,6 @@ export class WebPageDetailDialogComponent implements OnInit {
       this.form =  this.fb.group({
         id: null,
         name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-        protocol: [EProtocolValue.HTTPS],
         originSite: [null, [Validators.required, CustomValidators.url, Validators.maxLength(100)]],
         billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
         pricingTier: [null, Validators.required],
@@ -67,7 +63,7 @@ export class WebPageDetailDialogComponent implements OnInit {
     this.webPagesService.createWebPage({
       id: undefined,
       name: formValue.name,
-      originSite: `${formValue.protocol}${formValue.originSite}`,
+      originSite: formValue.originSite,
       pricingTier: formValue.pricingTier,
       billingProfile: formValue.billingProfile,
       enabled: formValue.enabled,

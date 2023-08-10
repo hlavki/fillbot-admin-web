@@ -6,6 +6,7 @@ import { IWebPageConfigDto } from '@fb/core/api/interfaces/web-page-config.inter
 import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
 import { EServiceConfigType } from '@fb/core/enums/service-config-type.enum';
 import { WebPageDetailDataService } from '@fb/core/services/web-page-detail-data/web-page-detail-data.service';
+import {getConfiguratorUrl} from '@core/utils/webPageUtil';
 
 @Component({
   selector: 'fb-config-tab',
@@ -53,6 +54,10 @@ export class ConfigTabComponent implements OnInit {
     ).subscribe((webPageConfig: IWebPageConfigDto) => {
       this.dataWebPageConfig$.next(webPageConfig);
     });
+  }
+
+  navigate(): void {
+    this.origin$.subscribe((origin: string) => window.open(getConfiguratorUrl(origin), '_blank'));
   }
 
   onConfigChanged(config: Partial<IWebPageConfigDto>): void {

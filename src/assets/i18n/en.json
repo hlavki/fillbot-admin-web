@@ -73,7 +73,7 @@
       "STANDARD": "Standard",
       "PRO": "Profesional"
     },
-    "servise-config": {
+    "service-config": {
       "ADDRESS": "Addresses",
       "EMAIL": "E-mails",
       "PHONE_NUMBER": "Phone numbers",
@@ -97,7 +97,7 @@
         "note": "Note: Annual price / Monthly price"
       },
       "url": {
-        "label": "Web page origin url"
+        "label": "Web page"
       },
       "enabled": {
         "label": "Active"
@@ -138,6 +138,7 @@
         "new": "New web page"
       },
       "web-page-detail": {
+        "configure-button": "Launch configuration widget",
         "tabs": {
           "services": "Services",
           "stats": "Statistics"
