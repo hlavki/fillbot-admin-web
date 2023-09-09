@@ -58,7 +58,7 @@ export class WebPageDetailDialogComponent implements OnInit {
         name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
         originSite: [null, [Validators.required, CustomValidators.url, Validators.maxLength(100)]],
         billingProfile: [this.billingProfiles.length === 1 ? this.billingProfiles[0] : null, Validators.required],
-        pricingTier: [null, Validators.required],
+        pricingTier: [this.presetPricingTier(), Validators.required],
       });
     });
   }
@@ -75,5 +75,9 @@ export class WebPageDetailDialogComponent implements OnInit {
     }).pipe(
       finalize(() => this.isLoading$.next(true)),
     ).subscribe(() => this.dialogRef.close({success: true}));
+  }
+
+  presetPricingTier(): IPricingTierDto {
+    return this.pricingTiers.find((pricingTier: IPricingTierDto) => pricingTier.preset === true);
   }
 }
