@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BehaviorSubject, finalize, forkJoin } from 'rxjs';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -8,6 +8,7 @@ import { BillingService } from '@fb/core/api/services/billing/billing.service';
 import { IPricingTierDto } from '@fb/core/api/interfaces/pricing-tier-dto.interface';
 import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
 import { CustomValidators } from '@fb/core/validators/custom-validators';
+import { TranslateService } from '@ngx-translate/core';
 
 interface IApiKeyDetailForm {
   id: string;
@@ -25,6 +26,7 @@ interface IApiKeyDetailForm {
 })
 export class WebPageDetailDialogComponent implements OnInit {
   readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  currentLang: string = this.translateService.currentLang;
 
   form: FormGroup;
 
@@ -34,21 +36,24 @@ export class WebPageDetailDialogComponent implements OnInit {
   constructor(
     private readonly webPagesService: WebPagesService,
     private readonly billingService: BillingService,
+    private readonly translateService: TranslateService,
     private readonly fb: FormBuilder,
     private readonly dialogRef: MatDialogRef<WebPageDetailDialogComponent>,
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
+    console.log('currentLang', this.currentLang);
     forkJoin([
       this.billingService.getBillingProfiles(),
-      this.webPagesService.getPricingTiers(),
+      this.webPagesService.getPricingTiers(this.currentLang),
     ]).pipe(
       finalize(() => this.isLoading$.next(false)),
     ).subscribe(([billingProfiles, pricingTiers]: [IBillingProfileDto[], IPricingTierDto[]]) => {
       this.billingProfiles = billingProfiles;
       this.pricingTiers = pricingTiers;
 
-      this.form =  this.fb.group({
+      this.form = this.fb.group({
         id: null,
         name: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
         originSite: [null, [Validators.required, CustomValidators.url, Validators.maxLength(100)]],
@@ -69,6 +74,6 @@ export class WebPageDetailDialogComponent implements OnInit {
       enabled: formValue.enabled,
     }).pipe(
       finalize(() => this.isLoading$.next(true)),
-    ).subscribe(() => this.dialogRef.close({ success: true }));
+    ).subscribe(() => this.dialogRef.close({success: true}));
   }
 }

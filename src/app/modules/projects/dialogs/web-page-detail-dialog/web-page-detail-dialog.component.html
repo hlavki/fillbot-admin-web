@@ -36,8 +36,8 @@
         <mat-select formControlName="pricingTier">
           <mat-option *ngFor="let pricingTier of pricingTiers" [value]="pricingTier">
             <strong>{{ ('enums.pricing-tier.' + pricingTier.code) | translate }}</strong>
-            <span>&nbsp;-&nbsp;{{ pricingTier.annualPrice }}&nbsp;€</span>
-            <span>&nbsp;/&nbsp;{{ pricingTier.monthlyPrice }}&nbsp;€</span>
+            <span>&nbsp;-&nbsp;{{ pricingTier.annualPrice.amount | currency: pricingTier.annualPrice.currency:'symbol-narrow':'2.0':currentLang }}</span>
+            <span>&nbsp;/&nbsp;{{ pricingTier.monthlyPrice.amount | currency: pricingTier.monthlyPrice.currency:'symbol-narrow':'2.0':currentLang }}</span>
           </mat-option>
         </mat-select>
         <mat-hint translate>projects.fields.pricing-tier.note</mat-hint>

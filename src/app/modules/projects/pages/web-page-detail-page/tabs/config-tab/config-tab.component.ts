@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { BehaviorSubject, Observable, finalize, map, switchMap } from 'rxjs';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {BehaviorSubject, Observable, finalize, map, switchMap} from 'rxjs';
 
-import { IWebPageConfigDto } from '@fb/core/api/interfaces/web-page-config.interface';
-import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
-import { EServiceConfigType } from '@fb/core/enums/service-config-type.enum';
-import { WebPageDetailDataService } from '@fb/core/services/web-page-detail-data/web-page-detail-data.service';
+import {IWebPageConfigDto} from '@fb/core/api/interfaces/web-page-config.interface';
+import {WebPagesService} from '@fb/core/api/services/web-pages/web-pages.service';
+import {EServiceConfigType} from '@fb/core/enums/service-config-type.enum';
+import {WebPageDetailDataService} from '@fb/core/services/web-page-detail-data/web-page-detail-data.service';
 import {getConfiguratorUrl} from '@core/utils/webPageUtil';
 
 @Component({
@@ -21,7 +21,7 @@ export class ConfigTabComponent implements OnInit {
   readonly dataWebPageConfig$: BehaviorSubject<IWebPageConfigDto> = new BehaviorSubject<IWebPageConfigDto>(null);
   readonly origin$: Observable<string> = this.webPageDetailDataService.getOrigin();
 
-   readonly activeServices$: Observable<EServiceConfigType[]> = this.dataWebPageConfig$.asObservable().pipe(
+  readonly activeServices$: Observable<EServiceConfigType[]> = this.dataWebPageConfig$.asObservable().pipe(
     map((webPageConfig: IWebPageConfigDto) => [
       ...(webPageConfig.address.validators.length ? [EServiceConfigType.ADDRESS] : []) as EServiceConfigType[],
       ...(webPageConfig.email.validators.length ? [EServiceConfigType.EMAIL] : []) as EServiceConfigType[],
@@ -56,8 +56,11 @@ export class ConfigTabComponent implements OnInit {
     });
   }
 
-  navigate(): void {
-    this.origin$.subscribe((origin: string) => window.open(getConfiguratorUrl(origin), '_blank'));
+  startConfigurationWidget(): void {
+    this.origin$.subscribe((origin: string) => {
+      console.log(`Opening configurator for ${getConfiguratorUrl(origin)}`);
+      window.open(getConfiguratorUrl(origin), '_blank');
+    });
   }
 
   onConfigChanged(config: Partial<IWebPageConfigDto>): void {

@@ -47,7 +47,7 @@ describe('WebPageDetailDialogComponent', () => {
         },
       ],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(WebPageDetailDialogComponent);
     component = fixture.componentInstance;

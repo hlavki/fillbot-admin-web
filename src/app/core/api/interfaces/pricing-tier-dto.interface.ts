@@ -1,11 +1,8 @@
+import { IPriceDto } from '@core/api/interfaces/price-dto.interface';
+
 export interface IPricingTierDto {
   code: string;
-  name: string;
-  order: number;
-  validFrom: string;
-  validTo: string;
-  selected: boolean;
-  valid: boolean;
-  monthlyPrice: number;
-  annualPrice: number;
+  monthlyPrice: IPriceDto;
+  annualPrice: IPriceDto;
+  preset: boolean;
 }

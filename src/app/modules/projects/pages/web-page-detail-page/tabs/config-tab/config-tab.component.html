@@ -3,14 +3,6 @@
 <ng-template #notLoading>
   <div fxLayout="column" fxLayoutGap="16px">
     <div fxLayout="column">
-      <button mat-flat-button color="primary" style="width:50%" (click)="navigate()">
-        <span translate>projects.pages.web-page-detail.configure-button</span>
-      </button>
-<!--      <mat-button-toggle style="width:50%" [disabled]="form.invalid || !form.dirty" (click)="onSubmit(form.value)">-->
-<!--        <span translate>projects.pages.web-page-detail.configure-button</span>-->
-<!--      </mat-button-toggle>-->
-    </div>
-    <div fxLayout="column">
       <h2 translate>projects.pages.web-page-detail.active-service</h2>
 
       <div *ngIf="(activeServices$ | async).length; else noActiveServices" fxLayout="row wrap" class="fb-gap">

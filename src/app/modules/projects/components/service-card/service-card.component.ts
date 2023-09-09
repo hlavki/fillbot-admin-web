@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { tap, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 
 import { IWebConfigValidatorDto, IWebPageConfigDto } from '@fb/core/api/interfaces/web-page-config.interface';
 import { EServiceConfigType } from '@fb/core/enums/service-config-type.enum';
 import { MatDialog } from '@angular/material/dialog';
 import { WebPageValidatorsDialogComponent } from '../../dialogs/web-page-validators-dialog/web-page-validators-dialog.component';
-import {getConfiguratorUrl} from '@core/utils/webPageUtil';
+import { getConfiguratorUrl } from '@core/utils/webPageUtil';
 
 @Component({
   selector: 'fb-service-card',
@@ -31,7 +31,8 @@ export class ServiceCardComponent implements OnInit {
   constructor(
     private readonly fb: FormBuilder,
     private readonly dialog: MatDialog,
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     if (this.active) {
@@ -57,17 +58,18 @@ export class ServiceCardComponent implements OnInit {
   }
 
   navigate(originSite: string): void {
+    console.log(`Opening configurator for ${getConfiguratorUrl(originSite)}`);
     window.open(getConfiguratorUrl(originSite), '_blank');
   }
 
-  onSwowValidators(validators: IWebConfigValidatorDto[]): void {
+  onShowValidators(validators: IWebConfigValidatorDto[]): void {
     this.dialog.open(WebPageValidatorsDialogComponent, {
       data: validators,
     });
   }
 
   private changeEnabled(type: EServiceConfigType, key: string, value: boolean): void {
-    switch(type) {
+    switch (type) {
       case EServiceConfigType.ADDRESS:
         this.configChanged.emit({
           address: {
@@ -104,7 +106,7 @@ export class ServiceCardComponent implements OnInit {
   }
 
   private createForm(type: EServiceConfigType): FormGroup {
-    switch(type) {
+    switch (type) {
       case EServiceConfigType.ADDRESS:
         return this.fb.group({
           enabled: this.config.address?.enabled,
