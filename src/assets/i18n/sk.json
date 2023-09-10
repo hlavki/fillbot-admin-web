@@ -19,27 +19,27 @@
       "confirm": "Confirm"
     },
     "menu": {
-      "dashboard": "Dashboard",
-      "projects": "Projects",
-      "web-pages": "Web pages",
-      "api-keys": "Api keys",
-      "statistics": "Statistics",
-      "settings": "Settings",
+      "dashboard": "Panel",
+      "projects": "Projekty",
+      "web-pages": "Web stránky",
+      "api-keys": "Api kľúče",
+      "statistics": "Štatistiky",
+      "settings": "Nastavenia",
       "personal": "Preferencie",
-      "billing-profiles": "Billing profiles",
-      "security": "Security"
+      "billing-profiles": "Fakturačné účty",
+      "security": "Bezpečnosť"
     },
     "messages": {
-      "copied-to-clipboard": "Copied to clipboard"
+      "copied-to-clipboard": "Skopírované do schránky"
     },
     "fields": {
       "address": {
-        "street": "Street",
-        "register-number": "Register number",
-        "reference-number": "Reference number",
-        "zip-code": "Zip code",
-        "city": "City",
-        "country": "Country"
+        "street": "Ulica",
+        "register-number": "Číslo popisné",
+        "reference-number": "Číslo orientačné",
+        "zip-code": "PSČ",
+        "city": "Mesto",
+        "country": "Krajina"
       }
     },
     "breadcrumbs": {
@@ -56,8 +56,8 @@
   },
   "enums": {
     "billing-type": {
-      "PERSONAL": "Personal",
-      "COMPANY": "Company"
+      "PERSONAL": "Osobný",
+      "COMPANY": "Firemný"
     },
     "country": {
       "CZ": "CZ",
@@ -68,9 +68,9 @@
       "EUR": "EUR"
     },
     "pricing-tier": {
-      "BASIC": "Basic",
-      "STANDARD": "Standard",
-      "PRO": "Profesional"
+      "BASIC": "Základný",
+      "STANDARD": "Štandardný",
+      "PRO": "Profesionálny"
     },
     "service-config": {
       "ADDRESS": "Adresy",
@@ -83,8 +83,8 @@
   "projects": {
     "fields": {
       "daily-amount-limit": {
-        "label": "Daily amount limit",
-        "note": "Note: If you don't want to have any limit, let this field empty."
+        "label": "Denný limit",
+        "note": "Poznámka: Ak nechcete mať žiadny limit, nechajte toto pole prázdne."
       },
       "name": {
         "label": "Názov"
@@ -94,7 +94,7 @@
       },
       "pricing-tier": {
         "label": "Tarif",
-        "note": "Note: Cena pre ročný tarif / Cena mesačne"
+        "note": "Poznámka: Cena pre ročný tarif / Cena mesačne"
       },
       "url": {
         "label": "Adresa web stránky"
@@ -111,16 +111,16 @@
     },
     "dialogs": {
       "api-keys-config": {
-        "title": "Api key configuration"
+        "title": "Api kľúče"
       },
       "api-keys-detail": {
-        "title": "New Api key"
+        "title": "Nový api kľúč"
       },
       "web-pages-config": {
-        "title": "Web page configuration"
+        "title": "Web stránky"
       },
       "web-pages-detail": {
-        "title-new": "New Web page"
+        "title-new": "Nová web stránka"
       },
       "web-page-validators": {
         "title": "Nastavené validátory",
@@ -130,12 +130,12 @@
     },
     "pages": {
       "api-keys": {
-        "title": "Api keys",
-        "new": "New api key"
+        "title": "Api kľúče",
+        "new": "Nový api kľúč"
       },
       "web-pages": {
-        "title": "Web pages",
-        "new": "New web page"
+        "title": "Web stránky",
+        "new": "Nová web stránka"
       },
       "web-page-detail": {
         "configure-button": "Spusti konfiguráciu",
@@ -146,7 +146,7 @@
         "active-service": "Aktivné služby",
         "available-service": "Dostupné šlužby",
         "address": {
-          "desc": "Inteligentný našeptávač adres na základe geolokacií."
+          "desc": "Inteligentný našeptávač adries na základe geolokacií."
         },
         "company": {
           "desc": "Inteligentný našeptávač firem na základe IČO, DIČ, názvu a pod."
@@ -160,19 +160,19 @@
       }
     },
     "confirmations": {
-      "delete-api-key": "You are trying to delete api key.",
-      "delete-web-page": "You are trying to delete web page."
+      "delete-api-key": "Pokúšate sa odstrániť kľúč api.",
+      "delete-web-page": "Pokúšate sa odstrániť webovú stránku."
     },
     "messages": {
       "api-keys": {
-        "created": "Api key was successfully created",
-        "updated": "Api key was successfully updated",
-        "deleted": "Api key was successfully deleted"
+        "created": "Api kľúč bol úspešne vytvorený",
+        "updated": "Api kľúč bol úspešne aktualizovaný",
+        "deleted": "Api kľúč bol úspešne odstránený"
       },
       "web-pages": {
-        "created": "Web page was successfully created",
-        "updated": "Web page was successfully updated",
-        "deleted": "Web page was successfully deleted"
+        "created": "Webová stránka bola úspešne vytvorená",
+        "updated": "Webová stránka bola úspešne aktualizovaná",
+        "deleted": "Webová stránka bola úspešne odstránená"
       },
       "web-page-detail": {
         "no-data-active": "Nemáte zatiaľ žiadne aktívne služby.",
@@ -182,32 +182,32 @@
   },
   "settings": {
     "confirmations": {
-      "delete": "You are trying to delete billing profile."
+      "delete": "Pokúšate sa vymazať fakturačný profil."
     },
     "messages": {
-      "created": "Billing profile was successfully created",
-      "updated": "Billing profile was successfully updated",
-      "deleted": "Billing profile was successfully deleted"
+      "created": "Fakturačný profil bol úspešne vytvorený",
+      "updated": "Fakturačný profil bol úspešne aktualizovaný",
+      "deleted": "Fakturačný profil bol úspešne odstránený"
     },
     "fields": {
-      "company-name": "Company name",
-      "cin": "CIN",
-      "vat": "VAT",
-      "first-name": "First name",
-      "last-name": "Last name"
+      "company-name": "Názov spoločnosti",
+      "cin": "IČO",
+      "vat": "IČ DPH",
+      "first-name": "Krstné meno",
+      "last-name": "Priezvisko"
     },
     "dialogs": {
       "billing-detail": {
-        "new-billing-title": "New billing profile",
-        "edit-billing-title": "Edit billing profile"
+        "new-billing-title": "Nový fakturačný profil",
+        "edit-billing-title": "Úpraviť fakturačný profil"
       }
     },
     "pages": {
       "billing": {
-        "title": "Billing profiles",
-        "new": "New billing profile",
-        "cin": "CIN",
-        "vat": "VAT"
+        "title": "Fakturačné profily",
+        "new": "Nový fakturačný profil",
+        "cin": "IČO",
+        "vat": "IČ DPH"
       },
       "personal": {
         "title": "Preferencie",
@@ -221,20 +221,20 @@
   },
   "system": {
     "buttons": {
-      "admin": "Go to administration"
+      "admin": "Prejsť na správu"
     },
     "pages": {
       "error": {
         "title": "Ooops!",
-        "sub-title": "Something went wrong on our side... We are sorry!"
+        "sub-title": "Niečo sa na našej strane pokazilo... Je nám to ľúto!"
       },
       "forbidden": {
         "title": "403",
-        "sub-title": "You are trying to do actions against our rules!"
+        "sub-title": "Snažíte sa konať v rozpore s našimi pravidlami!"
       },
       "not-found": {
         "title": "Page not found",
-        "sub-title": "This is not the page you're looking for."
+        "sub-title": "Toto nie je stránka, ktorú hľadáte."
       }
     }
   },
