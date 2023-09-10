@@ -21,13 +21,19 @@
           </mat-card-title>
         </mat-card-header>
 
+
         <mat-card-content class="web-pages__card__content" fxLayout="column" fxLayoutGap="16px">
+          <div fxLayoutAlign="start start" fxLayoutGap="8px">
+            <mat-icon>public</mat-icon>
+            <div fxLayout="column">
+              <span>{{ webPage.originSite }}</span>
+            </div>
+          </div>
+
           <div fxLayoutAlign="start start" fxLayoutGap="8px">
             <mat-icon>payments</mat-icon>
             <div fxLayout="column">
               <span>{{ webPage.billingProfile.companyName || (webPage.billingProfile.firstName + ' ' + webPage.billingProfile.lastName) }}</span>
-              <span>{{ webPage.billingProfile.address | appFormatAddress }}</span>
-              <span>{{ webPage.billingProfile.country }} ({{ webPage.billingProfile.currency }})</span>
             </div>
           </div>
 
