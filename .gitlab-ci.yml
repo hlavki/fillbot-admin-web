@@ -1,6 +1,3 @@
-default:
-  image: node:18-alpine
-
 include:
   - project: 'internal/ci-scripts'
     ref: master
