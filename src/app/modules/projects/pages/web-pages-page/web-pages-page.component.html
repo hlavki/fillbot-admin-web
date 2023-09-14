@@ -49,10 +49,13 @@
         </mat-card-content>
 
         <mat-card-actions fxLayoutAlign="end end">
-          <button mat-icon-button disabled>
+          <button title="{{ 'projects.pages.web-page-detail.integration-button' | translate }}" mat-icon-button>
+            <mat-icon fontSet="material-icons-outlined">integration_instructions</mat-icon>
+          </button>
+          <button title="{{ 'projects.pages.web-page-detail.tabs.stats' | translate }}" mat-icon-button disabled>
             <mat-icon fontSet="material-icons-outlined">analytics</mat-icon>
           </button>
-          <button mat-icon-button (click)="navigate($event, webPage.originSite)">
+          <button title="{{ 'projects.pages.web-page-detail.configure-button' | translate }}" mat-icon-button (click)="navigate($event, webPage.originSite)">
             <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
           </button>
           <button mat-icon-button (click)="onDetail($event, webPage.id)">

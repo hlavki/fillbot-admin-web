@@ -14,6 +14,9 @@ import { ConfigTabComponent } from './pages/web-page-detail-page/tabs/config-tab
 import { StaticsTabComponent } from './pages/web-page-detail-page/tabs/statics-tab/statics-tab.component';
 import { WebPageValidatorsDialogComponent } from './dialogs/web-page-validators-dialog/web-page-validators-dialog.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {
+  IntegrationTabComponent,
+} from '@fb/modules/projects/pages/web-page-detail-page/tabs/integration-tab/integration-tab.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     ServiceCardComponent,
     ConfigTabComponent,
     StaticsTabComponent,
+    IntegrationTabComponent,
     WebPageValidatorsDialogComponent,
   ],
   imports: [

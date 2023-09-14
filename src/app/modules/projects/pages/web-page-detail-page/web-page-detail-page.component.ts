@@ -24,7 +24,8 @@ export class WebPageDetailPageComponent implements OnInit, OnDestroy {
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
     private readonly webPageDetailDataService: WebPageDetailDataService,
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.params.pipe(
@@ -41,10 +42,16 @@ export class WebPageDetailPageComponent implements OnInit, OnDestroy {
       filter((event: unknown) => event instanceof NavigationEnd),
       startWith(null),
     ).subscribe(() => {
-      if (this.router.url.includes('statistics')) {
-        this.selectedIndex$.next(1);
-      } else {
-        this.selectedIndex$.next(0);
+      switch (this.router.url.split('/').pop()) {
+        case 'config':
+          this.selectedIndex$.next(0);
+          break;
+        case 'statistics':
+          this.selectedIndex$.next(1);
+          break;
+        case 'integration':
+          this.selectedIndex$.next(2);
+          break;
       }
     });
   }
@@ -60,6 +67,9 @@ export class WebPageDetailPageComponent implements OnInit, OnDestroy {
         break;
       case 1:
         this.router.navigate(['/', 'projects', 'web-pages', this.activatedRoute.snapshot.params['id'], 'statistics']);
+        break;
+      case 2:
+        this.router.navigate(['/', 'projects', 'web-pages', this.activatedRoute.snapshot.params['id'], 'integration']);
         break;
     }
   }
