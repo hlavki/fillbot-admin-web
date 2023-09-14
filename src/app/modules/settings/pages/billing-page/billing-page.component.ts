@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, finalize, filter, switchMap } from 'rxjs';
+import { BehaviorSubject, filter, finalize, switchMap } from 'rxjs';
 
 import { IBillingProfileDto } from '@core/api/interfaces/billing-profile-dto.interface';
 import { IDialogClose } from '@core/interfaces/dialog-close.interface';
