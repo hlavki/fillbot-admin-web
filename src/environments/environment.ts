@@ -12,6 +12,7 @@ export const environment = {
     },
     redirectUri: window.location.origin,
   },
+  clientLibUrl: 'https://dev.fillbot.app/client-lib/main.min.js',
 };
 
 /*
