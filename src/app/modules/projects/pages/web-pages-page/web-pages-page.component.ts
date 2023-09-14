@@ -45,9 +45,9 @@ export class WebPagesPageComponent implements OnInit {
     });
   }
 
-  onDetail(event: Event, id: string): void {
+  onDetail(event: Event, id: string, tab?: string): void {
     event.stopPropagation();
-    this.router.navigate(['/', 'projects', 'web-pages', id])
+    this.router.navigate(['/', 'projects', 'web-pages', id, tab])
   }
 
   onDelete(event: Event, id: string | undefined): void {
