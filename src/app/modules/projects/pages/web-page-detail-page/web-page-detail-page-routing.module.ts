@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { WebPageDetailPageComponent } from './web-page-detail-page.component';
 import { ConfigTabComponent } from './tabs/config-tab/config-tab.component';
 import { StaticsTabComponent } from './tabs/statics-tab/statics-tab.component';
+import {
+  IntegrationTabComponent,
+} from '@fb/modules/projects/pages/web-page-detail-page/tabs/integration-tab/integration-tab.component';
 
 const routes: Routes = [
   {
@@ -30,6 +33,15 @@ const routes: Routes = [
         data: {
           breadcrumbs: {
             label: 'core.breadcrumbs.web-page-stats',
+          },
+        },
+      },
+      {
+        path: 'integration',
+        component: IntegrationTabComponent,
+        data: {
+          breadcrumbs: {
+            label: 'core.breadcrumbs.web-page-integration',
           },
         },
       },

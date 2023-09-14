@@ -1,0 +1,12 @@
+@use 'utils/variables';
+
+.integration-tab {
+  &__source-code {
+    background-color: variables.$blue-light-2 !important;
+    padding: 20px 10px;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px dashed #9b9b9b;
+  }
+}

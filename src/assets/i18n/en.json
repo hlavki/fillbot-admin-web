@@ -139,9 +139,11 @@
       },
       "web-page-detail": {
         "configure-button": "Launch configuration widget",
+        "integration-button": "Integration",
         "tabs": {
           "services": "Services",
-          "stats": "Statistics"
+          "stats": "Statistics",
+          "integration": "Integration"
         },
         "active-service": "Active services",
         "available-service": "Available service",
@@ -156,6 +158,10 @@
         },
         "phoneNumber": {
           "desc": "Real-time phone number validation and availability."
+        },
+        "integration": {
+          "desc": "Integration of service into your website.",
+          "info-text": "Copy and paste this code into your website."
         }
       }
     },
