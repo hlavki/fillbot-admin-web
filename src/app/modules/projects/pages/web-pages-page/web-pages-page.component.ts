@@ -1,17 +1,17 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {BehaviorSubject, filter, finalize, switchMap} from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { BehaviorSubject, filter, finalize, switchMap } from 'rxjs';
 
-import {IWebPageDto} from '@fb/core/api/interfaces/web-page-dto.interface';
-import {WebPagesService} from '@fb/core/api/services/web-pages/web-pages.service';
-import {IDialogClose} from '@fb/core/interfaces/dialog-close.interface';
+import { IWebPageDto } from '@fb/core/api/interfaces/web-page-dto.interface';
+import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.service';
+import { IDialogClose } from '@fb/core/interfaces/dialog-close.interface';
 
-import {WebPageDetailDialogComponent} from '../../dialogs/web-page-detail-dialog/web-page-detail-dialog.component';
-import {NotificationService} from '@fb/core/services/notification/notification.service';
-import {TranslateService} from '@ngx-translate/core';
-import {ConfirmationDialogComponent} from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
-import {Router} from '@angular/router';
-import {getConfiguratorUrl} from '@core/utils/webPageUtil';
+import { WebPageDetailDialogComponent } from '../../dialogs/web-page-detail-dialog/web-page-detail-dialog.component';
+import { NotificationService } from '@fb/core/services/notification/notification.service';
+import { TranslateService } from '@ngx-translate/core';
+import { ConfirmationDialogComponent } from '@fb/shared/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { Router } from '@angular/router';
+import { getConfiguratorUrl } from '@core/utils/webPageUtil';
 
 @Component({
   selector: 'fb-web-pages-page',
@@ -47,7 +47,7 @@ export class WebPagesPageComponent implements OnInit {
 
   onDetail(event: Event, id: string, tab?: string): void {
     event.stopPropagation();
-    this.router.navigate(['/', 'projects', 'web-pages', id, tab])
+    this.router.navigate(['/', 'projects', 'web-pages', id, ...(tab ? [tab] : [])])
   }
 
   onDelete(event: Event, id: string | undefined): void {
