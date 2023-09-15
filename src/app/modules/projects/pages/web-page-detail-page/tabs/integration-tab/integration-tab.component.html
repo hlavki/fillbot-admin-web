@@ -1,0 +1,10 @@
+<fb-loading *ngIf="isLoading$ | async; else notLoading"></fb-loading>
+
+<ng-template #notLoading>
+  <div fxLayout="column" fxLayoutGap="16px">
+    <div fxLayout="column">
+      <div>{{ 'projects.pages.web-page-detail.integration.info-text' | translate }}</div>
+      <pre class="integration-tab__source-code">{{ includeSnippetCode$ | async }}</pre>
+    </div>
+  </div>
+</ng-template>

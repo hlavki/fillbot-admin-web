@@ -46,6 +46,9 @@
           <button mat-icon-button (click)="onEdit(billingProfile)">
             <mat-icon fontSet="material-icons-outlined">edit</mat-icon>
           </button>
+          <button mat-icon-button (click)="onEditPaymentMethod(billingProfile)">
+            <mat-icon fontSet="material-icons-outlined">payment</mat-icon>
+          </button>
           <button color="warn" mat-icon-button [disabled]="((data$ | async)?.length || 0) <= 1" (click)="onDelete(billingProfile.id)">
             <mat-icon fontSet="material-icons-outlined" >delete</mat-icon>
           </button>

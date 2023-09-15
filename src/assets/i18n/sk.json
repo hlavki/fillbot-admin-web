@@ -139,9 +139,11 @@
       },
       "web-page-detail": {
         "configure-button": "Spusti konfiguráciu",
+        "integration-button": "Integrácia",
         "tabs": {
           "services": "Služby",
-          "stats": "Štatistiky"
+          "stats": "Štatistiky",
+          "integration": "Integrácia"
         },
         "active-service": "Aktivné služby",
         "available-service": "Dostupné šlužby",
@@ -156,6 +158,10 @@
         },
         "phoneNumber": {
           "desc": "Validácia a dostupnosť telefonného čísla v reálnom čase."
+        },
+        "integration": {
+          "desc": "Integrácia služieb do vašej webovej stránky.",
+          "info-text": "Pre integráciu služieb do vašej webovej stránky, stačí vložiť nasledujúci kód do hlavičky vašej stránky."
         }
       }
     },

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { BehaviorSubject, finalize, filter, switchMap } from 'rxjs';
+import { BehaviorSubject, filter, finalize, switchMap } from 'rxjs';
 
 import { IBillingProfileDto } from '@core/api/interfaces/billing-profile-dto.interface';
 import { IDialogClose } from '@core/interfaces/dialog-close.interface';
@@ -10,6 +10,9 @@ import { NotificationService } from '@core/services/notification/notification.se
 import { BillingDetailDialogComponent } from '@shared/dialogs/billing-detail-dialog/billing-detail-dialog.component';
 import { ConfirmationDialogComponent } from '@shared/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { TranslateService } from '@ngx-translate/core';
+import {
+  PaymentMethodDialogComponent,
+} from '@fb/modules/settings/dialogs/payment-method-dialog/payment-method-dialog.component';
 
 @Component({
   selector: 'fb-billing-page',
@@ -43,6 +46,17 @@ export class BillingPageComponent implements OnInit {
 
   onEdit(billingProfile: IBillingProfileDto): void {
     this.dialog.open(BillingDetailDialogComponent, {
+      data: billingProfile,
+    }).afterClosed().pipe(
+      filter((dialogClose: IDialogClose) => !!dialogClose?.success),
+    ).subscribe(() => {
+      this.notificationService.success(this.translateService.instant('settings.messages.updated'));
+      this.loadData();
+    });
+  }
+
+  onEditPaymentMethod(billingProfile: IBillingProfileDto): void {
+    this.dialog.open(PaymentMethodDialogComponent, {
       data: billingProfile,
     }).afterClosed().pipe(
       filter((dialogClose: IDialogClose) => !!dialogClose?.success),

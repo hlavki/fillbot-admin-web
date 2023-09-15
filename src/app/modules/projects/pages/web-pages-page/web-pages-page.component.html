@@ -42,24 +42,30 @@
             <div fxLayout="column">
               <span>{{ 'enums.pricing-tier.' + webPage.pricingTier.code | translate }}</span>
               <div>
-                <span>{{ 'core.pricing-tier.annual' | translate }}: {{ webPage.pricingTier.annualPrice }}€</span> | <span>{{ 'core.pricing-tier.monthly' | translate }}: {{ webPage.pricingTier.monthlyPrice }}€</span>
+                <span>{{ 'core.pricing-tier.annual' | translate }}: {{ webPage.pricingTier.annualPrice }}€</span> |
+                <span>{{ 'core.pricing-tier.monthly' | translate }}: {{ webPage.pricingTier.monthlyPrice }}€</span>
               </div>
             </div>
           </div>
         </mat-card-content>
 
         <mat-card-actions fxLayoutAlign="end end">
-          <button mat-icon-button disabled>
+          <button title="{{ 'projects.pages.web-page-detail.integration-button' | translate }}" mat-icon-button
+                  (click)="onDetail($event, webPage.id, 'integration')">
+            <mat-icon fontSet="material-icons-outlined">integration_instructions</mat-icon>
+          </button>
+          <button title="{{ 'projects.pages.web-page-detail.tabs.stats' | translate }}" mat-icon-button disabled>
             <mat-icon fontSet="material-icons-outlined">analytics</mat-icon>
           </button>
-          <button mat-icon-button (click)="navigate($event, webPage.originSite)">
+          <button title="{{ 'projects.pages.web-page-detail.configure-button' | translate }}" mat-icon-button
+                  (click)="navigate($event, webPage.originSite)">
             <mat-icon fontSet="material-icons-outlined">arrow_outward</mat-icon>
           </button>
           <button mat-icon-button (click)="onDetail($event, webPage.id)">
             <mat-icon fontSet="material-icons-outlined">visibility</mat-icon>
           </button>
           <button color="warn" mat-icon-button (click)="onDelete($event, webPage.id)">
-            <mat-icon fontSet="material-icons-outlined" >delete</mat-icon>
+            <mat-icon fontSet="material-icons-outlined">delete</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>
