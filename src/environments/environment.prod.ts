@@ -1,12 +1,16 @@
+import { IEnvironment } from '@core/interfaces/environment.interface';
+
+const envConfig: IEnvironment = (window as any).aokEnv || {};
+
 export const environment = {
   production: true,
   keycloak: {
     params: {
-      realm: 'fillbot',
-      url: 'https://sso.dev.fillbot.app',
-      clientId: 'admin-web',
+      realm: envConfig.keycloakRealm ?? 'fillbot',
+      url: envConfig.keycloakUrl ?? 'https://sso.dev.fillbot.app',
+      clientId: envConfig.keycloakClientId ?? 'admin-web',
     },
-    redirectUri: window.location.origin,
+    redirectUri: envConfig.keycloakRedirectUri ?? window.location.origin,
   },
-  clientLibUrl: 'https://dev.fillbot.app/client-lib/main.min.js',
+  clientLibUrl: envConfig.clientLibUrl ?? 'https://dev.fillbot.app/client-lib/main.min.js',
 };
