@@ -4,7 +4,6 @@ import { environment } from '@env/environment';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
-    console.log(`PICO ${environment.keycloak.params.url}`);
     keycloak.init({
       config: {
         url: environment.keycloak.params.url,
