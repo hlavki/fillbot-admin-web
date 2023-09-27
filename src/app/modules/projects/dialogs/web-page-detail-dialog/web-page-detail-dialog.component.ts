@@ -26,7 +26,7 @@ interface IApiKeyDetailForm {
 })
 export class WebPageDetailDialogComponent implements OnInit {
   readonly isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
-  currentLang: string = this.translateService.currentLang;
+  currentLang: string = this.translateService.currentLang ?? this.translateService.defaultLang;
 
   form: FormGroup;
 
@@ -43,7 +43,6 @@ export class WebPageDetailDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('currentLang', this.currentLang);
     forkJoin([
       this.billingService.getBillingProfiles(),
       this.webPagesService.getPricingTiers(this.currentLang),
@@ -69,7 +68,7 @@ export class WebPageDetailDialogComponent implements OnInit {
       id: undefined,
       name: formValue.name,
       originSite: formValue.originSite,
-      pricingTier: formValue.pricingTier,
+      pricingTier: { code: formValue.pricingTier.code },
       billingProfile: formValue.billingProfile,
       enabled: formValue.enabled,
     }).pipe(
