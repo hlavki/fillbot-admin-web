@@ -1,10 +1,10 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-import {IWebPageDto} from '../../interfaces/web-page-dto.interface';
-import {IPricingTierDto} from '../../interfaces/pricing-tier-dto.interface';
-import {IWebPageConfigDto} from '../../interfaces/web-page-config.interface';
+import { IWebPageDto } from '../../interfaces/web-page-dto.interface';
+import { IPricingTierDto } from '../../interfaces/pricing-tier-dto.interface';
+import { IWebPageConfigDto } from '../../interfaces/web-page-config.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,7 @@ export class WebPagesService {
   }
 
   createWebPage(webPage: IWebPageDto): Observable<void> {
-    return this.http.post<void>(this.BASE_URL, webPage);
+    return this.http.post<void>(this.BASE_URL, webPage, {headers: {'Content-Type': 'application/json'}});
   }
 
   deleteWebPage(id: string): Observable<void> {
