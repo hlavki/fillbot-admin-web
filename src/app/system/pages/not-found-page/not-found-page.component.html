@@ -1,7 +1,7 @@
 <fb-base-page>
   <ng-template #content>
     <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px">
-      <img src="../../../../assets/images/worried.png" width="150px">
+      <img alt="worried" src="../../../../assets/images/worried.png" width="150px">
 
       <div fxLayout="column" fxLayoutGap="64px" fxLayoutAlign="start center">
         <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="16px" style="text-align: center">
@@ -10,7 +10,7 @@
         </div>
 
         <div fxLayoutAlign="center" fxLayoutGap="16px" fxLayout.lt-sm="column">
-          <button *ngIf="isLoggedIn$ | async" mat-raised-button color="primary" [routerLink]="['/']">
+          <button *ngIf="isLoggedIn" mat-raised-button color="primary" [routerLink]="['/']">
             <span translate>system.buttons.admin</span>
           </button>
         </div>
