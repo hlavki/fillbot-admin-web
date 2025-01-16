@@ -1,5 +1,5 @@
 {
-  "/api/*": {
+  "/api/**": {
     "target": "https://admin.dev.fillbot.app",
     "secure": false,
     "changeOrigin": true,

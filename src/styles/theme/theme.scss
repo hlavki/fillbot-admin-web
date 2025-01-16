@@ -1,28 +1,28 @@
 @use '@angular/material' as mat;
 @use './theme/pallete';
 
-$fb-primary: mat.define-palette(pallete.$md-primary, 500, 300, 900);
-$fb-accent: mat.define-palette(pallete.$md-aokgray, 500, 300, 900);
-$fb-warn: mat.define-palette(pallete.$md-aokwarn, 500, 300, 900);
+$fb-primary: mat.m2-define-palette(pallete.$md-primary, 500, 300, 900);
+$fb-accent: mat.m2-define-palette(pallete.$md-aokgray, 500, 300, 900);
+$fb-warn: mat.m2-define-palette(pallete.$md-aokwarn, 500, 300, 900);
 
-$fb-typography: mat.define-typography-config(
+$fb-typography: mat.m2-define-typography-config(
   $font-family: '"Poppins", sans-serif',
-  $headline-1: mat.define-typography-level(32px, 50px, bold),
-  $headline-2: mat.define-typography-level(24px, 40px, bold),
+  $headline-1: mat.m2-define-typography-level(32px, 50px, bold),
+  $headline-2: mat.m2-define-typography-level(24px, 40px, bold),
   $headline-3: null,
   $headline-4: null,
   $headline-5: null,
   $headline-6: null,
-  $subtitle-1: mat.define-typography-level(14px, 25px, 500),
-  $subtitle-2: mat.define-typography-level(18px, 30px, bold),
-  $body-1: mat.define-typography-level(16px, 1.25, normal),
-  $body-2: mat.define-typography-level(14px, 20px, normal),
-  $caption: mat.define-typography-level(12px, 14px, 400),
-  $button: mat.define-typography-level(14px, 10px, 500),
+  $subtitle-1: mat.m2-define-typography-level(14px, 25px, 500),
+  $subtitle-2: mat.m2-define-typography-level(18px, 30px, bold),
+  $body-1: mat.m2-define-typography-level(16px, 1.25, normal),
+  $body-2: mat.m2-define-typography-level(14px, 20px, normal),
+  $caption: mat.m2-define-typography-level(12px, 14px, 400),
+  $button: mat.m2-define-typography-level(14px, 10px, 500),
   $overline: null,
 );
 
-$fb-theme: mat.define-light-theme((
+$fb-theme: mat.m2-define-light-theme((
 	color: (
 		primary: $fb-primary,
 		accent: $fb-accent,
