@@ -17,7 +17,7 @@
     "@angular/common": "^18.2.13",
     "@angular/compiler": "^18.2.13",
     "@angular/core": "^18.2.13",
-    "@ngbracket/ngx-layout": "^17.0.0",
+    "@ngbracket/ngx-layout": "^18.0.0",
     "@angular/forms": "^18.2.13",
     "@angular/material": "^18.2.14",
     "@angular/material-moment-adapter": "^18.2.14",
