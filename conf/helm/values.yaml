@@ -1,0 +1,12 @@
+nginx:
+  fullnameOverride: admin-web
+  nameOverride: admin-web
+  image:
+    repository: docker.mores.eu/fillbot/admin-web
+  resources:
+    requests:
+      memory: "32Mi"
+      cpu: "100m"
+    limits:
+      memory: "128Mi"
+      cpu: "1"
