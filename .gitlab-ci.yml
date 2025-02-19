@@ -13,5 +13,6 @@ deploy:
   extends: .deploy-to-k8s
   variables:
     ENV: dev
+    GITOPS_BRANCH: master
   only:
     - main
