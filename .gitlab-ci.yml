@@ -9,7 +9,7 @@ build:
     - npm install
     - npm run build:prod
 
-deploy:
+deploy-to-dev:
   extends: .deploy-to-k8s
   variables:
     ENV: dev
