@@ -10,7 +10,7 @@ build:
     - npm run build:prod
 
 deploy:
-  extends: .deploy-to-dev-tpl
+  extends: .deploy-to-k8s
   variables:
     ENV: dev
   only:
