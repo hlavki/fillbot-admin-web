@@ -1,0 +1,9 @@
+apiVersion: v2
+name: admin-web
+type: application
+version: 0.0.0
+
+dependencies:
+  - name: nginx
+    version: 0.2.0
+    repository: oci://docker.mores.eu/fillbot/charts

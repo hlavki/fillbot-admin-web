@@ -1,7 +1,7 @@
 include:
   - project: 'internal/ci-scripts'
     ref: master
-    file: '/web/ci-default.yml'
+    file: '/web/default.yml'
 
 build:
   stage: build
@@ -10,7 +10,7 @@ build:
     - npm run build:prod
 
 deploy:
-  extends: .deploy-to-dev-tpl
+  extends: .deploy-to-k8s
   variables:
     ENV: dev
   only:
