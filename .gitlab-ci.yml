@@ -2,7 +2,3 @@ include:
   - project: 'internal/ci-scripts'
     ref: master
     file: '/web/angular.yml'
-
-deploy-to-dev:
-  only:
-    - main
