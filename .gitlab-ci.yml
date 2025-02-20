@@ -1,18 +1,8 @@
 include:
   - project: 'internal/ci-scripts'
     ref: master
-    file: '/web/default.yml'
-
-build:
-  stage: build
-  script:
-    - npm install
-    - npm run build:prod
+    file: '/web/angular.yml'
 
 deploy-to-dev:
-  extends: .deploy-to-k8s
-  variables:
-    ENV: dev
-    GITOPS_BRANCH: master
   only:
     - main
