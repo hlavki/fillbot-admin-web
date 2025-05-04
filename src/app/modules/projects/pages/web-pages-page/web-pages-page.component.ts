@@ -64,7 +64,7 @@ export class WebPagesPageComponent implements OnInit {
         },
       }).afterClosed().pipe(
         filter((dialogClose: IDialogClose) => !!dialogClose?.success),
-        switchMap(() => this.webPagesService.deleteWebPage(id)),
+        switchMap(() => this.webPagesService.delete(id)),
       ).subscribe(() => {
         this.notificationService.success(this.translateService.instant('projects.messages.web-pages.deleted'));
         this.loadData();

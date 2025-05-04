@@ -81,6 +81,7 @@ export class ApiKeysPagesComponent implements OnInit {
   }
 
   getApiKeySecured(apiKey: string): string {
+    console.log('getApiKeySecured', apiKey);
     return `${apiKey.substring(0, 3)}${Array(apiKey.length - 6).fill('*').join('')}${apiKey.substring(apiKey.length - 3)}`
   }
 

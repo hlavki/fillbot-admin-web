@@ -64,7 +64,7 @@ export class WebPageDetailDialogComponent implements OnInit {
 
   onSubmit(formValue: IApiKeyDetailForm): void {
     this.isLoading$.next(true);
-    this.webPagesService.createWebPage({
+    this.webPagesService.create({
       id: undefined,
       name: formValue.name,
       originSite: formValue.originSite,

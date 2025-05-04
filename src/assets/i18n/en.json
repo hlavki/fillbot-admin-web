@@ -130,8 +130,8 @@
     },
     "pages": {
       "api-keys": {
-        "title": "Api keys",
-        "new": "New api key"
+        "title": "API keys",
+        "new": "New API key"
       },
       "web-pages": {
         "title": "Web pages",

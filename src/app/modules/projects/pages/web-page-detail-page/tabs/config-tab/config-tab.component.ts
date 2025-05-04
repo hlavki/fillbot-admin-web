@@ -48,7 +48,7 @@ export class ConfigTabComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.parent.params.pipe(
       map((params: Params) => params['id']),
-      switchMap((id: string) => this.webPageService.getWebPageConfig(id).pipe(
+      switchMap((id: string) => this.webPageService.getConfig(id).pipe(
         finalize(() => this.isLoading$.next(false)),
       )),
     ).subscribe((webPageConfig: IWebPageConfigDto) => {
@@ -68,7 +68,7 @@ export class ConfigTabComponent implements OnInit {
       ...this.dataWebPageConfig$.value,
       ...config,
     };
-    this.webPageService.updateWebPageConfig(this.activatedRoute.snapshot.parent.params['id'], configToSave).subscribe(
+    this.webPageService.updateConfig(this.activatedRoute.snapshot.parent.params['id'], configToSave).subscribe(
       () => this.dataWebPageConfig$.next(configToSave),
     );
   }
