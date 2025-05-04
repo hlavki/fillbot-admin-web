@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core
 import { BehaviorSubject, delay, of } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'fb-loading',
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],

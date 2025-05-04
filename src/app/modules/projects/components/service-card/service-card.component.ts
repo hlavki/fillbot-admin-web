@@ -9,6 +9,7 @@ import { WebPageValidatorsDialogComponent } from '../../dialogs/web-page-validat
 import { getConfiguratorUrl } from '@core/utils/webPageUtil';
 
 @Component({
+  standalone: false,
   selector: 'fb-service-card',
   templateUrl: './service-card.component.html',
   styleUrls: ['./service-card.component.scss'],

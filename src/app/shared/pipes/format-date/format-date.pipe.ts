@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as moment from 'moment';
 
 @Pipe({
+  standalone: false,
   name: 'fbFormatDate',
 })
 export class FormatDatePipe implements PipeTransform {

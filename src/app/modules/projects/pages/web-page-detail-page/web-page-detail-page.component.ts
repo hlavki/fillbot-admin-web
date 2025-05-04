@@ -8,6 +8,7 @@ import { WebPagesService } from '@fb/core/api/services/web-pages/web-pages.servi
 import { WebPageDetailDataService } from '@fb/core/services/web-page-detail-data/web-page-detail-data.service';
 
 @Component({
+  standalone: false,
   selector: 'fb-web-page-detail-page',
   templateUrl: './web-page-detail-page.component.html',
   styleUrls: ['./web-page-detail-page.component.scss'],

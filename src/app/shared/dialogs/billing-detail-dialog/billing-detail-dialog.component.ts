@@ -14,6 +14,7 @@ import { IBillingDetailForm } from '@core/interfaces/billing-detail-form.interfa
 import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 @Component({
+  standalone: false,
   selector: 'fb-billing-detail-dialog',
   templateUrl: './billing-detail-dialog.component.html',
   styleUrls: ['./billing-detail-dialog.component.scss'],

@@ -3,6 +3,7 @@ import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
+  standalone: false,
   // eslint-disable-next-line @angular-eslint/component-selector
   selector: '[fb-form-message]',
   template: '<span>{{ errorMessage() | translate }}</span>',

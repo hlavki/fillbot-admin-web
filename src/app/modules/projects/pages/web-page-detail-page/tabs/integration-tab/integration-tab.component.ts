@@ -5,6 +5,7 @@ import {WebPagesService} from '@fb/core/api/services/web-pages/web-pages.service
 import {environment} from '@env/environment';
 
 @Component({
+    standalone: false,
     selector: 'fb-integration-tab',
     templateUrl: './integration-tab.component.html',
     styleUrls: ['./integration-tab.component.scss'],

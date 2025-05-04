@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 
 @Component({
+  standalone: false,
   selector: 'fb-forbidden-page',
   templateUrl: './forbidden-page.component.html',
   styleUrls: ['./forbidden-page.component.scss'],

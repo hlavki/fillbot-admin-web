@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, ContentChild, Input, TemplateRef } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'fb-base-page',
   templateUrl: './base-page.component.html',
   styleUrls: ['./base-page.component.scss'],

@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { getConfiguratorUrl } from '@core/utils/webPageUtil';
 
 @Component({
+  standalone: false,
   selector: 'fb-web-pages-page',
   templateUrl: './web-pages-page.component.html',
   styleUrls: ['./web-pages-page.component.scss'],

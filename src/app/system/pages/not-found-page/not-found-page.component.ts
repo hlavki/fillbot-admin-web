@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 
 @Component({
+  standalone: false,
   selector: 'fb-not-found-page',
   templateUrl: './not-found-page.component.html',
   styleUrls: ['./not-found-page.component.scss'],

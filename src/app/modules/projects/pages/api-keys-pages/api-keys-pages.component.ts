@@ -14,6 +14,7 @@ import { ApiKeyDetailDialogComponent } from '../../dialogs/api-key-detail-dialog
 import { ApiKeyConfigDialogComponent } from '../../dialogs/api-key-config-dialog/api-key-config-dialog.component';
 
 @Component({
+  standalone: false,
   selector: 'fb-api-keys-pages',
   templateUrl: './api-keys-pages.component.html',
   styleUrls: ['./api-keys-pages.component.scss'],

@@ -4,6 +4,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'fb-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],

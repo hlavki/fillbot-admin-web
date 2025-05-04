@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'fb-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],

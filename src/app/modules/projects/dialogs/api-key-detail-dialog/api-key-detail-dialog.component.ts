@@ -15,6 +15,7 @@ interface IApiKeyDetailForm {
 }
 
 @Component({
+  standalone: false,
   selector: 'fb-api-key-detail-dialog',
   templateUrl: './api-key-detail-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

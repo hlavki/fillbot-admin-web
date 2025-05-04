@@ -20,6 +20,7 @@ interface IApiKeyDetailForm {
 }
 
 @Component({
+  standalone: false,
   selector: 'fb-web-page-detail-dialog',
   templateUrl: './web-page-detail-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

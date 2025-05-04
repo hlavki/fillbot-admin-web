@@ -4,6 +4,7 @@ import { UserService } from '@fb/core/api/services/user/user.service';
 import { Observable } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'fb-personal-page',
   templateUrl: './personal-page.component.html',
   styleUrls: ['./personal-page.component.scss'],

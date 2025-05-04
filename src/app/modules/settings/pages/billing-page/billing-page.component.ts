@@ -15,6 +15,7 @@ import {
 } from '@fb/modules/settings/dialogs/payment-method-dialog/payment-method-dialog.component';
 
 @Component({
+  standalone: false,
   selector: 'fb-billing-page',
   templateUrl: './billing-page.component.html',
   styleUrls: ['./billing-page.component.scss'],

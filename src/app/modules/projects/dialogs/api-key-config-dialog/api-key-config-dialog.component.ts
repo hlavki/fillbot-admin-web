@@ -8,6 +8,7 @@ import { ApiKeysService } from '@core/api/services/api-keys/api-keys.service';
 import { CustomValidators } from '@fb/core/validators/custom-validators';
 
 @Component({
+  standalone: false,
   selector: 'fb-api-key-config-dialog',
   templateUrl: './api-key-config-dialog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

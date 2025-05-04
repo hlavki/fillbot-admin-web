@@ -9,6 +9,7 @@ import {WebPageDetailDataService} from '@fb/core/services/web-page-detail-data/w
 import {getConfiguratorUrl} from '@core/utils/webPageUtil';
 
 @Component({
+  standalone: false,
   selector: 'fb-config-tab',
   templateUrl: './config-tab.component.html',
   styleUrls: ['./config-tab.component.scss'],
