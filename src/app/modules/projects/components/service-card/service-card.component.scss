@@ -1,4 +1,5 @@
 @use 'utils/variables';
+@use "sass:map";
 
 :host {
   display: block;
@@ -9,7 +10,7 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 
-  @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
+  @media screen and (max-width: map.get(variables.$grid-breakpoints, md)) {
     min-width: 100%;
   }
 }

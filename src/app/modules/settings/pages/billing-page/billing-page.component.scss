@@ -1,4 +1,5 @@
 @use 'utils/variables';
+@use "sass:map";
 
 .billing {
   gap: 16px;
@@ -11,7 +12,7 @@
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 
-    @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
+    @media screen and (max-width: map.get(variables.$grid-breakpoints, md)) {
       min-width: 100%;
     }
 
@@ -24,9 +25,6 @@
     max-width: 380px;
     min-width: 380px;
 
-    @media screen and (max-width: map-get(variables.$grid-breakpoints, md)) {
-      min-width: 100%;
-    }
 
     min-height: 200px;
     background-color: variables.$white !important;
@@ -37,6 +35,10 @@
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+
+    @media screen and (max-width: map.get(variables.$grid-breakpoints, md)) {
+      min-width: 100%;
+    }
 
     &:hover {
       background-color: variables.$blue-light-2 !important;
