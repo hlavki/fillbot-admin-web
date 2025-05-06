@@ -24,8 +24,8 @@ import {RouterLink} from '@angular/router';
     ],
 })
 export class ForbiddenPageComponent {
-    readonly isLoggedIn: boolean = this.keycloackService.isLoggedIn();
+    readonly isLoggedIn: boolean = this.keycloakService.isLoggedIn();
 
-    constructor(private readonly keycloackService: KeycloakService) {
+    constructor(private readonly keycloakService: KeycloakService) {
     }
 }
