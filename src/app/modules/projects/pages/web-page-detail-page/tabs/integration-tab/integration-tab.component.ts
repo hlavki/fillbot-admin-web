@@ -3,12 +3,24 @@ import {BehaviorSubject, map} from 'rxjs';
 import {ActivatedRoute, Params} from '@angular/router';
 import {WebPagesService} from '@fb/core/api/services/web-pages/web-pages.service';
 import {environment} from '@env/environment';
+import {AsyncPipe, NgIf} from '@angular/common';
+import {LoadingComponent} from '../../../../../../shared/components/loading/loading.component';
+import {DefaultLayoutDirective, DefaultLayoutGapDirective} from '@ngbracket/ngx-layout/flex';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
     selector: 'fb-integration-tab',
     templateUrl: './integration-tab.component.html',
     styleUrls: ['./integration-tab.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgIf,
+        LoadingComponent,
+        DefaultLayoutDirective,
+        DefaultLayoutGapDirective,
+        AsyncPipe,
+        TranslatePipe,
+    ],
 })
 export class IntegrationTabComponent implements OnInit {
 

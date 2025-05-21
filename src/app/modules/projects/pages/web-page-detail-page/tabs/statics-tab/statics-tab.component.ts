@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  selector: 'fb-statics-tab',
-  templateUrl: './statics-tab.component.html',
-  styleUrls: ['./statics-tab.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fb-statics-tab',
+    templateUrl: './statics-tab.component.html',
+    styleUrls: ['./statics-tab.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StaticsTabComponent {}
+export class StaticsTabComponent {
+}
