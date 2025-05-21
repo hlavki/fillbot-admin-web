@@ -1,4 +1,4 @@
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {inject, NgModule, provideAppInitializer} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -44,12 +44,10 @@ registerLocaleData(localeSk, 'sk');
             isolate: true,
         })], providers: [
         {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
-        {
-            provide: APP_INITIALIZER,
-            multi: true,
-            deps: [KeycloakService],
-            useFactory: initializeKeycloak,
-        },
+        provideAppInitializer(() => {
+            const initializerFn = initializeKeycloak(inject(KeycloakService));
+            return initializerFn();
+        }),
         {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {...new MatDialogConfig(), width: '100%', maxWidth: '700px'}},
         provideHttpClient(withInterceptorsFromDi()),
     ],
